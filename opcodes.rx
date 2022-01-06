@@ -1,0 +1,32 @@
+/* Rexx */
+/*-------------------------------------------------------------------*/
+/*> Count lines & included COPY                                      */
+/*-------------------------------------------------------------------*/
+Call Init
+parse arg ifile ofile
+l = 0
+c = 0
+st = 0
+t = '09'x
+opt. = ''
+call lineout ofile, , 1
+do while lines(ifile) > 0 
+	line = linein(ifile)
+	parse var line 1 arch 4 gen 13 opcode 22 frmt 31 hex 40 oper
+	lineo = arch gen opcode frmt hex oper
+	cache = opt.opcode
+	if cache = '' then do 
+		opt.opcode = lineo
+		oline = strip(arch)||t||strip(gen)||t||strip(opcode)||t||strip(frmt)||t||strip(hex)||t||strip(oper)
+		call lineout ofile, oline
+		end
+	else if word(cache,5) <> word(lineo,5) then say cache ':' lineo
+	end
+exit
+/*-------------------------------------------------------------------*/
+/*> Init: Initialize                                                 */
+/*-------------------------------------------------------------------*/
+Init:
+call rxfuncadd 'sysloadfuncs', 'regutil', 'sysloadfuncs'
+r = sysloadfuncs()
+return

@@ -4,8 +4,9 @@
 $$1 = 'default' in $$1 ? $$1['default'] : $$1;
 
 var FilterMenu = function () {
-    function FilterMenu(target, th, column, index, options) {
-        this.options = options;
+    function FilterMenu(cache, target, th, column, index, options) {
+        this.cache = cache;
+		this.options = options;
         this.th = th;
         this.column = column;
         this.index = index;
@@ -59,7 +60,8 @@ var FilterMenu = function () {
         }
     };
     FilterMenu.prototype.dropdownFilterItem = function (td, self) {
-        var value = td.innerText;
+        // var value = td.getAttribute('data-value') ?? td.innerText;
+		var value = td;
         var dropdownFilterItem = document.createElement('div');
         dropdownFilterItem.className = 'dropdown-filter-item';
         var input = document.createElement('input');
@@ -116,9 +118,20 @@ var FilterMenu = function () {
         var self = this;
         var dropdownFilterContent = document.createElement('div');
         dropdownFilterContent.className = 'dropdown-filter-content';
+		var colValues = [];
+        for(var i=0; i < this.cache.length; i++){
+          colValues.push(this.cache[i][this.column]);
+        }
+		colValues = [...new Set(colValues)];
+		// console.log(colValues);
+		var innerDivs = colValues.map(function (td) {
+            return _this.dropdownFilterItem(td, self);
+        }); 
+		/*
         var innerDivs = this.tds.reduce(function (arr, el) {
             var values = arr.map(function (el) {
-                return el.innerText.trim();
+                var val = (el.getAttribute('data-value') ?? el.innerText);
+				return val.trim();
             });
             if (values.indexOf(el.innerText.trim()) < 0) arr.push(el);
             return arr;
@@ -135,7 +148,7 @@ var FilterMenu = function () {
             return 0;
         }).map(function (td) {
             return _this.dropdownFilterItem(td, self);
-        });
+        }); */
         this.inputs = innerDivs.map(function (div) {
             return div.firstElementChild;
         });
@@ -182,15 +195,16 @@ var FilterMenu = function () {
 }();
 
 var FilterCollection = function () {
-    function FilterCollection(target, options) {
-        this.target = target;
+    function FilterCollection(cache, target, options) {
+        this.cache = cache;
+		this.target = target;
         this.options = options;
         this.ths = target.find('th' + options.columnSelector).toArray();
         this.filterMenus = this.ths.map(function (th, index) {
             var column = $(th).index();
-            return new FilterMenu(target, th, column, index, options);
+            return new FilterMenu(cache, target, th, column, index, options);
         });
-        this.rows = target.find('tbody').find('tr').toArray();
+        this.rows = target.find('tbody.main').children('tr').toArray();
         this.table = target.get(0);
     }
     FilterCollection.prototype.initialize = function () {
@@ -206,24 +220,26 @@ var FilterCollection = function () {
         var filterMenus = this.filterMenus;
         var rows = this.rows;
         var ths = this.ths;
+		var cache = this.cache;
         var updateRowVisibility = this.updateRowVisibility;
         this.target.find('.dropdown-filter-menu-item.item').change(function () {
             var index = $(this).data('index');
             var value = $(this).val();
             filterMenus[index].updateSelectAll();
-            updateRowVisibility(filterMenus, rows, ths);
+            updateRowVisibility(filterMenus, rows, ths, cache);
         });
     };
     FilterCollection.prototype.bindSelectAllCheckboxes = function () {
         var filterMenus = this.filterMenus;
         var rows = this.rows;
         var ths = this.ths;
+		var cache = this.cache;
         var updateRowVisibility = this.updateRowVisibility;
         this.target.find('.dropdown-filter-menu-item.select-all').change(function () {
             var index = $(this).data('index');
             var value = this.checked;
             filterMenus[index].selectAllUpdate(value);
-            updateRowVisibility(filterMenus, rows, ths);
+            updateRowVisibility(filterMenus, rows, ths, cache);
         });
     };
     FilterCollection.prototype.bindSort = function () {
@@ -233,13 +249,14 @@ var FilterCollection = function () {
         var sort = this.sort;
         var table = this.table;
         var options = this.options;
+		var cache = this.cache;
         var updateRowVisibility = this.updateRowVisibility;
         this.target.find('.dropdown-filter-sort').click(function () {
             var $sortElement = $(this).find('span');
             var column = $sortElement.data('column');
             var order = $sortElement.attr('class');
             sort(column, order, table, options);
-            updateRowVisibility(filterMenus, rows, ths);
+            updateRowVisibility(filterMenus, rows, ths, cache);
         });
     };
     FilterCollection.prototype.bindSearch = function () {
@@ -247,15 +264,16 @@ var FilterCollection = function () {
         var rows = this.rows;
         var ths = this.ths;
         var updateRowVisibility = this.updateRowVisibility;
+		var cache = this.cache;
         this.target.find('.dropdown-filter-search').keyup(function () {
             var $input = $(this).find('input');
             var index = $input.data('index');
             var value = $input.val();
             filterMenus[index].searchToggle(value);
-            updateRowVisibility(filterMenus, rows, ths);
+            updateRowVisibility(filterMenus, rows, ths, cache);
         });
     };
-    FilterCollection.prototype.updateRowVisibility = function (filterMenus, rows, ths) {
+    FilterCollection.prototype.updateRowVisibility = function (filterMenus, rows, ths, cache) {
         var showRows = rows;
         var hideRows = [];
         var selectedLists = filterMenus.map(function (filterMenu) {
@@ -271,23 +289,39 @@ var FilterCollection = function () {
         for (var i = 0; i < rows.length; i++) {
             var tds = rows[i].children;
             for (var j = 0; j < selectedLists.length; j++) {
-                var content = tds[selectedLists[j].column].innerText.trim().replace(/ +(?= )/g, '');
+                //var content = tds[selectedLists[j].column].getAttribute('data-value') ?? tds[selectedLists[j].column].innerText.trim();
+				var content = cache[i][selectedLists[j].column].replace(/ +(?= )/g, '');
                 if (selectedLists[j].selected.indexOf(content) === -1) {
-                    $(rows[i]).hide();
+                  //  $(rows[i]).hide(0);
+                    //$(rows[i]).css("display", "none");
+					$(rows[i]).addClass('will-hide').removeClass('will-show');
+					//$(rows[i]).addClass('collapsed');
+					//console.log(selectedLists[j].column + ':' + content);
                     break;
                 }
-                $(rows[i]).show();
+                //$(rows[i]).show(0);
+                //$(rows[i]).css("display", "table-row");
+				$(rows[i]).addClass('will-show').removeClass('will-hide');
+				//$(rows[i]).removeClass('collapsed');
             }
         }
+		$('.will-hide').hide();
+		var toShow = $('.will-show');
+		$('#count').text(toShow.length);
+		toShow.show();
+//		$('.will-hide').addClass('collapsed');
+//		$('.will-show').removeClass('collapsed');
     };
     FilterCollection.prototype.sort = function (column, order, table, options) {
         var flip = 1;
         if (order === options.captions.z_to_a.toLowerCase().split(' ').join('-')) flip = -1;
         var tbody = $(table).find('tbody').get(0);
-        var rows = $(tbody).find('tr').get();
+        var rows = $(tbody).children('tr').get();
         rows.sort(function (a, b) {
-            var A = a.children[column].innerText.toUpperCase();
-            var B = b.children[column].innerText.toUpperCase();
+			var A = a.children[column].getAttribute('data-value');
+			if (A == null) A = a.children[column].innerText.toUpperCase();
+			var B = b.children[column].getAttribute('data-value');
+            if (B == null) B = b.children[column].innerText.toUpperCase();
             if (!isNaN(Number(A)) && !isNaN(Number(B))) {
                 if (Number(A) < Number(B)) return -1 * flip;
                 if (Number(A) > Number(B)) return 1 * flip;
@@ -304,8 +338,8 @@ var FilterCollection = function () {
     return FilterCollection;
 }();
 
-$$1.fn.excelTableFilter = function (options) {
-    var target = this;
+$$1.fn.excelTableFilter = function (cache, options) {
+	var target = this;
     options = $$1.extend({}, $$1.fn.excelTableFilter.options, options);
     if (typeof options.columnSelector === 'undefined') options.columnSelector = '';
     if (typeof options.sort === 'undefined') options.sort = true;
@@ -316,11 +350,10 @@ $$1.fn.excelTableFilter = function (options) {
         search: 'Search',
         select_all: 'Select All'
     };
-    var filterCollection = new FilterCollection(target, options);
+    var filterCollection = new FilterCollection(cache, target, options);
     filterCollection.initialize();
     return target;
 };
 $$1.fn.excelTableFilter.options = {};
 
 }(jQuery));
-//# sourceMappingURL=excel-bootstrap-table-filter-bundle.js.map

@@ -1,0 +1,28 @@
+http://www.bixoft.nl/english/opcd00.htm
+https://www.jqueryscript.net/table/Excel-like-Bootstrap-Table-Sorting-Filtering-Plugin.html
+file:///A:/papa/MyGit/opcodes/index.html
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security  --user-data-dir=c:\temp
+
+[x] Falla el sort y el filtro
+[x] Lento, muy lento
+[x] Carga lenta 3s.
+[x] No mover una vez cargada
+[x] Sticky y errores en <sub>
+[x] Loading
+[x] ToolTips
+[x] HexOp rompe el filtro
+[x] Contador
+[x] Exceptions?
+[x] Se vuelve a romper el filtro
+[x] General, Decimal, Float, Vector, Control
+[x] Add, compare, load... / flavor
+[x] Marcar low y high 
+[x] Completar box 
+[x] Performance
+[x] Assembler instr
+[x] Generations
+[ ] box tooltips, *?
+[ ] Operations y CC
+[ ] Extended mnemonic
+[ ] Hidden instructions
+

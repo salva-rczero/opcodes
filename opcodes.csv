@@ -1,0 +1,1296 @@
+Instruction,Mnemo,Operands,Frmt,Hex OP,Operation,c0,c1,c2,c3,Flags,Facility,Family,Gen,Type
+Add (32),A,"R1,D2(X2,B2)",RX-a,5A,R1(s32)=R1(s32)+word(s32),zO,nO,pO,o,C A IF B2,,General,1,Add 
+Add Normalized (LH),AD,"R1,D2(X2,B2)",RX-a,6A,,,,,,C §7 §9 A Da EU EO LS B2,,HFP,1,Add Normalized 
+Add (LB),ADB,"R1,D2(X2,B2)",RXE,ED1A,,,,,,C §7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Add 
+Add (LB),ADBR,"R1,R2",RRE,B31A,,,,,,C §7 §9 Db Xi Xo Xu Xx,,BFP,4,Add 
+Add Normalized (LH),ADR,"R1,R2",RR,2A,,,,,,C §7 §9 Da EU EO LS,,HFP,1,Add Normalized 
+Add (LD),ADTR,"R1,R2,R3",RRF-a,B3D2,,,,,,C §7 §9 Dt Xi Xo Xu Xx,TF,DFP,7,Add 
+Add (LD),ADTRA,"R1,R2,R3,M4",RRF-a,B3D2,,,,,,C §7 §9 Dt Xi Xo Xu Xx Xq,F,DFP,9,Add 
+Add Normalized (SH),AE,"R1,D2(X2,B2)",RX-a,7A,,,,,,C §7 §9 A Da EU EO LS B2,,HFP,1,Add Normalized 
+Add (SB),AEB,"R1,D2(X2,B2)",RXE,ED0A,,,,,,C §7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Add 
+Add (SB),AEBR,"R1,R2",RRE,B30A,,,,,,C §7 §9 Db Xi Xo Xu Xx,,BFP,4,Add 
+Add Normalized (SH),AER,"R1,R2",RR,3A,,,,,,C §7 §9 Da EU EO LS,,HFP,1,Add Normalized 
+Add Immediate (32),AFI,"R1,I2",RIL-a,C29,R1(s32)=R1(s32)+I2(s32),zO,nO,pO,o,C IF,EI,General,7,Add Immediate 
+Add (64),AG,"R1,D2(X2,B2)",RXY-a,E308,R1(s64)=R1(s64)+stor(s64),zO,nO,pO,o,C A IF B2,N,General,5,Add 
+Add (64&larr;32),AGF,"R1,D2(X2,B2)",RXY-a,E318,R1(s64)=R1(s64)+stor(s32),zO,nO,pO,o,C A IF B2,N,General,5,Add 
+Add Immediate (64&larr;32),AGFI,"R1,I2",RIL-a,C28,R1(s64)=R1(s64)+I2(s32),zO,nO,pO,o,C IF,EI,General,7,Add Immediate 
+Add (64&larr;32),AGFR,"R1,R2",RRE,B918,R1(s64)=R1(s64)+R2(s32),zO,nO,pO,o,C IF,N,General,5,Add 
+Add Halfword (64&larr;16),AGH,"R1,D2(X2,B2)",RXY-a,E338,R1(s64)=R1(s64)+stor(s16),zO,nO,pO,o,C A IF B2,MI2,General,12,Add Halfword 
+Add Halfword Immediate (64&larr;16),AGHI,"R1,I2",RI-a,A7B,R1(s64)=R1(s64)+I2(s16),zO,nO,pO,o,C IF,N,General,5,Add Halfword Immediate 
+Add Immediate (64&larr;16),AGHIK,"R1,R3,I2",RIE-d,ECD9,R1(s64)=R3(s64)+I2(s16),zO,nO,pO,o,C IF,DO,General,9,Add Immediate 
+Add (64),AGR,"R1,R2",RRE,B908,R1(s64)=R1(s64)+R2(s64),zO,nO,pO,o,C IF,N,General,5,Add 
+Add (64),AGRK,"R1,R2,R3",RRF-a,B9E8,R1(s64)=R2(s64)+R3(s64),zO,nO,pO,o,C IF,DO,General,9,Add 
+Add Immediate (64&larr;8),AGSI,"D1(B1),I2",SIY,EB7A,stor(s64)=stor(s64)+I2(s8),zO,nO,pO,o,C A IF £1 ST B1,GE,General,8,Add Immediate 
+Add Halfword (32&larr;16),AH,"R1,D2(X2,B2)",RX-a,4A,R1(s32)=R1(s32)+stor(s16),zO,nO,pO,o,C A IF B2,,General,1,Add Halfword 
+Add High (32),AHHHR,"R1,R2,R3",RRF-a,B9C8,HR1(s32)=HR2(s32)+HR3(s32),zO,nO,pO,o,C IF,HW,General,9,Add High 
+Add High (32),AHHLR,"R1,R2,R3",RRF-a,B9D8,HR1(s32)=HR2(s32)+LR3(s32),zO,nO,pO,o,C IF,HW,General,9,Add High 
+Add Halfword Immediate (32&larr;16),AHI,"R1,I2",RI-a,A7A,R1(s32)=R1(s32)+I2(s16),zO,nO,pO,o,C IF,,General,4,Add Halfword Immediate 
+Add Immediate (32&larr;16),AHIK,"R1,R3,I2",RIE-d,ECD8,R1(s32)=R3(s32)+I2(s16),zO,nO,pO,o,C IF,DO,General,9,Add Immediate 
+Add Halfword (32&larr;16),AHY,"R1,D2(X2,B2)",RXY-a,E37A,R1(s32)=R1(s32)+stor(s16),zO,nO,pO,o,C A IF B2,LD,General,6,Add Halfword 
+Add Immediate High (32),AIH,"R1,I2",RIL-a,CC8,R1(s32)=R1(s32)+I2(s32),zO,nO,pO,o,C IF,HW,General,9,Add Immediate High 
+Add Logical (32),AL,"R1,D2(X2,B2)",RX-a,5E,,,,,,C A B2,,General,1,Add Logical 
+Add Logical with Carry (32),ALC,"R1,D2(X2,B2)",RXY-a,E398,,,,,,C A B2,N3,General,4,Add Logical with Carry 
+Add Logical with Carry (64),ALCG,"R1,D2(X2,B2)",RXY-a,E388,,,,,,C A B2,N,General,5,Add Logical with Carry 
+Add Logical with Carry (64),ALCGR,"R1,R2",RRE,B988,,,,,,C,N,General,5,Add Logical with Carry 
+Add Logical with Carry (32),ALCR,"R1,R2",RRE,B998,,,,,,C,N3,General,4,Add Logical with Carry 
+Add Logical Immediate (32),ALFI,"R1,I2",RIL-a,C2B,,zC,ZC,zc,Zc,C,EI,General,7,Add Logical Immediate 
+Add Logical (64),ALG,"R1,D2(X2,B2)",RXY-a,E30A,,,,,,C A B2,N,General,5,Add Logical 
+Add Logical (64&larr;32),ALGF,"R1,D2(X2,B2)",RXY-a,E31A,,,,,,C A B2,N,General,5,Add Logical 
+Add Logical Immediate (64&larr;32),ALGFI,"R1,I2",RIL-a,C2A,R1(u64)=R1(u64)+I2(u32),zC,ZC,zc,Zc,C,EI,General,7,Add Logical Immediate 
+Add Logical (64&larr;32),ALGFR,"R1,R2",RRE,B91A,,,,,,C,N,General,5,Add Logical 
+Add Logical with Signed Immediate (64&larr;16),ALGHSIK,"R1,R3,I2",RIE-d,ECDB,,,,,,C,DO,General,9,Add Logical with Signed Immediate 
+Add Logical (64),ALGR,"R1,R2",RRE,B90A,,,,,,C,N,General,5,Add Logical 
+Add Logical (64),ALGRK,"R1,R2,R3",RRF-a,B9EA,,,,,,C,DO,General,9,Add Logical 
+Add Logical with Signed Immediate (64&larr;8),ALGSI,"D1(B1),I2",SIY,EB7E,,,,,,C A £1 ST B1,GE,General,8,Add Logical with Signed Immediate 
+Add Logical High (32),ALHHHR,"R1,R2,R3",RRF-a,B9CA,,,,,,C,HW,General,9,Add Logical High 
+Add Logical High (32),ALHHLR,"R1,R2,R3",RRF-a,B9DA,,,,,,C,HW,General,9,Add Logical High 
+Add Logical with Signed Immediate (32&larr;16),ALHSIK,"R1,R3,I2",RIE-d,ECDA,,,,,,C,DO,General,9,Add Logical with Signed Immediate 
+Add Logical (32),ALR,"R1,R2",RR,1E,,,,,,C,,General,1,Add Logical 
+Add Logical (32),ALRK,"R1,R2,R3",RRF-a,B9FA,,,,,,C,DO,General,9,Add Logical 
+Add Logical with Signed Immediate (32&larr;8),ALSI,"D1(B1),I2",SIY,EB6E,,,,,,C A £1 ST B1,GE,General,8,Add Logical with Signed Immediate 
+Add Logical with Signed Immediate High (32),ALSIH,"R1,I2",RIL-a,CCA,,,,,,C,HW,General,9,Add Logical with Signed Immediate High 
+Add Logical with Signed Immediate High (32),ALSIHN,"R1,I2",RIL-a,CCB,,,,,,,HW,General,9,Add Logical with Signed Immediate High 
+Add Logical (32),ALY,"R1,D2(X2,B2)",RXY-a,E35E,,,,,,C A B2,LD,General,6,Add Logical 
+Add Decimal,AP,"D1(L1,B1),D2(L2,B2)",SS-b,FA,,,,,,C §9 A Dg DF ST B1 B2,,Decimal,1,Add Decimal
+Add (32),AR,"R1,R2",RR,1A,R1(s32)=R1(s32)+R2(s32),zO,nO,pO,o,C IF,,General,1,Add 
+Add (32),ARK,"R1,R2,R3",RRF-a,B9F8,R1(s32)=R2(s32)+R3(s32),zO,nO,pO,o,C IF,DO,General,9,Add 
+Add Immediate (32&larr;8),ASI,"D1(B1),I2",SIY,EB6A,stor(s32)=stor(s32)+I2(s8),zO,nO,pO,o,C A IF £1 ST B1,GE,General,8,Add Immediate 
+Add Unnormalized (SH),AU,"R1,D2(X2,B2)",RX-a,7E,,,,,,C §7 §9 A Da EO LS B2,,HFP,1,Add Unnormalized 
+Add Unnormalized (SH),AUR,"R1,R2",RR,3E,,,,,,C §7 §9 Da EO LS,,HFP,1,Add Unnormalized 
+Add Unnormalized (LH),AW,"R1,D2(X2,B2)",RX-a,6E,,,,,,C §7 §9 A Da EO LS B2,,HFP,1,Add Unnormalized 
+Add Unnormalized (LH),AWR,"R1,R2",RR,2E,,,,,,C §7 §9 Da EO LS,,HFP,1,Add Unnormalized 
+Add (EB),AXBR,"R1,R2",RRE,B34A,,,,,,C §7 §9 SP Db Xi Xo Xu Xx,,BFP,4,Add 
+Add Normalized (EH),AXR,"R1,R2",RR,36,,,,,,C §7 §9 SP Da EU EO LS,,HFP,1,Add Normalized 
+Add (ED),AXTR,"R1,R2,R3",RRF-a,B3DA,,,,,,C §7 §9 SP Dt Xi Xo Xu Xx,TF,DFP,7,Add 
+ADD (ED),AXTRA,"R1,R2,R3,M4",RRF-a,B3DA,,,,,,C §7 §9 SP Dt Xi Xo Xu Xx Xq,F,DFP,9,ADD 
+Add (32),AY,"R1,D2(X2,B2)",RXY-a,E35A,R1(s32)=R1(s32)+stor(s32),zO,nO,pO,o,C A IF B2,LD,General,6,Add 
+Branch and Stack,BAKR,"R1,R2",RRE,B240,,,,,,§1 A1* Z5 T B ST,,Control,4,Branch and Stack
+Branch and Link,BAL,"R1,D2(X2,B2)",RX-a,45,,,,,,§9 B,,General,1,Branch and Link
+Branch and Link,BALR,"R1,R2",RR,05,,,,,,§2 §9 T B,,General,1,Branch and Link
+Branch and Save,BAS,"R1,D2(X2,B2)",RX-a,4D,,,,,,§9 B,,General,2,Branch and Save
+Branch and Save,BASR,"R1,R2",RR,0D,,,,,,§2 §9 T B,,General,2,Branch and Save
+Branch and Save and Set Mode,BASSM,"R1,R2",RR,0C,,,,,,§2 §3 §9 T B,,General,3,Branch and Save and Set Mode
+Branch on Condition,BC,"M1,D2(X2,B2)",RX-b,47,,,,,,§9 B,,General,1,Branch on Condition
+Branch on Condition,BCR,"M1,R2",RR,07,,,,,,§9 ¢1 B,,General,1,Branch on Condition
+Branch on Count (32),BCT,"R1,D2(X2,B2)",RX-a,46,,,,,,§9 B,,General,1,Branch on Count 
+Branch on Count (64),BCTG,"R1,D2(X2,B2)",RXY-a,E346,,,,,,§9 B,N,General,5,Branch on Count 
+Branch on Count (64),BCTGR,"R1,R2",RRE,B946,,,,,,§9 B,N,General,5,Branch on Count 
+Branch on Count (32),BCTR,"R1,R2",RR,06,,,,,,§9 B,,General,1,Branch on Count 
+Branch Indirect on Condition,BIC,"M1,D2(X2,B2)",RXY-b,E347,,,,,,§9 A B B2,MI2,General,12,Branch Indirect on Condition
+Branch Prediction Preload,BPP,"M1,RI2,D3(B3)",SMI,C7,,,,,,§9,EH,General,10,Branch Prediction Preload
+Branch Prediction Relative Preload,BPRP,"M1,RI2,RI3",MII,C5,,,,,,§9,EH,General,10,Branch Prediction Relative Preload
+Branch Relative and Save,BRAS,"R1,RI2",RI-b,A75,,,,,,§9 B,,General,4,Branch Relative and Save
+Branch Relative and Save Long,BRASL,"R1,RI2",RIL-b,C05,,,,,,§9 B,N3,General,4,Branch Relative and Save Long
+Branch Relative on Condition,BRC,"M1,RI2",RI-c,A74,,,,,,§10 B,,General,4,Branch Relative on Condition
+Branch Relative on Condition Long,BRCL,"M1,RI2",RIL-c,C04,,,,,,§10 B,N3,General,4,Branch Relative on Condition Long
+Branch Relative on Count (32),BRCT,"R1,RI2",RI-b,A76,,,,,,§9 B,,General,4,Branch Relative on Count 
+Branch Relative on Count (64),BRCTG,"R1,RI2",RI-b,A77,,,,,,§9 B,N,General,5,Branch Relative on Count 
+Branch Relative on Count High (32),BRCTH,"R1,RI2",RIL-b,CC6,,,,,,§9 B,HW,General,9,Branch Relative on Count High 
+Branch Relative on Index High (32),BRXH,"R1,R3,RI2",RSI,84,,,,,,§9 B,,General,4,Branch Relative on Index High 
+Branch Relative on Index High (64),BRXHG,"R1,R3,RI2",RIE-e,EC44,,,,,,§9 B,N,General,5,Branch Relative on Index High 
+Branch Relative on Index Low or Equal (32),BRXLE,"R1,R3,RI2",RSI,85,,,,,,§9 B,,General,4,Branch Relative on Index Low or Equal 
+Branch Relative on Index Low or Equal (64),BRXLG,"R1,R3,RI2",RIE-e,EC45,,,,,,§9 B,N,General,5,Branch Relative on Index Low or Equal 
+Branch and Set Authority,BSA,"R1,R2",RRE,B25A,,,,,,Q A1* SO T B,,Control,4,Branch and Set Authority
+Branch in Subspace Group,BSG,"R1,R2",RRE,B258,,,,,,§1 A1* SO T B R2,,Control,4,Branch in Subspace Group
+Branch and Set Mode,BSM,"R1,R2",RR,0B,,,,,,§3 §9 T B,,General,3,Branch and Set Mode
+Branch on Index High (32),BXH,"R1,R3,D2(B2)",RS-a,86,,,,,,§9 B,,General,1,Branch on Index High 
+Branch on Index High (64),BXHG,"R1,R3,D2(B2)",RSY-a,EB44,,,,,,§9 B,N,General,5,Branch on Index High 
+Branch on Index Low or Equal (32),BXLE,"R1,R3,D2(B2)",RS-a,87,,,,,,§9 B,,General,1,Branch on Index Low or Equal 
+Branch on Index Low or Equal (64),BXLEG,"R1,R3,D2(B2)",RSY-a,EB45,,,,,,§9 B,N,General,5,Branch on Index Low or Equal 
+Compare (32),C,"R1,D2(X2,B2)",RX-a,59,,,,,,C A B2,,General,1,Compare 
+Compare (LH),CD,"R1,D2(X2B2),M3",RX-a,69,,,,,,C §7 §9 A Da B2,,HFP,1,Compare 
+Compare (LB),CDB,"R1,D2(X2,B2)",RXE,ED19,,,,,,C §7 §9 A Db Xi B2,,BFP,4,Compare 
+Compare (LB),CDBR,"R1,R2",RRE,B319,,,,,,C §7 §9 Db Xi,,BFP,4,Compare 
+Convert from Fixed (LB&larr;32),CDFBR,"R1,R2",RRE,B395,,,,,,§7 §9 Db,,BFP,4,Convert from Fixed 
+Convert from Fixed (LB&larr;32),CDFBRA,"R1,M3,R2,M4",RRF-e,B395,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Fixed 
+Convert from Fixed (LH&larr;32),CDFR,"R1,R2",RRE,B3B5,,,,,,§7 §9 Da,,HFP,4,Convert from Fixed 
+Convert from Fixed (LD&larr;32),CDFTR,"R1,M3,R2,M4",RRE,B951,,,,,,§7 §9 Dt,F,DFP,9,Convert from Fixed 
+Convert from Fixed (LB&larr;64),CDGBR,"R1,R2",RRE,B3A5,,,,,,§7 §9 Db Xx,N,BFP,5,Convert from Fixed 
+Convert from Fixed (LB&larr;64),CDGBRA,"R1,M3,R2,M4",RRF-e,B3A5,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Fixed 
+Convert from Fixed (LH&larr;64),CDGR,"R1,R2",RRE,B3C5,,,,,,§7 §9 Da,N,HFP,5,Convert from Fixed 
+Convert from Fixed (LD&larr;64),CDGTR,"R1,R2",RRE,B3F1,,,,,,§7 §9 Dt Xx,TF,DFP,7,Convert from Fixed 
+Convert from Fixed (LD&larr;64),CDGTRA,"R1,M3,R2,M4",RRF-e,B3F1,,,,,,§7 §9 Dt Xx Xq,F,DFP,9,Convert from Fixed 
+Convert from Logical (LB&larr;32),CDLFBR,"R1,M3,R2,M4",RRF-e,B391,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Logical 
+Convert from Logical (LD&larr;32),CDLFTR,"R1,M3,R2,M4",RRF-e,B953,,,,,,§7 §9 Dt,F,DFP,9,Convert from Logical 
+Convert from Logical (LB&larr;64),CDLGBR,"R1,M3,R2,M4",RRF-e,B3A1,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Logical 
+Convert from Logical (LD&larr;64),CDLGTR,"R1,M3,R2,M4",RRF-e,B952,,,,,,§7 §9 Dt Xx Xq,F,DFP,9,Convert from Logical 
+Convert from Packed (To Long DFP),CDPT,"R1,D2(L2,B2),M3",RSL-b,EDAE,,,,,,§7 §9 A SP Dt Dg B2,PC,DFP,11,Convert from Packed 
+Compare (LH),CDR,"R1,R2",RR,29,,,,,,C §7 §9 Da,,HFP,1,Compare 
+Compare Double and Swap (32),CDS,"R1,R3,D2(B2)",RS-a,BB,,,,,,C §9 A SP $ ST B2,,General,1,Compare Double and Swap 
+Compare Double and Swap (64),CDSG,"R1,R3,D2(B2)",RSY-a,EB3E,,,,,,C §9 A SP $ ST B2,N,General,5,Compare Double and Swap 
+Convert from Signed Packed (LD&larr;64),CDSTR,"R1,R2",RRE,B3F3,,,,,,§7 §9 Dt Dg,TF,DFP,7,Convert from Signed Packed 
+Compare Double and Swap (32),CDSY,"R1,R3,D2(B2)",RSY-a,EB31,,,,,,C §9 A SP $ ST B2,LD,General,6,Compare Double and Swap 
+Compare (LD),CDTR,"R1,R2",RRE,B3E4,,,,,,C §7 §9 Dt Xi,TF,DFP,7,Compare 
+Convert from Unsigned Packed (LD&larr;64),CDUTR,"R1,R2",RRE,B3F2,,,,,,§7 §9 Dt Dg,TF,DFP,7,Convert from Unsigned Packed 
+Convert from Zoned (to long DFP),CDZT,"R1,D2(L2,B2),M3",RSL-b,EDAA,,,,,,§7 §9 A SP Dt Dg B2,ZF,DFP,10,Convert from Zoned 
+Compare (SH),CE,"R1,D2(X2,B2)",RX-a,79,,,,,,C §7 §9 A Da B2,,HFP,1,Compare 
+Compare (SB),CEB,"R1,D2(X2,B2)",RXE,ED09,,,,,,C §7 §9 A Db Xi B2,,BFP,4,Compare 
+Compare (SB),CEBR,"R1,R2",RRE,B309,,,,,,C §7 §9 Db Xi,,BFP,4,Compare 
+Compare Biased Exponent (LD),CEDTR,"R1,R2",RRE,B3F4,,,,,,C §7 §9 Dt,TF,DFP,7,Compare Biased Exponent 
+Convert from Fixed (SB&larr;32),CEFBR,"R1,R2",RRE,B394,,,,,,§7 §9 Db Xx,,BFP,4,Convert from Fixed 
+Convert from Fixed (SB&larr;32),CEFBRA,"R1,M3,R2,M4",RRF-e,B394,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Fixed 
+Convert from Fixed (SH&larr;32),CEFR,"R1,R2",RRE,B3B4,,,,,,§7 §9 Da,,HFP,4,Convert from Fixed 
+Convert from Fixed (SB&larr;64),CEGBR,"R1,R2",RRE,B3A4,,,,,,§7 §9 Db Xx,N,BFP,5,Convert from Fixed 
+Convert from Fixed (SB&larr;64),CEGBRA,"R1,M3,R2,M4",RRF-e,B3A4,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Fixed 
+Convert from Fixed (SH&larr;64),CEGR,"R1,R2",RRE,B3C4,,,,,,§7 §9 Da,N,HFP,5,Convert from Fixed 
+Convert from Logical (SB&larr;32),CELFBR,"R1,M3,R2,M4",RRF-e,B390,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Logical 
+Convert from Logical (SB&larr;64),CELGBR,"R1,M3,R2,M4",RRF-e,B3A0,,,,,,§7 §9 SP Db Xx,F,BFP,9,Convert from Logical 
+Compare (SH),CER,"R1,R2",RR,39,,,,,,C §7 §9 Da,,HFP,1,Compare 
+Compare Biased Exponent (ED),CEXTR,"R1,R2",RRE,B3FC,,,,,,C §7 §9 SP Dt,TF,DFP,7,Compare Biased Exponent 
+Compare and Form Codeword,CFC,D2(B2),S,B21A,,,,,,C §9 A SP II GM I1,,General,3,Compare and Form Codeword
+Convert to Fixed (32&larr;LB),CFDBR,"R1,M3,R2",RRF-e,B399,,,,,,C §7 §9 SP Db Xi Xx,,BFP,4,Convert to Fixed 
+Convert to Fixed (32&larr;LB),CFDBRA,"R1,M3,R2,M4",RRF-e,B399,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (32&larr;LH),CFDR,"R1,M3,R2",RRF-e,B3B9,,,,,,C §7 §9 SP Da,,HFP,4,Convert to Fixed 
+Convert to Fixed (32&larr;LD),CFDTR,"R1,M3,R2,M4",RRF-e,B941,,,,,,C §7 §9 Dt Xi Xx,F,DFP,9,Convert to Fixed 
+Convert to Fixed (32&larr;SB),CFEBR,"R1,M3,R2",RRF-e,B398,,,,,,C §7 §9 SP Db Xi Xx,,BFP,4,Convert to Fixed 
+Convert to Fixed (32&larr;SB),CFEBRA,"R1,M3,R2,M4",RRF-e,B398,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (32&larr;SH),CFER,"R1,M3,R2",RRF-e,B3B8,,,,,,C §7 §9 SP Da,,HFP,4,Convert to Fixed 
+Compare Immediate (32),CFI,"R1,I2",RIL-a,C2D,,,,,,C,EI,General,7,Compare Immediate 
+Convert to Fixed (32&larr;EB),CFXBR,"R1,M3,R2",RRF-e,B39A,,,,,,C §7 §9 SP Db Xi Xx,,BFP,4,Convert to Fixed 
+Convert to Fixed (32&larr;EB),CFXBRA,"R1,M3,R2,M4",RRF-e,B39A,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (32&larr;EH),CFXR,"R1,M3,R2",RRF-e,B3BA,,,,,,C §7 §9 SP Da,,HFP,4,Convert to Fixed 
+Convert to Fixed (32&larr;ED),CFXTR,"R1,M3,R2,M4",RRF-e,B949,,,,,,C §7 §9 SP Dt Xi Xx,F,DFP,9,Convert to Fixed 
+Compare (64),CG,"R1,D2(X2,B2)",RXY-a,E320,,,,,,C A B2,N,General,5,Compare 
+Convert to Fixed (64&larr;LB),CGDBR,"R1,M3,R2",RRF-e,B3A9,,,,,,C §7 §9 SP Db Xi Xx,N,BFP,5,Convert to Fixed 
+Convert to Fixed (64&larr;LB),CGDBRA,"R1,M3,R2,M4",RRF-e,B3A9,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (64&larr;LH),CGDR,"R1,M3,R2",RRF-e,B3C9,,,,,,C §7 §9 SP Da,N,HFP,5,Convert to Fixed 
+Convert to Fixed (64&larr;LD),CGDTR,"R1,M3,R2",RRF-e,B3E1,,,,,,C §7 §9 Dt Xi Xx,TF,DFP,7,Convert to Fixed 
+Convert to Fixed (64&larr;LD),CGDTRA,"R1,M3,R2,M4",RRF-e,B3E1,,,,,,C §7 §9 Dt Xi Xx,F,DFP,9,Convert to Fixed 
+Convert to Fixed (64&larr;SB),CGEBR,"R1,M3,R2",RRF-e,B3A8,,,,,,C §7 §9 SP Db Xi Xx,N,BFP,5,Convert to Fixed 
+Convert to Fixed (64&larr;SB),CGEBRA,"R1,M3,R2,M4",RRF-e,B3A8,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (64&larr;SH),CGER,"R1,M3,R2",RRF-e,B3C8,,,,,,C §7 §9 SP Da,N,HFP,5,Convert to Fixed 
+Compare (64&larr;32),CGF,"R1,D2(X2,B2)",RXY-a,E330,,,,,,C A B2,N,General,5,Compare 
+Compare Immediate (64&larr;32),CGFI,"R1,I2",RIL-a,C2C,,,,,,C,EI,General,7,Compare Immediate 
+Compare (64&larr;32),CGFR,"R1,R2",RRE,B930,,,,,,C,N,General,5,Compare 
+Compare Relative Long (64&larr;32),CGFRL,"R1,RI2",RIL-b,C6C,,,,,,C A* SP,GE,General,8,Compare Relative Long 
+Compare Halfword (64&larr;16),CGH,"R1,D2(X2,B2)",RXY-a,E334,,,,,,C A B2,GE,General,8,Compare Halfword 
+Compare Halfword Immediate (64&larr;16),CGHI,"R1,I2",RI-a,A7F,,,,,,C,N,General,5,Compare Halfword Immediate 
+Compare Halfword Relative Long (64&larr;16),CGHRL,"R1,RI2",RIL-b,C64,,,,,,C A*,GE,General,8,Compare Halfword Relative Long 
+Compare Halfword Immediate (64&larr;16),CGHSI,"D1(B1),I2",SIL,E558,,,,,,C A B1,GE,General,8,Compare Halfword Immediate 
+Compare Immediate and Branch (64&larr;8),CGIB,"R1,I2,M3,D4(B4)",RIS,ECFC,,,,,,§9 B,GE,General,8,Compare Immediate and Branch 
+Compare Immediate and Branch Relative (64&larr;8),CGIJ,"R1,I2,M3,RI4",RIE-c,EC7C,,,,,,§10 B,GE,General,8,Compare Immediate and Branch Relative 
+Compare Immediate and Trap (64&larr;16),CGIT,"R1,I2,M3",RIE-a,EC70,,,,,,Dc,GE,General,8,Compare Immediate and Trap 
+Compare (64),CGR,"R1,R2",RRE,B920,,,,,,C,N,General,5,Compare 
+Compare and Branch (64),CGRB,"R1,R2,M3,D4(B4)",RRS,ECE4,,,,,,§9 B,GE,General,8,Compare and Branch 
+Compare and Branch Relative (64),CGRJ,"R1,R2,M3,RI4",RIE-b,EC64,,,,,,§10 B,GE,General,8,Compare and Branch Relative 
+Compare Relative Long (64),CGRL,"R1,RI2",RIL-b,C68,,,,,,C A* SP,GE,General,8,Compare Relative Long 
+Compare and Trap (64),CGRT,"R1,R2,M3",RRF-c,B960,,,,,,Dc,GE,General,8,Compare and Trap 
+Convert to Fixed (64&larr;EB),CGXBR,"R1,M3,R2",RRF-e,B3AA,,,,,,C §7 §9 SP Db Xi Xx,N,BFP,5,Convert to Fixed 
+Convert to Fixed (64&larr;EB),CGXBRA,"R1,M3,R2,M4",RRF-e,B3AA,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Fixed 
+Convert to Fixed (64&larr;EH),CGXR,"R1,M3,R2",RRF-e,B3CA,,,,,,C §7 §9 SP Da,N,HFP,5,Convert to Fixed 
+Convert to Fixed (64&larr;ED),CGXTR,"R1,M3,R2",RRF-e,B3E9,,,,,,C §7 §9 SP Dt Xi Xx,TF,DFP,7,Convert to Fixed 
+Convert to Fixed (64&larr;ED),CGXTRA,"R1,M3,R2,M4",RRF-e,B3E9,,,,,,C §7 §9 SP Dt Xi Xx,F,DFP,9,Convert to Fixed 
+Compare Halfword (32&larr;16),CH,"R1,D2(X2,B2)",RX-a,49,,,,,,C A B2,,General,1,Compare Halfword 
+Compare High (32),CHF,"R1,D2(X2,B2)",RXY-a,E3CD,,,,,,C A B2,HW,General,9,Compare High 
+Compare High (32),CHHR,"R1,R2",RRE,B9CD,,,,,,C,HW,General,9,Compare High 
+Compare Halfword Immediate (16&larr;16),CHHSI,"D1(B1),I2",SIL,E554,,,,,,C A B1,GE,General,8,Compare Halfword Immediate 
+Compare Halfword Immediate (32&larr;16),CHI,"R1,I2",RI-a,A7E,,,,,,C,,General,4,Compare Halfword Immediate 
+Compare High (32),CHLR,"R1,R2",RRE,B9DD,,,,,,C,HW,General,9,Compare High 
+Compare Halfword Relative Long (32&larr;16),CHRL,"R1,RI2",RIL-b,C65,,,,,,C A*,GE,General,8,Compare Halfword Relative Long 
+Compare Halfword Immediate (32&larr;16),CHSI,"D1(B1),I2",SIL,E55C,,,,,,C A B1,GE,General,8,Compare Halfword Immediate 
+Compare Halfword (32&larr;16),CHY,"R1,D2(X2,B2)",RXY-a,E379,,,,,,C A B2,LD,General,6,Compare Halfword 
+Compare Immediate and Branch (32&larr;8),CIB,"R1,I2,M3,D4(B4)",RIS,ECFE,,,,,,§9 B,GE,General,8,Compare Immediate and Branch 
+Compare Immediate High (32),CIH,"R1,I2",RIL-a,CCD,,,,,,C,HW,General,9,Compare Immediate High 
+Compare Immediate and Branch Relative (32&larr;8),CIJ,"R1,I2,M3,RI4",RIE-c,EC7E,,,,,,§10 B,GE,General,8,Compare Immediate and Branch Relative 
+Compare Immediate and Trap (32&larr;16),CIT,"R1,I2,M3",RIE-a,EC72,,,,,,Dc,GE,General,8,Compare Immediate and Trap 
+Checksum,CKSM,"R1,R2",RRE,B241,,,,,,C §9 A SP IC R2,,General,4,Checksum
+Compare Logical (32),CL,"R1,D2(X2,B2)",RX-a,55,,,,,,C A B2,,General,1,Compare Logical 
+Compare Logical (character),CLC,"D1(L,B1),D2(B2)",SS-a,D5,,,,,,C §9 A B1 B2,,General,1,Compare Logical 
+Compare Logical Long,CLCL,"R1,R2",RR,0F,,,,,,C §9 A SP II R1 R2,,General,1,Compare Logical Long
+Compare Logical Long Extended,CLCLE,"R1,R3,D2(B2)",RS-a,A9,,,,,,C §9 A SP IC R1 R3,,General,4,Compare Logical Long Extended
+Compare Logical Long Unicode,CLCLU,"R1,R3,D2(B2)",RSY-a,EB8F,,,,,,C §9 A SP IC R1 R2,E2,General,5,Compare Logical Long Unicode
+Convert to Logical (32&larr;LB),CLFDBR,"R1,M3,R2,M4",RRF-e,B39D,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Convert to Logical (32&larr;LD),CLFDTR,"R1,M3,R2,M4",RRF-e,B943,,,,,,C §7 §9 Dt Xi Xx,F,DFP,9,Convert to Logical 
+Convert to Logical (32&larr;SB),CLFEBR,"R1,M3,R2,M4",RRF-e,B39C,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Compare Logical Immediate (32&larr;16),CLFHSI,"D1(B1),I2",SIL,E55D,,,,,,C A B1,GE,General,8,Compare Logical Immediate 
+Compare Logical Immediate (32),CLFI,"R1,I2",RIL-a,C2F,,,,,,C,EI,General,7,Compare Logical Immediate 
+Compare Logical Immediate and Trap (32&larr;16),CLFIT,"R1,I2,M3",RIE-a,EC73,,,,,,Dc,GE,General,8,Compare Logical Immediate and Trap 
+Convert to Logical (32&larr;EB),CLFXBR,"R1,M3,R2,M4",RRF-e,B39E,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Convert to Logical (32&larr;ED),CLFXTR,"R1,M3,R2,M4",RRF-e,B94B,,,,,,C §7 §9 SP Dt Xi Xx,F,DFP,9,Convert to Logical 
+Compare Logical (64),CLG,"R1,D2(X2,B2)",RXY-a,E321,,,,,,C A B2,N,General,5,Compare Logical 
+Convert to Logical (64&larr;LB),CLGDBR,"R1,M3,R2,M4",RRF-e,B3AD,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Convert to Logical (64&larr;LD),CLGDTR,"R1,M3,R2,M4",RRF-e,B942,,,,,,C §7 §9 Dt Xi Xx,F,DFP,9,Convert to Logical 
+Convert to Logical (64&larr;SB),CLGEBR,"R1,M3,R2,M4",RRF-e,B3AC,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Compare Logical (64&larr;32),CLGF,"R1,D2(X2,B2)",RXY-a,E331,,,,,,C A B2,N,General,5,Compare Logical 
+Compare Logical Immediate (64&larr;32),CLGFI,"R1,I2",RIL-a,C2E,,,,,,C,EI,General,7,Compare Logical Immediate 
+Compare Logical (64&larr;32),CLGFR,"R1,R2",RRE,B931,,,,,,C,N,General,5,Compare Logical 
+Compare Logical Relative Long (64&larr;32),CLGFRL,"R1,RI2",RIL-b,C6E,,,,,,C A* SP,GE,General,8,Compare Logical Relative Long 
+Compare Logical Relative Long (64&larr;16),CLGHRL,"R1,RI2",RIL-b,C66,,,,,,C A*,GE,General,8,Compare Logical Relative Long 
+Compare Logical Immediate (64&larr;16),CLGHSI,"D1(B1),I2",SIL,E559,,,,,,C A B1,GE,General,8,Compare Logical Immediate 
+Compare Logical Immediate and Branch (64&larr;8),CLGIB,"R1,I2,M3,D4(B4)",RIS,ECFD,,,,,,§9 B,GE,General,8,Compare Logical Immediate and Branch 
+Compare Logical Immediate and Branch Relative (64&larr;8),CLGIJ,"R1,I2,M3,RI4",RIE-c,EC7D,,,,,,§10 B,GE,General,8,Compare Logical Immediate and Branch Relative 
+Compare Logical Immediate and Trap (64&larr;16),CLGIT,"R1,I2,M3",RIE-a,EC71,,,,,,Dc,GE,General,8,Compare Logical Immediate and Trap 
+Compare Logical (64),CLGR,"R1,R2",RRE,B921,,,,,,C,N,General,5,Compare Logical 
+Compare Logical and Branch (64),CLGRB,"R1,R2,M3,D4(B4)",RRS,ECE5,,,,,,§9 B,GE,General,8,Compare Logical and Branch 
+Compare Logical and Branch Relative (64),CLGRJ,"R1,R2,M3,RI4",RIE-b,EC65,,,,,,§10 B,GE,General,8,Compare Logical and Branch Relative 
+Compare Logical Relative Long (64),CLGRL,"R1,RI2",RIL-b,C6A,,,,,,C A* SP,GE,General,8,Compare Logical Relative Long 
+Compare Logical and Trap (64),CLGRT,"R1,R2,M3",RRF-c,B961,,,,,,Dc,GE,General,8,Compare Logical and Trap 
+Compare Logical and Trap (64),CLGT,"R1,M3,D2(B2)",RSY-b,EB2B,,,,,,A Dc B2,MI1,General,10,Compare Logical and Trap 
+Convert to Logical (64&larr;EB),CLGXBR,"R1,M3,R2,M4",RRF-e,B3AE,,,,,,C §7 §9 SP Db Xi Xx,F,BFP,9,Convert to Logical 
+Convert to Logical (64&larr;ED),CLGXTR,"R1,M3,R2,M4",RRF-e,B94A,,,,,,C §7 §9 SP Dt Xi Xx,F,DFP,9,Convert to Logical 
+Compare Logical High (32),CLHF,"R1,D2(X2,B2)",RXY-a,E3CF,,,,,,C A B2,HW,General,9,Compare Logical High 
+Compare Logical High (32),CLHHR,"R1,R2",RRE,B9CF,,,,,,C,HW,General,9,Compare Logical High 
+Compare Logical Immediate (16&larr;16),CLHHSI,"D1(B1),I2",SIL,E555,,,,,,C A B1,GE,General,8,Compare Logical Immediate 
+Compare Logical High (32),CLHLR,"R1,R2",RRE,B9DF,,,,,,C,HW,General,9,Compare Logical High 
+Compare Logical Relative Long (32&larr;16),CLHRL,"R1,RI2",RIL-b,C67,,,,,,C A*,GE,General,8,Compare Logical Relative Long 
+Compare Logical Immediate,CLI,"D1(B1),I2",SI,95,,,,,,C A B1,,General,1,Compare Logical Immediate
+Compare Logical Immediate and Branch (32&larr;8),CLIB,"R1,I2,M3,D4(B4)",RIS,ECFF,,,,,,§9 B,GE,General,8,Compare Logical Immediate and Branch 
+Compare Logical Immediate High (32),CLIH,"R1,I2",RIL-a,CCF,,,,,,C,HW,General,9,Compare Logical Immediate High 
+Compare Logical Immediate and Branch Relative (32&larr;8),CLIJ,"R1,I2,M3,RI4",RIE-c,EC7F,,,,,,§10 B,GE,General,8,Compare Logical Immediate and Branch Relative 
+Compare Logical Immediate,CLIY,"D1(B1),I2",SIY,EB55,,,,,,C A B1,LD,General,6,Compare Logical Immediate
+Compare Logical Char. under Mask (low),CLM,"R1,M3,D2(B2)",RS-b,BD,,,,,,C A B2,,General,1,Compare Logical Char. under Mask 
+Compare Logical Char. under Mask (high),CLMH,"R1,M3,D2(B2)",RSY-b,EB20,,,,,,C A B2,N,General,5,Compare Logical Char. under Mask 
+Compare Logical Char. under Mask (low),CLMY,"R1,M3,D2(B2)",RSY-b,EB21,,,,,,C A B2,LD,General,6,Compare Logical Char. under Mask 
+Compare Logical (32),CLR,"R1,R2",RR,15,,,,,,C,,General,1,Compare Logical 
+Compare Logical and Branch (32),CLRB,"R1,R2,M3,D4(B4)",RRS,ECF7,,,,,,§9 B,GE,General,8,Compare Logical and Branch 
+Compare Logical and Branch Relative (32),CLRJ,"R1,R2,M3,RI4",RIE-b,EC77,,,,,,§10 B,GE,General,8,Compare Logical and Branch Relative 
+Compare Logical Relative Long (32),CLRL,"R1,RI2",RIL-b,C6F,,,,,,C A* SP,GE,General,8,Compare Logical Relative Long 
+Compare Logical and Trap (32),CLRT,"R1,R2,M3",RRF-c,B973,,,,,,Dc,GE,General,8,Compare Logical and Trap 
+Compare Logical String,CLST,"R1,R2",RRE,B25D,,,,,,C §9 A SP IC G0 R1 R2,,General,4,Compare Logical String
+Compare Logical and Trap (32),CLT,"R1,M3,D2(B2)",RSY-b,EB23,,,,,,A Dc B2,MI1,General,10,Compare Logical and Trap 
+Compare Logical (32),CLY,"R1,D2(X2,B2)",RXY-a,E355,,,,,,C A B2,LD,General,6,Compare Logical 
+Compression Call,CMPSC,"R1,R2",RRE,B263,,,,,,C §5 §9 A SP II Dg GM ST R1 R2,,General,4,Compression Call
+Compare Decimal,CP,"D1(L1,B1),D2(L2,B2)",SS-b,F9,,,,,,C §9 A Dg B1 B2,,Decimal,1,Compare Decimal
+Convert to Packed (From Long DFP),CPDT,"R1,D2(L2,B2),M3",RSL-b,EDAC,,,,,,C §7 §9 A SP Dt DF ST B2,PC,DFP,11,Convert to Packed 
+Copy Sign (L),CPSDR,"R1,R3,R2",RRF-b,B372,,,,,,§7 §9 Da,FS,FP,7,Copy Sign 
+Convert to Packed (From Extended DFP),CPXT,"R1,D2(L2,B2),M3",RSL-b,EDAD,,,,,,C §7 §9 A SP Dt DF ST B2,PC,DFP,11,Convert to Packed 
+Copy Access,CPYA,"R1,R2",RRE,B24D,,,,,,§6 U1 U2,,General,4,Copy Access
+Compare (32),CR,"R1,R2",RR,19,,,,,,C,,General,1,Compare 
+Compare and Branch (32),CRB,"R1,R2,M3,D4(B4)",RRS,ECF6,,,,,,§9 B,GE,General,8,Compare and Branch 
+Compare and Replace DAT Table Entry,CRDTE,"R1,R3,R2[,M4]",RRF-b,B98F,,,,,,P A1 SP $,ED2,Control,10,Compare and Replace DAT Table Entry
+Compare and Branch Relative (32),CRJ,"R1,R2,M3,RI4",RIE-b,EC76,,,,,,§10 B,GE,General,8,Compare and Branch Relative 
+Compare Relative Long (32),CRL,"R1,RI2",RIL-b,C6D,,,,,,C A* SP,GE,General,8,Compare Relative Long 
+Compare and Trap (32),CRT,"R1,R2,M3",RRF-c,B972,,,,,,Dc,GE,General,8,Compare and Trap 
+Compare and Swap (32),CS,"R1,R3,D2(B2)",RS-a,BA,,,,,,C §9 A SP $ ST B2,,General,1,Compare and Swap 
+Clear Subchannel,CSCH,,S,B230,,,,,,C P OP ¢ GS,,I/O,3,Clear Subchannel
+Convert to Signed Packed (64&larr;LD),CSDTR,"R1,R2,M4",RRF-d,B3E3,,,,,,§7 §9 Dt,TF,DFP,7,Convert to Signed Packed 
+Compare and Swap (64),CSG,"R1,R3,D2(B2)",RSY-a,EB30,,,,,,C §9 A SP $ ST B2,N,General,5,Compare and Swap 
+Compare and Swap and Purge (32),CSP,"R1,R2",RRE,B250,,,,,,C P A1 SP $ ST R2,,Control,5,Compare and Swap and Purge 
+Compare and Swap and Purge (64),CSPG,"R1,R2",RRE,B98A,,,,,,C P A1 SP $ ST R2,DE,Control,6,Compare and Swap and Purge 
+Compare and Swap and Store,CSST,"D1(B1),D2(B2),R3",SSF,C82,,,,,,C §1 A SP $ GM ST B1 B2,CS,General,7,Compare and Swap and Store
+Convert to Signed Packed (128&larr;ED),CSXTR,"R1,R2,M4",RRF-d,B3EB,,,,,,§7 §9 SP Dt,TF,DFP,7,Convert to Signed Packed 
+Compare and Swap (32),CSY,"R1,R3,D2(B2)",RSY-a,EB14,,,,,,C §9 A SP $ ST B2,LD,General,6,Compare and Swap 
+Convert UTF-8 to UTF-16,CU12,"R1,R2[,M3]",RRF-c,B2A7,,,,,,C §5 §9 A SP IC ST R1 R2,,General,6,Convert UTF-8 to UTF-16
+Convert UTF-8 to UTF-32,CU14,"R1,R2[,M3]",RRF-c,B9B0,,,,,,C §5 §9 A SP IC ST R1 R2,E3,General,6,Convert UTF-8 to UTF-32
+Convert UTF-16 to UTF-8,CU21,"R1,R2[,M3]",RRF-c,B2A6,,,,,,C §5 §9 A SP IC ST R1 R2,,General,6,Convert UTF-16 to UTF-8
+Convert UTF-16 to UTF-32,CU24,"R1,R2[,M3]",RRF-c,B9B1,,,,,,C §5 §9 A SP IC ST R1 R2,E3,General,6,Convert UTF-16 to UTF-32
+Convert UTF-32 to UTF-8,CU41,"R1,R2",RRE,B9B2,,,,,,C §5 §9 A SP IC ST R1 R2,E3,General,6,Convert UTF-32 to UTF-8
+Convert UTF-32 to UTF-16,CU42,"R1,R2",RRE,B9B3,,,,,,C §5 §9 A SP IC ST R1 R2,E3,General,6,Convert UTF-32 to UTF-16
+Convert to Unsigned Packed (64&larr;LD),CUDTR,"R1,R2",RRE,B3E2,,,,,,§7 §9 Dt,TF,DFP,7,Convert to Unsigned Packed 
+Compare until Substring Equal,CUSE,"R1,R2",RRE,B257,,,,,,C §9 A SP II GM R1 R2,,General,4,Compare until Substring Equal
+Convert UTF-8 to Unicode,CUTFU,"R1,R2[,M3]",RRF-c,B2A7,,,,,,C §5 §9 A SP IC ST R1 R2,,General,4,Convert UTF-8 to Unicode
+Convert Unicode to UTF-8,CUUTF,"R1,R2[,M3]",RRF-c,B2A6,,,,,,C §5 §9 A SP IC ST R1 R2,,General,4,Convert Unicode to UTF-8
+Convert to Unsigned Packed (128&larr;ED),CUXTR,"R1,R2",RRE,B3EA,,,,,,§7 §9 SP Dt,TF,DFP,7,Convert to Unsigned Packed 
+Convert to Binary (32),CVB,"R1,D2(X2,B2)",RX-a,4F,,,,,,§9 A Dg IK B2,,General,1,Convert to Binary 
+Convert to Binary (64),CVBG,"R1,D2(X2,B2)",RXY-a,E30E,,,,,,§9 A Dg IK B2,N,General,5,Convert to Binary 
+Convert to Binary (32),CVBY,"R1,D2(X2,B2)",RXY-a,E306,,,,,,§9 A Dg IK B2,LD,General,6,Convert to Binary 
+Convert to Decimal (32),CVD,"R1,D2(X2,B2)",RX-a,4E,,,,,,§9 A ST B2,,General,1,Convert to Decimal 
+Convert to Decimal (64),CVDG,"R1,D2(X2,B2)",RXY-a,E32E,,,,,,§9 A ST B2,N,General,5,Convert to Decimal 
+Convert to Decimal (32),CVDY,"R1,D2(X2,B2)",RXY-a,E326,,,,,,§9 A ST B2,LD,General,6,Convert to Decimal 
+Compare (EB),CXBR,"R1,R2",RRE,B349,,,,,,C §7 §9 SP Db Xi,,BFP,4,Compare 
+Convert from Fixed (EB&larr;32),CXFBR,"R1,R2",RRE,B396,,,,,,§7 §9 SP Db,,BFP,4,Convert from Fixed 
+Convert from Fixed (EB&larr;32),CXFBRA,"R1,M3,R2,M4",RRF-e,B396,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Fixed 
+Convert from Fixed (EH&larr;32),CXFR,"R1,R2",RRE,B3B6,,,,,,§7 §9 SP Da,,HFP,4,Convert from Fixed 
+Convert from Fixed (ED&larr;32),CXFTR,"R1,M3,R2,M4",RRE,B959,,,,,,§7 §9 SP Dt,F,DFP,9,Convert from Fixed 
+Convert from Fixed (EB&larr;64),CXGBR,"R1,R2",RRE,B3A6,,,,,,§7 §9 SP Db,N,BFP,5,Convert from Fixed 
+Convert from Fixed (EB&larr;64),CXGBRA,"R1,M3,R2,M4",RRF-e,B3A6,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Fixed 
+Convert from Fixed (EH&larr;64),CXGR,"R1,R2",RRE,B3C6,,,,,,§7 §9 SP Da,N,HFP,5,Convert from Fixed 
+Convert from Fixed (ED&larr;64),CXGTR,"R1,R2",RRE,B3F9,,,,,,§7 §9 SP Dt,TF,DFP,7,Convert from Fixed 
+Convert from Fixed (ED&larr;64),CXGTRA,"R1,M3,R2,M4",RRF-e,B3F9,,,,,,§7 §9 SP Dt,F,DFP,9,Convert from Fixed 
+Convert from Logical (EB&larr;32),CXLFBR,"R1,M3,R2,M4",RRF-e,B392,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Logical 
+Convert from Logical (ED&larr;32),CXLFTR,"R1,M3,R2,M4",RRF-e,B95B,,,,,,§7 §9 SP Dt,F,DFP,9,Convert from Logical 
+Convert from Logical (EB&larr;64),CXLGBR,"R1,M3,R2,M4",RRF-e,B3A2,,,,,,§7 §9 SP Db,F,BFP,9,Convert from Logical 
+Convert from Logical (ED&larr;64),CXLGTR,"R1,M3,R2,M4",RRF-e,B95A,,,,,,§7 §9 SP Dt,F,DFP,9,Convert from Logical 
+Convert from Packed (To Extended DFP),CXPT,"R1,D2(L2,B2),M3",RSL-b,EDAF,,,,,,§7 §9 A SP Dt Dg B2,PC,DFP,11,Convert from Packed 
+Compare (EH),CXR,"R1,R2",RRE,B369,,,,,,C §7 §9 SP Da,,HFP,4,Compare 
+Convert from Signed Packed (ED&larr;128),CXSTR,"R1,R2",RRE,B3FB,,,,,,§7 §9 SP Dt Dg,TF,DFP,7,Convert from Signed Packed 
+Compare (ED),CXTR,"R1,R2",RRE,B3EC,,,,,,C §7 §9 SP Dt Xi,TF,DFP,7,Compare 
+Convert from Unsigned Packed (ED&larr;128),CXUTR,"R1,R2",RRE,B3FA,,,,,,§7 §9 SP Dt Dg,TF,DFP,7,Convert from Unsigned Packed 
+Convert from Zoned (to extended DFP),CXZT,"R1,D2(L2,B2),M3",RSL-b,EDAB,,,,,,§7 §9 A SP Dt Dg B2,ZF,DFP,10,Convert from Zoned 
+Compare (32),CY,"R1,D2(X2,B2)",RXY-a,E359,,,,,,C A B2,LD,General,6,Compare 
+Convert to Zoned (from long DFP),CZDT,"R1,D2(L2,B2),M3",RSL-b,EDA8,,,,,,C §7 §9 A SP ST B2,ZF,DFP,10,Convert to Zoned 
+Convert to Zoned (from extended DFP),CZXT,"R1,D2(L2,B2),M3",RSL-b,EDA9,,,,,,C §7 §9 A SP ST B2,ZF,DFP,10,Convert to Zoned 
+Divide (32&larr;64),D,"R1,D2(X2,B2)",RX-a,5D,,,,,,§9 A SP IK B2,,General,1,Divide 
+Divide (LH),DD,"R1,D2(X2,B2)",RX-a,6D,,,,,,§7 §9 A Da EU EO FK B2,,HFP,1,Divide 
+Divide (LB),DDB,"R1,D2(X2,B2)",RXE,ED1D,,,,,,§7 §9 A Db Xi Xz Xo Xu Xx B2,,BFP,4,Divide 
+Divide (LB),DDBR,"R1,R2",RRE,B31D,,,,,,§7 §9 Db Xi Xz Xo Xu Xx,,BFP,4,Divide 
+Divide (LH),DDR,"R1,R2",RR,2D,,,,,,§7 §9 Da EU EO FK,,HFP,1,Divide 
+Divide (LD),DDTR,"R1,R2,R3",RRF-a,B3D1,,,,,,§7 §9 Dt Xi Xz Xo Xu Xx,TF,DFP,7,Divide 
+Divide (LD),DDTRA,"R1,R2,R3,M4",RRF-a,B3D1,,,,,,§7 §9 Dt Xi Xz Xo Xu Xx Xq,F,DFP,9,Divide 
+Divide (SH),DE,"R1,D2(X2,B2)",RX-a,7D,,,,,,§7 §9 A Da EU EO FK B2,,HFP,1,Divide 
+Divide (SB),DEB,"R1,D2(X2,B2)",RXE,ED0D,,,,,,§7 §9 A Db Xi Xz Xo Xu Xx B2,,BFP,4,Divide 
+Divide (SB),DEBR,"R1,R2",RRE,B30D,,,,,,§7 §9 Db Xi Xz Xo Xu Xx,,BFP,4,Divide 
+Divide (SH),DER,"R1,R2",RR,3D,,,,,,§7 §9 Da EU EO FK,,HFP,1,Divide 
+DEFLATE Conversion Call,DFLTCC,"R1,R2,R3",RRF-a,B939,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2 R3,GZ,Special,13,DEFLATE Conversion Call
+Divide to Integer (LB),DIDBR,"R1,R3,R2,M4",RRF-b,B35B,,,,,,C §7 §9 SP Db Xi Xu Xx,,BFP,4,Divide to Integer 
+Divide to Integer (SB),DIEBR,"R1,R3,R2,M4",RRF-b,B353,,,,,,C §7 §9 SP Db Xi Xu Xx,,BFP,4,Divide to Integer 
+Divide Logical (32&larr;64),DL,"R1,D2(X2,B2)",RXY-a,E397,,,,,,§9 A SP IK B2,N3,General,4,Divide Logical 
+Divide Logical (64&larr;128),DLG,"R1,D2(X2,B2)",RXY-a,E387,,,,,,§9 A SP IK B2,N,General,5,Divide Logical 
+Divide Logical (64&larr;128),DLGR,"R1,R2",RRE,B987,,,,,,§9 SP IK,N,General,5,Divide Logical 
+Divide Logical (32&larr;64),DLR,"R1,R2",RRE,B997,,,,,,§9 SP IK,N3,General,4,Divide Logical 
+Divide Decimal,DP,"D1(L1,B1),D2(L2,B2)",SS-b,FD,,,,,,§9 A SP Dg DK ST B1 B2,,Decimal,1,Divide Decimal
+Divide (32&larr;64),DR,"R1,R2",RR,1D,,,,,,§9 SP IK,,General,1,Divide 
+Divide Single (64),DSG,"R1,D2(X2,B2)",RXY-a,E30D,,,,,,§9 A SP IK B2,N,General,5,Divide Single 
+Divide Single (64&larr;32),DSGF,"R1,D2(X2,B2)",RXY-a,E31D,,,,,,§9 A SP IK B2,N,General,5,Divide Single 
+Divide Single (64&larr;32),DSGFR,"R1,R2",RRE,B91D,,,,,,§9 SP IK,N,General,5,Divide Single 
+Divide Single (64),DSGR,"R1,R2",RRE,B90D,,,,,,§9 SP IK,N,General,5,Divide Single 
+Divide (EB),DXBR,"R1,R2",RRE,B34D,,,,,,§7 §9 SP Db Xi Xz Xo Xu Xx,,BFP,4,Divide 
+Divide (EH),DXR,"R1,R2",RRE,B22D,,,,,,§7 §9 SP Da EU EO FK,,HFP,3,Divide 
+Divide (ED),DXTR,"R1,R2,R3",RRF-a,B3D9,,,,,,§7 §9 SP Dt Xi Xz Xo Xu Xx,TF,DFP,7,Divide 
+Divide (ED),DXTRA,"R1,R2,R3,M4",RRF-a,B3D9,,,,,,§7 §9 SP Dt Xi Xz Xo Xu Xx Xq,F,DFP,9,Divide 
+Extract Access,EAR,"R1,R2",RRE,B24F,,,,,,U2,,General,4,Extract Access
+Extract CPU Attribute,ECAG,"R1,R3,D2(B2)",RSY-a,EB4C,,,,,,§9,GE,General,8,Extract CPU Attribute
+Extract CPU Time,ECTG,"D1(B1),D2(B2),R3",SSF,C81,,,,,,§8 §9 A GM R3 B1 B2,ET,General,7,Extract CPU Time
+Edit,ED,"D1(L,B1),D2(B2)",SS-a,DE,,,,,,C §9 A Dg ST B1 B2,,Decimal,1,Edit
+Edit and Mark,EDMK,"D1(L,B1),D2(B2)",SS-a,DF,,,,,,C §9 A Dg G1 ST B1 B2,,Decimal,1,Edit and Mark
+Extract Biased Exponent (64&larr;LD),EEDTR,"R1,R2",RRE,B3E5,,,,,,§7 §9 Dt,TF,DFP,7,Extract Biased Exponent 
+Extract Biased Exponent (64&larr;ED),EEXTR,"R1,R2",RRE,B3ED,,,,,,§7 §9 SP Dt,TF,DFP,7,Extract Biased Exponent 
+Extract FPC,EFPC,R1,RRE,B38C,,,,,,§7 §9 Db,,FP,4,Extract FPC
+Extract Primary ASN and Instance,EPAIR,R1,RRE,B99A,,,,,,Q SO,RA,Control,6,Extract Primary ASN and Instance
+Extract Primary ASN,EPAR,R1,RRE,B226,,,,,,Q SO,,Control,2,Extract Primary ASN
+Extract PSW,EPSW,"R1,R2",RRE,B98D,,,,,,§8 §9,N3,General,4,Extract PSW
+Extract Stacked Registers (32),EREG,"R1,R2",RRE,B249,,,,,,§1 A1* SE U1 U2,,Control,4,Extract Stacked Registers 
+Extract Stacked Registers (64),EREGG,"R1,R2",RRE,B90E,,,,,,§1 A1* SE U1 U2,N,Control,5,Extract Stacked Registers 
+Extract Secondary ASN and Instance,ESAIR,R1,RRE,B99B,,,,,,Q SO,RA,Control,6,Extract Secondary ASN and Instance
+Extract Secondary ASN,ESAR,R1,RRE,B227,,,,,,Q SO,,Control,2,Extract Secondary ASN
+Extract Significance (64&larr;LD),ESDTR,"R1,R2",RRE,B3E7,,,,,,§7 §9 Dt,TF,DFP,7,Extract Significance 
+Extract and Set Extended Authority,ESEA,"R1,R2",RRE,B99D,,,,,,P,N,Control,5,Extract and Set Extended Authority
+Extract Stacked State,ESTA,"R1,R2",RRE,B24A,,,,,,C §1 A1* SP SE,,Control,4,Extract Stacked State
+Extract Significance (64&larr;ED),ESXTR,"R1,R2",RRE,B3EF,,,,,,§7 §9 SP Dt,TF,DFP,7,Extract Significance 
+Extract Transaction Nesting Depth,ETND,R1,RRE,B2EC,,,,,,§9 SO,TX,General,10,Extract Transaction Nesting Depth
+Execute,EX,"R1,D2(X2,B2)",RX-a,44,,,,,,§9 AI SP EX,,General,1,Execute
+Execute Relative Long,EXRL,"R1,RI2",RIL-b,C60,,,,,,§9 AI EX,XX,General,8,Execute Relative Long
+Load FP Integer (LB),FIDBR,"R1,M3,R2",RRF-e,B35F,,,,,,§7 §9 SP Db Xi Xx,,BFP,4,Load FP Integer 
+Load FP Integer (LB),FIDBRA,"R1,M3,R2,M4",RRF-e,B35F,,,,,,§7 §9 SP Db Xi Xx,F,BFP,9,Load FP Integer 
+Load FP Integer (LH),FIDR,"R1,R2",RRE,B37F,,,,,,§7 §9 Da,,HFP,4,Load FP Integer 
+Load FP Integer (LD),FIDTR,"R1,M3,R2,M4",RRF-e,B3D7,,,,,,§7 §9 Dt Xi Xx Xq,TF,DFP,7,Load FP Integer 
+Load FP Integer (SB),FIEBR,"R1,M3,R2",RRF-e,B357,,,,,,§7 §9 SP Db Xi Xx,,BFP,4,Load FP Integer 
+Load FP Integer (SB),FIEBRA,"R1,M3,R2,M4",RRF-e,B357,,,,,,§7 §9 SP Db Xi Xx,F,BFP,9,Load FP Integer 
+Load FP Integer (SH),FIER,"R1,R2",RRE,B377,,,,,,§7 §9 Da,,HFP,4,Load FP Integer 
+Load FP Integer (EB),FIXBR,"R1,M3,R2",RRF-e,B347,,,,,,§7 §9 SP Db Xi Xx,,BFP,4,Load FP Integer 
+Load FP Integer (EB),FIXBRA,"R1,M3,R2,M4",RRF-e,B347,,,,,,§7 §9 SP Db Xi Xx,F,BFP,9,Load FP Integer 
+Load FP Integer (EH),FIXR,"R1,R2",RRE,B367,,,,,,§7 §9 SP Da,,HFP,4,Load FP Integer 
+Load FP Integer (ED),FIXTR,"R1,M3,R2,M4",RRF-e,B3DF,,,,,,§7 §9 SP Dt Xi Xx Xq,TF,DFP,7,Load FP Integer 
+Find Leftmost One,FLOGR,"R1,R2",RRE,B983,,,,,,C SP,EI,General,7,Find Leftmost One
+Halve (LH),HDR,"R1,R2",RR,24,,,,,,§7 §9 Da EU,,HFP,1,Halve 
+Halve (SH),HER,"R1,R2",RR,34,,,,,,§7 §9 Da EU,,HFP,1,Halve 
+Halt Subchannel,HSCH,,S,B231,,,,,,C P OP ¢ GS,,I/O,3,Halt Subchannel
+Insert Address Space Control,IAC,R1,RRE,B224,,,,,,C Q SO,,Control,2,Insert Address Space Control
+Insert Character,IC,"R1,D2(X2,B2)",RX-a,43,,,,,,A B2,,General,1,Insert Character
+Insert Characters under Mask (low),ICM,"R1,M3,D2(B2)",RS-b,BF,,,,,,C A B2,,General,1,Insert Characters under Mask 
+Insert Characters under Mask (high),ICMH,"R1,M3,D2(B2)",RSY-b,EB80,,,,,,C A B2,N,General,5,Insert Characters under Mask 
+Insert Characters under Mask (low),ICMY,"R1,M3,D2(B2)",RSY-b,EB81,,,,,,C A B2,LD,General,6,Insert Characters under Mask 
+Insert Character,ICY,"R1,D2(X2,B2)",RXY-a,E373,,,,,,A B2,LD,General,6,Insert Character
+Invalidate DAT Table Entry,IDTE,"R1,R3,R2",RRF-b,B98E,,,,,,U DE P A1 SP $,,Control,6,Invalidate DAT Table Entry
+Insert Biased Exponent (LD&larr;64&LD),IEDTR,"R1,R3,R2",RRF-b,B3F6,,,,,,§7 §9 Dt,TF,DFP,7,Insert Biased Exponent 
+Insert Biased Exponent (ED&larr;64&ED),IEXTR,"R1,R3,R2",RRF-b,B3FE,,,,,,§7 §9 SP Dt,TF,DFP,7,Insert Biased Exponent 
+Insert Immediate (high),IIHF,"R1,I2",RIL-a,C08,,,,,,,EI,General,7,Insert Immediate 
+Insert Immediate (high high),IIHH,"R1,I2",RI-a,A50,,,,,,,N,General,5,Insert Immediate 
+Insert Immediate (high low),IIHL,"R1,I2",RI-a,A51,,,,,,,N,General,5,Insert Immediate 
+Insert Immediate (low),IILF,"R1,I2",RIL-a,C09,,,,,,,EI,General,7,Insert Immediate 
+Insert Immediate (low high),IILH,"R1,I2",RI-a,A52,,,,,,,N,General,5,Insert Immediate 
+Insert Immediate (low low),IILL,"R1,I2",RI-a,A53,,,,,,,N,General,5,Insert Immediate 
+Insert PSW Key,IPK,,S,B20B,,,,,,Q G2,,Control,1,Insert PSW Key
+Insert Program Mask,IPM,R1,RRE,B222,,,,,,,,General,3,Insert Program Mask
+Invalidate Page Table Entry,IPTE,"R1,R2",RRF-a,B221,,,,,,P A1 SP $,,Control,2,Invalidate Page Table Entry
+Insert Reference Bits Multiple,IRBM,"R1,R2",RRE,B2AC,,,,,,P A1*,IM,Control,12,Insert Reference Bits Multiple
+Insert Storage Key Extended,ISKE,"R1,R2",RRE,B229,,,,,,P A1*,,Control,2,Insert Storage Key Extended
+Insert Virtual Storage Key,IVSK,"R1,R2",RRE,B223,,,,,,Q A1* SO R2,,Control,2,Insert Virtual Storage Key
+Compare and Signal (LB),KDB,"R1,D2(X2,B2)",RXE,ED18,,,,,,C §7 §9 A Db Xi B2,,BFP,4,Compare and Signal 
+Compare and Signal (LB),KDBR,"R1,R2",RRE,B318,,,,,,C §7 §9 Db Xi,,BFP,4,Compare and Signal 
+Compute Digital Signature Authentication,KDSA,"R1,R2",RRE,B93A,,,,,,C §5 §9 A SP IC GM I1 ST R2,M9,Special,13,Compute Digital Signature Authentication
+Compare and Signal (LD),KDTR,"R1,R2",RRE,B3E0,,,,,,C §7 §9 Dt Xi,TF,DFP,7,Compare and Signal 
+Compare and Signal (SB),KEB,"R1,D2(X2,B2)",RXE,ED08,,,,,,C §7 §9 A Db Xi B2,,BFP,4,Compare and Signal 
+Compare and Signal (SB),KEBR,"R1,R2",RRE,B308,,,,,,C §7 §9 Db Xi,,BFP,4,Compare and Signal 
+Compute Intermediate Message Digest,KIMD,"R1,R2",RRE,B93E,,,,,,C §5 §9 A SP IC GM I1 ST R2,MS,General,6,Compute Intermediate Message Digest
+Compute Last Message Digest,KLMD,"R1,R2",RRE,B93F,,,,,,C §5 §9 A SP IC GM I1 ST R2,MS,General,6,Compute Last Message Digest
+Cipher Message,KM,"R1,R2",RRE,B92E,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2,MS,General,6,Cipher Message
+Cipher Message with Authentication,KMA,"R1,R3,R2",RRF-b,B929,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2 R3,M8,General,12,Cipher Message with Authentication
+Compute Message Authentication Code,KMAC,"R1,R2",RRE,B91E,,,,,,C §5 §9 A SP IC GM I1 ST R2,MS,General,6,Compute Message Authentication Code
+Cipher Message with Chaining,KMC,"R1,R2",RRE,B92F,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2,MS,General,6,Cipher Message with Chaining
+Cipher Message with Counter,KMCTR,"R1,R3,R2",RRF-b,B92D,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2 R3,M4,General,9,Cipher Message with Counter
+Cipher Message with Cipher Feedback,KMF,"R1,R2",RRE,B92A,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2,M4,General,9,Cipher Message with Cipher Feedback
+Cipher Message with Output Feedback,KMO,"R1,R2",RRE,B92B,,,,,,C §5 §9 A SP IC GM I1 ST R1 R2,M4,General,9,Cipher Message with Output Feedback
+Compare and Signal (EB),KXBR,"R1,R2",RRE,B348,,,,,,C §7 §9 SP Db Xi,,BFP,4,Compare and Signal 
+Compare and Signal (ED),KXTR,"R1,R2",RRE,B3E8,,,,,,C §7 §9 SP Dt Xi,TF,DFP,7,Compare and Signal 
+Load (32),L,"R1,D2(X2,B2)",RX-a,58,,,,,,A B2,,General,1,Load 
+Load Address,LA,"R1,D2(X2,B2)",RX-a,41,,,,,,,,General,1,Load Address
+Load and Add (32),LAA,"R1,R3,D2(B2)",RSY-a,EBF8,,,,,,C §9 A SP IF £ ST B2,IA,General,9,Load and Add 
+Load and Add (64),LAAG,"R1,R3,D2(B2)",RSY-a,EBE8,,,,,,C §9 A SP IF £ ST B2,IA,General,9,Load and Add 
+Load and Add Logical (32),LAAL,"R1,R3,D2(B2)",RSY-a,EBFA,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and Add Logical 
+Load and Add Logical (64),LAALG,"R1,R3,D2(B2)",RSY-a,EBEA,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and Add Logical 
+Load Address Extended,LAE,"R1,D2(X2,B2)",RX-a,51,,,,,,§6 U1 BP,,General,4,Load Address Extended
+Load Address Extended,LAEY,"R1,D2(X2,B2)",RXY-a,E375,,,,,,§6 U1 BP,GE,General,8,Load Address Extended
+Load Access Multiple,LAM,"R1,R3,D2(B2)",RS-a,9A,,,,,,§6 A SP UB,,General,4,Load Access Multiple
+Load Access Multiple,LAMY,"R1,R3,D2(B2)",RSY-a,EB9A,,,,,,§6 A SP UB,LD,General,6,Load Access Multiple
+Load and AND (32),LAN,"R1,R3,D2(B2)",RSY-a,EBF4,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and AND 
+Load and AND (64),LANG,"R1,R3,D2(B2)",RSY-a,EBE4,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and AND 
+Load and OR (32),LAO,"R1,R3,D2(B2)",RSY-a,EBF6,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and OR 
+Load and OR (64),LAOG,"R1,R3,D2(B2)",RSY-a,EBE6,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and OR 
+Load Address Relative Long,LARL,"R1,RI2",RIL-b,C00,,,,,,,N3,General,4,Load Address Relative Long
+Load Address Space Parameters,LASP,"D1(B1),D2(B2)",SSE,E500,,,,,,C P A1 SP SO B1,,Control,2,Load Address Space Parameters
+Load and Trap (32),LAT,"R1,D2(X2,B2)",RXY-a,E39F,,,,,,A Dc B2,LT,General,10,Load and Trap 
+Load and Exclusive OR (32),LAX,"R1,R3,D2(B2)",RSY-a,EBF7,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and Exclusive OR 
+Load and Exclusive OR (64),LAXG,"R1,R3,D2(B2)",RSY-a,EBE7,,,,,,C §9 A SP £ ST B2,IA,General,9,Load and Exclusive OR 
+Load Address,LAY,"R1,D2(X2,B2)",RXY-a,E371,,,,,,,LD,General,6,Load Address
+Load Byte (32&larr;8),LB,"R1,D2(X2,B2)",RXY-a,E376,,,,,,A,LD,General,6,Load Byte 
+Load Byte High (32&larr;8),LBH,"R1,D2(X2,B2)",RXY-a,E3C0,,,,,,A B2,HW,General,9,Load Byte High 
+Load Byte (32&larr;8),LBR,"R1,R2",RRE,B926,,,,,,,EI,General,7,Load Byte 
+Load Count to Block Boundary,LCBB,"R1,D2(X2,B2),M3",RXE,E727,,,,,,C SP,VF,General,11,Load Count to Block Boundary
+Load Complement (LB),LCDBR,"R1,R2",RRE,B313,,,,,,C §7 §9 Db,,BFP,4,Load Complement 
+Load Complement (L),LCDFR,"R1,R2",RRE,B373,,,,,,§7 §9 Da,FS,FP,7,Load Complement 
+Load Complement (LH),LCDR,"R1,R2",RR,23,,,,,,C §7 §9 Da,,HFP,1,Load Complement 
+Load Complement (SB),LCEBR,"R1,R2",RRE,B303,,,,,,C §7 §9 Db,,BFP,4,Load Complement 
+Load Complement (SH),LCER,"R1,R2",RR,33,,,,,,C §7 §9 Da,,HFP,1,Load Complement 
+Load Complement (64&larr;32),LCGFR,"R1,R2",RRE,B913,,,,,,C,N,General,5,Load Complement 
+Load Complement (64),LCGR,"R1,R2",RRE,B903,,,,,,C IF,N,General,5,Load Complement 
+Load Complement (32),LCR,"R1,R2",RR,13,,,,,,C IF,,General,1,Load Complement 
+Load Control (32),LCTL,"R1,R3,D2(B2)",RS-a,B7,,,,,,P A SP B2,,Control,1,Load Control 
+Load Control (64),LCTLG,"R1,R3,D2(B2)",RSY-a,EB2F,,,,,,P A SP B2,N,Control,5,Load Control 
+Load Complement (EB),LCXBR,"R1,R2",RRE,B343,,,,,,C §7 §9 SP Db,,BFP,4,Load Complement 
+Load Complement (EH),LCXR,"R1,R2",RRE,B363,,,,,,C §7 §9 SP Da,,HFP,4,Load Complement 
+Load (L),LD,"R1,D2(X2,B2)",RX-a,68,,,,,,§7 §9 A Da B2,,FP,1,Load 
+Load Lengthened (LH&larr;SH),LDE,"R1,D2(X2,B2)",RXE,ED24,,,,,,§7 §9 A Da B2,,HFP,4,Load Lengthened 
+Load Lengthened (LB&larr;SB),LDEB,"R1,D2(X2,B2)",RXE,ED04,,,,,,§7 §9 A Db Xi B2,,BFP,4,Load Lengthened 
+Load Lengthened (LB&larr;SB),LDEBR,"R1,R2",RRE,B304,,,,,,§7 §9 Db Xi,,BFP,4,Load Lengthened 
+Load Lengthened (LH&larr;SH),LDER,"R1,R2",RRE,B324,,,,,,§7 §9 Da,,HFP,4,Load Lengthened 
+Load Lengthened (LD&larr;SD),LDETR,"R1,R2,M4",RRF-d,B3D4,,,,,,§7 §9 Dt Xi,TF,DFP,7,Load Lengthened 
+Load FPR from GR (L&larr;64),LDGR,"R1,R2",RRE,B3C1,,,,,,§7 §9 Da,FG,FP,7,Load FPR from GR 
+Load (L),LDR,"R1,R2",RR,28,,,,,,§7 §9 Da,,FP,1,Load 
+Load Rounded (LB&larr;EB),LDXBR,"R1,R2",RRE,B345,,,,,,§7 §9 SP Db Xi Xo Xu Xx,,BFP,4,Load Rounded 
+Load Rounded (LB&larr;EB),LDXBRA,"R1,M3,R2,M4",RRF-e,B345,,,,,,§7 §9 SP Db Xi Xo Xu Xx,F,BFP,9,Load Rounded 
+Load Rounded (LH&larr;EH),LDXR,"R1,R2",RR,25,,,,,,§7 §9 SP Da EO,,HFP,4,Load Rounded 
+Load Rounded (LD&larr;ED),LDXTR,"R1,M3,R2,M4",RRF-e,B3DD,,,,,,§7 §9 SP Dt Xi Xo Xu Xx Xq,TF,DFP,7,Load Rounded 
+Load (L),LDY,"R1,D2(X2,B2)",RXY-a,ED65,,,,,,§7 §9 A Da B2,LD,FP,6,Load 
+Load (S),LE,"R1,D2(X2,B2)",RX-a,78,,,,,,§7 §9 A Da B2,,FP,1,Load 
+Load Rounded (SB&larr;LB),LEDBR,"R1,R2",RRE,B344,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Load Rounded 
+Load Rounded (SB&larr;LB),LEDBRA,"R1,M3,R2,M4",RRF-e,B344,,,,,,§7 §9 SP Db Xi Xo Xu Xx,F,BFP,9,Load Rounded 
+Load Rounded (SH&larr;LH),LEDR,"R1,R2",RR,35,,,,,,§7 §9 Da EO,,HFP,4,Load Rounded 
+Load Rounded (SD&larr;LD),LEDTR,"R1,M3,R2,M4",RRF-e,B3D5,,,,,,§7 §9 Dt Xi Xo Xu Xx Xq,TF,DFP,7,Load Rounded 
+Load (S),LER,"R1,R2",RR,38,,,,,,§7 §9 Da,,FP,1,Load 
+Load Rounded (SB&larr;EB),LEXBR,"R1,R2",RRE,B346,,,,,,§7 §9 SP Db Xi Xo Xu Xx,,BFP,4,Load Rounded 
+Load Rounded (SB&larr;EB),LEXBRA,"R1,M3,R2,M4",RRF-e,B346,,,,,,§7 §9 SP Db Xi Xo Xu Xx,F,BFP,9,Load Rounded 
+Load Rounded (SH&larr;EH),LEXR,"R1,R2",RRE,B366,,,,,,§7 §9 SP Da EO,,HFP,4,Load Rounded 
+Load (S),LEY,"R1,D2(X2,B2)",RXY-a,ED64,,,,,,§7 §9 A Da B2,LD,FP,6,Load 
+Load FPC and Signal,LFAS,D2(B2),S,B2BD,,,,,,§7 §9 A SP Dt Xg B2,XF,FP,7,Load FPC and Signal
+Load High (32),LFH,"R1,D2(X2,B2)",RXY-a,E3CA,,,,,,A B2,HW,General,9,Load High 
+Load and Trap (32H&larr;32),LFHAT,"R1,D2(X2,B2)",RXY-a,E3C8,,,,,,A Dc B2,LT,General,10,Load and Trap 
+Load FPC,LFPC,D2(B2),S,B29D,,,,,,§7 §9 A SP Db B2,,FP,4,Load FPC
+Load (64),LG,"R1,D2(X2,B2)",RXY-a,E304,,,,,,A B2,N,General,5,Load 
+Load and Trap (64),LGAT,"R1,D2(X2,B2)",RXY-a,E385,,,,,,A Dc B2,LT,General,10,Load and Trap 
+Load Byte (64&larr;8),LGB,"R1,D2(X2,B2)",RXY-a,E377,,,,,,A,LD,General,6,Load Byte 
+Load Byte (64&larr;8),LGBR,"R1,R2",RRE,B906,,,,,,,EI,General,7,Load Byte 
+Load GR from FPR (64&larr;L),LGDR,"R1,R2",RRE,B3CD,,,,,,§7 §9 Da,FG,FP,7,Load GR from FPR 
+Load (64&larr;32),LGF,"R1,D2(X2,B2)",RXY-a,E314,,,,,,A B2,N,General,5,Load 
+Load Immediate (64&larr;32),LGFI,"R1,I2",RIL-a,C01,,,,,,,EI,General,7,Load Immediate 
+Load (64&larr;32),LGFR,"R1,R2",RRE,B914,,,,,,,N,General,5,Load 
+Load Relative Long (64&larr;32),LGFRL,"R1,RI2",RIL-b,C4C,,,,,,A* SP,GE,General,8,Load Relative Long 
+Load guarded (64),LGG,"R1,D2(X2,B2)",RXY-a,E34C,,,,,,§12 A SP B ST B2,GF,General,12,Load guarded 
+Load Halfword (64&larr;16),LGH,"R1,D2(X2,B2)",RXY-a,E315,,,,,,A B2,N,General,5,Load Halfword 
+Load Halfword Immediate (64&larr;16),LGHI,"R1,I2",RI-a,A79,,,,,,,N,General,5,Load Halfword Immediate 
+Load Halfword (64&larr;16),LGHR,"R1,R2",RRE,B907,,,,,,,EI,General,7,Load Halfword 
+Load Halfword Relative Long (64&larr;16),LGHRL,"R1,RI2",RIL-b,C44,,,,,,A*,GE,General,8,Load Halfword Relative Long 
+Load (64),LGR,"R1,R2",RRE,B904,,,,,,,N,General,5,Load 
+Load Relative Long (64),LGRL,"R1,RI2",RIL-b,C48,,,,,,A* SP,GE,General,8,Load Relative Long 
+Load guarded storage controls,LGSC,"R1,D2(X2,B2)",RXY-a,E34D,,,,,,§1 A SO B2,GF,General,12,Load guarded storage controls
+Load Halfword (32&larr;16),LH,"R1,D2(X2,B2)",RX-a,48,,,,,,A B2,,General,1,Load Halfword 
+Load Halfword High (32&larr;16),LHH,"R1,D2(X2,B2)",RXY-a,E3C4,,,,,,A B2,HW,General,9,Load Halfword High 
+Load Halfword Immediate (32&larr;16),LHI,"R1,I2",RI-a,A78,,,,,,,,General,4,Load Halfword Immediate 
+Load Halfword (32&larr;16),LHR,"R1,R2",RRE,B927,,,,,,,EI,General,7,Load Halfword 
+Load Halfword Relative Long (32&larr;16),LHRL,"R1,RI2",RIL-b,C45,,,,,,A*,GE,General,8,Load Halfword Relative Long 
+Load Halfword (32&larr;16),LHY,"R1,D2(X2,B2)",RXY-a,E378,,,,,,A B2,LD,General,6,Load Halfword 
+Load Logical Character (32&larr;8),LLC,"R1,D2(X2,B2)",RXY-a,E394,,,,,,A B2,EI,General,7,Load Logical Character 
+Load Logical Character High (32&larr;8),LLCH,"R1,D2(X2,B2)",RXY-a,E3C2,,,,,,A B2,HW,General,9,Load Logical Character High 
+Load Logical Character (32&larr;8),LLCR,"R1,R2",RRE,B994,,,,,,,EI,General,7,Load Logical Character 
+Load Logical Character (64&larr;8),LLGC,"R1,D2(X2,B2)",RXY-a,E390,,,,,,A B2,N,General,5,Load Logical Character 
+Load Logical Character (64&larr;8),LLGCR,"R1,R2",RRE,B984,,,,,,,EI,General,7,Load Logical Character 
+Load Logical (64&larr;32),LLGF,"R1,D2(X2,B2)",RXY-a,E316,,,,,,A B2,N,General,5,Load Logical 
+Load and Trap (64&larr;32),LLGFAT,"R1,D2(X2,B2)",RXY-a,E39D,,,,,,A Dc B2,LT,General,10,Load and Trap 
+Load Logical (64&larr;32),LLGFR,"R1,R2",RRE,B916,,,,,,,N,General,5,Load Logical 
+Load Logical Relative Long (64&larr;32),LLGFRL,"R1,RI2",RIL-b,C4E,,,,,,A* SP,GE,General,8,Load Logical Relative Long 
+Load logical and shift guarded (64&larr;32),LLGFSG,"R1,D2(X2,B2)",RXY-a,E348,,,,,,§12 A SP B ST B2,GF,General,12,Load logical and shift guarded 
+Load Logical Halfword (64&larr;16),LLGH,"R1,D2(X2,B2)",RXY-a,E391,,,,,,A B2,N,General,5,Load Logical Halfword 
+Load Logical Halfword (64&larr;16),LLGHR,"R1,R2",RRE,B985,,,,,,,EI,General,7,Load Logical Halfword 
+Load Logical Halfword Relative Long (64&larr;16),LLGHRL,"R1,RI2",RIL-b,C46,,,,,,A*,GE,General,8,Load Logical Halfword Relative Long 
+Load Logical Thirty One Bits (64&larr;31),LLGT,"R1,D2(X2,B2)",RXY-a,E317,,,,,,A B2,N,General,5,Load Logical Thirty One Bits 
+Load Logical Thirty One Bits and Trap (64&larr;31),LLGTAT,"R1,D2(X2,B2)",RXY-a,E39C,,,,,,A Dc B2,LT,General,10,Load Logical Thirty One Bits and Trap 
+Load Logical Thirty One Bits (64&larr;31),LLGTR,"R1,R2",RRE,B917,,,,,,,N,General,5,Load Logical Thirty One Bits 
+Load Logical Halfword (32&larr;16),LLH,"R1,D2(X2,B2)",RXY-a,E395,,,,,,A B2,EI,General,7,Load Logical Halfword 
+Load Logical Halfword High (32&larr;16),LLHH,"R1,D2(X2,B2)",RXY-a,E3C6,,,,,,A B2,HW,General,9,Load Logical Halfword High 
+Load Logical Halfword (32&larr;16),LLHR,"R1,R2",RRE,B995,,,,,,,EI,General,7,Load Logical Halfword 
+Load Logical Halfword Relative Long (32&larr;16),LLHRL,"R1,RI2",RIL-b,C42,,,,,,A*,GE,General,8,Load Logical Halfword Relative Long 
+Load Logical Immediate (high),LLIHF,"R1,I2",RIL-a,C0E,,,,,,,EI,General,7,Load Logical Immediate 
+Load Logical Immediate (high high),LLIHH,"R1,I2",RI-a,A5C,,,,,,,N,General,5,Load Logical Immediate 
+Load Logical Immediate (high low),LLIHL,"R1,I2",RI-a,A5D,,,,,,,N,General,5,Load Logical Immediate 
+Load Logical Immediate (low),LLILF,"R1,I2",RIL-a,C0F,,,,,,,EI,General,7,Load Logical Immediate 
+Load Logical Immediate (low high),LLILH,"R1,I2",RI-a,A5E,,,,,,,N,General,5,Load Logical Immediate 
+Load Logical Immediate (low low),LLILL,"R1,I2",RI-a,A5F,,,,,,,N,General,5,Load Logical Immediate 
+Load Logical and Zero Rightmost Byte (32),LLZRGF,"R1,D2(X2,B2)",RXY-a,E33A,,,,,,A B2,LZ,General,11,Load Logical and Zero Rightmost Byte 
+Load Multiple (32),LM,"R1,R3,D2(B2)",RS-a,98,,,,,,A B2,,General,1,Load Multiple 
+Load Multiple Disjoint (64&larr;32&32),LMD,"R1,R3,D2(B2),D4(B4)",SS-e,EF,,,,,,§9 A B2 B4,N,General,5,Load Multiple Disjoint 
+Load Multiple (64),LMG,"R1,R3,D2(B2)",RSY-a,EB04,,,,,,A B2,N,General,5,Load Multiple 
+Load Multiple High,LMH,"R1,R3,D2(B2)",RSY-a,EB96,,,,,,A B2,N,General,5,Load Multiple High
+Load Multiple (32),LMY,"R1,R3,D2(B2)",RSY-a,EB98,,,,,,A B2,LD,General,6,Load Multiple 
+Load Negative (LB),LNDBR,"R1,R2",RRE,B311,,,,,,C §7 §9 Db,,BFP,4,Load Negative 
+Load Negative (L),LNDFR,"R1,R2",RRE,B371,,,,,,§7 §9 Da,FS,FP,7,Load Negative 
+Load Negative (LH),LNDR,"R1,R2",RR,21,,,,,,C §7 §9 Da,,HFP,1,Load Negative 
+Load Negative (SB),LNEBR,"R1,R2",RRE,B301,,,,,,C §7 §9 Db,,BFP,4,Load Negative 
+Load Negative (SH),LNER,"R1,R2",RR,31,,,,,,C §7 §9 Da,,HFP,1,Load Negative 
+Load Negative (64&larr;32),LNGFR,"R1,R2",RRE,B911,,,,,,C,N,General,5,Load Negative 
+Load Negative (64),LNGR,"R1,R2",RRE,B901,,,,,,C,N,General,5,Load Negative 
+Load Negative (32),LNR,"R1,R2",RR,11,,,,,,C,,General,1,Load Negative 
+Load Negative (EB),LNXBR,"R1,R2",RRE,B341,,,,,,C §7 §9 SP Db,,BFP,4,Load Negative 
+Load Negative (EH),LNXR,"R1,R2",RRE,B361,,,,,,C §7 §9 SP Da,,HFP,4,Load Negative 
+Load on Condition (32),LOC,"R1,D2(B2),M3",RSY-b,EBF2,,,,,,A B2,L1,General,9,Load on Condition 
+Load High on Condition (32),LOCFH,"R1,D2(B2),M3",RSY-b,EBE0,,,,,,A B2,L2,General,11,Load High on Condition 
+Load High on Condition (32),LOCFHR,"R1,R2,M3",RRF-c,B9E0,,,,,,,L2,General,11,Load High on Condition 
+Load on Condition (64),LOCG,"R1,D2(B2),M3",RSY-b,EBE2,,,,,,A B2,L1,General,9,Load on Condition 
+Load Halfword Immediate on Condition (64&larr;16),LOCGHI,"R1,I2,M3",RIE-g,EC46,,,,,,,L2,General,11,Load Halfword Immediate on Condition 
+Load on Condition (64),LOCGR,"R1,R2,M3",RRF-c,B9E2,,,,,,,L1,General,9,Load on Condition 
+Load Halfword High Immediate on Condition (32&larr;16),LOCHHI,"R1,I2,M3",RIE-g,EC4E,,,,,,,L2,General,11,Load Halfword High Immediate on Condition 
+Load Halfword Immediate on Condition (32&larr;16),LOCHI,"R1,I2,M3",RIE-g,EC42,,,,,,,L2,General,11,Load Halfword Immediate on Condition 
+Load on Condition (32),LOCR,"R1,R2,M3",RRF-c,B9F2,,,,,,,L1,General,9,Load on Condition 
+Load Pair Disjoint (32),LPD,"R3,D1(B1),D2(B2)",SSF,C84,,,,,,C §9 A SP B1 B2,IA,General,9,Load Pair Disjoint 
+Load Positive (LB),LPDBR,"R1,R2",RRE,B310,,,,,,C §7 §9 Db,,BFP,4,Load Positive 
+Load Positive (L),LPDFR,"R1,R2",RRE,B370,,,,,,§7 §9 Da,FS,FP,7,Load Positive 
+Load Pair Disjoint (64),LPDG,"R3,D1(B1),D2(B2)",SSF,C85,,,,,,C §9 A SP B1 B2,IA,General,9,Load Pair Disjoint 
+Load Positive (LH),LPDR,"R1,R2",RR,20,,,,,,C §7 §9 Da,,HFP,1,Load Positive 
+Load Positive (SB),LPEBR,"R1,R2",RRE,B300,,,,,,C §7 §9 Db,,BFP,4,Load Positive 
+Load Positive (SH),LPER,"R1,R2",RR,30,,,,,,C §7 §9 Da,,HFP,1,Load Positive 
+Load Positive (64&larr;32),LPGFR,"R1,R2",RRE,B910,,,,,,C,N,General,5,Load Positive 
+Load Positive (64),LPGR,"R1,R2",RRE,B900,,,,,,C IF,N,General,5,Load Positive 
+Load Pair from Quadword (64&64&larr;128),LPQ,"R1,D2(X2,B2)",RXY-a,E38F,,,,,,§9 A SP B2,N,General,5,Load Pair from Quadword 
+Load Positive (32),LPR,"R1,R2",RR,10,,,,,,C IF,,General,1,Load Positive 
+Load PSW,LPSW,D2(B2),SI,82,,,,,,L P A SP ¢ B2,,Control,1,Load PSW
+Load PSW Extended,LPSWE,D2(B2),S,B2B2,,,,,,L P A SP ¢ B2,N,Control,5,Load PSW Extended
+Load Page-Table-Entry Address,LPTEA,"R1,R3,R2,M4",RRF-b,B9AA,,,,,,C P A1* SP SO R2,D2,Control,7,Load Page-Table-Entry Address
+Load Positive (EB),LPXBR,"R1,R2",RRE,B340,,,,,,C §7 §9 SP Db,,BFP,4,Load Positive 
+Load Positive (EH),LPXR,"R1,R2",RRE,B360,,,,,,C §7 §9 SP Da,,HFP,4,Load Positive 
+Load (32),LR,"R1,R2",RR,18,,,,,,,,General,1,Load 
+Load Real Address (32),LRA,"R1,D2(X2,B2)",RX-a,B1,,,,,,C P A1* SO BP,,Control,1,Load Real Address 
+Load Real Address (64),LRAG,"R1,D2(X2,B2)",RXY-a,E303,,,,,,C P A1* BP,N,Control,5,Load Real Address 
+Load Real Address (32),LRAY,"R1,D2(X2,B2)",RXY-a,E313,,,,,,C P A1* SO BP,LD,Control,6,Load Real Address 
+Load Rounded (LH&larr;EH),LRDR,"R1,R2",RR,25,,,,,,§7 §9 SP Da EO,,HFP,1,Load Rounded 
+Load Rounded (SH&larr;LH),LRER,"R1,R2",RR,35,,,,,,§7 §9 Da EO,,HFP,1,Load Rounded 
+Load Relative Long (32),LRL,"R1,RI2",RIL-b,C4D,,,,,,A SP,GE,General,8,Load Relative Long 
+Load Reversed (32),LRV,"R1,D2(X2,B2)",RXY-a,E31E,,,,,,A B2,N3,General,4,Load Reversed 
+Load Reversed (64),LRVG,"R1,D2(X2,B2)",RXY-a,E30F,,,,,,A B2,N,General,5,Load Reversed 
+Load Reversed (64),LRVGR,"R1,R2",RRE,B90F,,,,,,,N,General,5,Load Reversed 
+Load Reversed (16),LRVH,"R1,D2(X2,B2)",RXY-a,E31F,,,,,,A B2,N3,General,4,Load Reversed 
+Load Reversed (32),LRVR,"R1,R2",RRE,B91F,,,,,,,N3,General,4,Load Reversed 
+Load and Test (32),LT,"R1,D2(X2,B2)",RXY-a,E312,,,,,,C A B2,EI,General,7,Load and Test 
+Load and Test (LB),LTDBR,"R1,R2",RRE,B312,,,,,,C §7 §9 Db Xi,,BFP,4,Load and Test 
+Load and Test (LH),LTDR,"R1,R2",RR,22,,,,,,C §7 §9 Da,,HFP,1,Load and Test 
+Load and Test (LD),LTDTR,"R1,R2",RRE,B3D6,,,,,,C §7 §9 Dt Xi,TF,DFP,7,Load and Test 
+Load and Test (SB),LTEBR,"R1,R2",RRE,B302,,,,,,C §7 §9 Db Xi,,BFP,4,Load and Test 
+Load and Test (SH),LTER,"R1,R2",RR,32,,,,,,C §7 §9 Da,,HFP,1,Load and Test 
+Load and Test (64),LTG,"R1,D2(X2,B2)",RXY-a,E302,,,,,,C A B2,EI,General,7,Load and Test 
+Load And Test (64&larr;32),LTGF,"R1,D2(X2,B2)",RXY-a,E332,,,,,,C A B2,GE,General,8,Load And Test 
+Load and Test (64&larr;32),LTGFR,"R1,R2",RRE,B912,,,,,,C,N,General,5,Load and Test 
+Load and Test (64),LTGR,"R1,R2",RRE,B902,,,,,,C,N,General,5,Load and Test 
+Load and Test (32),LTR,"R1,R2",RR,12,,,,,,C,,General,1,Load and Test 
+Load and Test (EB),LTXBR,"R1,R2",RRE,B342,,,,,,C §7 §9 SP Db Xi,,BFP,4,Load and Test 
+Load and Test (EH),LTXR,"R1,R2",RRE,B362,,,,,,C §7 §9 SP Da,,HFP,4,Load and Test 
+Load and Test (ED),LTXTR,"R1,R2",RRE,B3DE,,,,,,C §7 §9 SP Dt Xi,TF,DFP,7,Load and Test 
+Load Using Real Address (32),LURA,"R1,R2",RRE,B24B,,,,,,P A1 SP,,Control,4,Load Using Real Address 
+Load Using Real Address (64),LURAG,"R1,R2",RRE,B905,,,,,,P A1 SP,N,Control,5,Load Using Real Address 
+Load Lengthened (EH&larr;LH),LXD,"R1,D2(X2,B2)",RXE,ED25,,,,,,§7 §9 A SP Da B2,,HFP,4,Load Lengthened 
+Load Lengthened (EB&larr;LB),LXDB,"R1,D2(X2,B2)",RXE,ED05,,,,,,§7 §9 A SP Db Xi B2,,BFP,4,Load Lengthened 
+Load Lengthened (EB&larr;LB),LXDBR,"R1,R2",RRE,B305,,,,,,§7 §9 SP Db Xi,,BFP,4,Load Lengthened 
+Load Lengthened (EH&larr;LH),LXDR,"R1,R2",RRE,B325,,,,,,§7 §9 SP Da,,HFP,4,Load Lengthened 
+Load Lengthened (ED&larr;LD),LXDTR,"R1,R2,M4",RRF-d,B3DC,,,,,,§7 §9 SP Dt Xi,TF,DFP,7,Load Lengthened 
+Load Lengthened (EH&larr;SH),LXE,"R1,D2(X2,B2)",RXE,ED26,,,,,,§7 §9 A SP Da B2,,HFP,4,Load Lengthened 
+Load Lengthened (EB&larr;SB),LXEB,"R1,D2(X2,B2)",RXE,ED06,,,,,,§7 §9 A SP Db Xi B2,,BFP,4,Load Lengthened 
+Load Lengthened (EB&larr;SB),LXEBR,"R1,R2",RRE,B306,,,,,,§7 §9 SP Db Xi,,BFP,4,Load Lengthened 
+Load Lengthened (EH&larr;SH),LXER,"R1,R2",RRE,B326,,,,,,§7 §9 SP Da,,HFP,4,Load Lengthened 
+Load (E),LXR,"R1,R2",RRE,B365,,,,,,§7 §9 SP Da,,FP,4,Load 
+Load (32),LY,"R1,D2(X2,B2)",RXY-a,E358,,,,,,A B2,LD,General,6,Load 
+Load Zero (L),LZDR,R1,RRE,B375,,,,,,§7 §9 Da,,FP,4,Load Zero 
+Load Zero (S),LZER,R1,RRE,B374,,,,,,§7 §9 Da,,FP,4,Load Zero 
+Load and Zero Rightmost Byte (32),LZRF,"R1,D2(X2,B2)",RXY-a,E33B,,,,,,A B2,LZ,General,11,Load and Zero Rightmost Byte 
+Load and Zero Rightmost Byte (64),LZRG,"R1,D2(X2,B2)",RXY-a,E32A,,,,,,A B2,LZ,General,11,Load and Zero Rightmost Byte 
+Load Zero (E),LZXR,R1,RRE,B376,,,,,,§7 §9 SP Da,,FP,4,Load Zero 
+Multiply (64&larr;32),M,"R1,D2(X2,B2)",RX-a,5C,,,,,,A SP B2,,General,1,Multiply 
+Multiply and Add (LH),MAD,"R1,R3,D2(X2,B2)",RXF,ED3E,,,,,,§7 §9 A Da EU EO B2,HM,HFP,6,Multiply and Add 
+Multiply and Add (LB),MADB,"R1,R3,D2(X2,B2)",RXF,ED1E,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply and Add 
+Multiply and Add (LB),MADBR,"R1,R3,R2",RRD,B31E,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply and Add 
+Multiply and Add (LH),MADR,"R1,R3,R2",RRD,B33E,,,,,,§7 §9 Da EU EO,HM,HFP,6,Multiply and Add 
+Multiply and Add (SH),MAE,"R1,R3,D2(X2,B2)",RXF,ED2E,,,,,,§7 §9 A Da EU EO B2,HM,HFP,6,Multiply and Add 
+Multiply and Add (SB),MAEB,"R1,R3,D2(X2,B2)",RXF,ED0E,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply and Add 
+Multiply and Add (SB),MAEBR,"R1,R3,R2",RRD,B30E,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply and Add 
+Multiply and Add (SH),MAER,"R1,R3,R2",RRD,B32E,,,,,,§7 §9 Da EU EO,HM,HFP,6,Multiply and Add 
+Multiply and Add Unnormalized (EH&larr;LH),MAY,"R1,R3,D2(X2,B2)",RXF,ED3A,,,,,,§7 §9 A Da B2,UE,HFP,7,Multiply and Add Unnormalized 
+Multiply and Add Unnormalized (EHH&larr;LH),MAYH,"R1,R3,D2(X2,B2)",RXF,ED3C,,,,,,§7 §9 A Da B2,UE,HFP,7,Multiply and Add Unnormalized 
+Multiply and Add Unnormalized (EHH&larr;LH),MAYHR,"R1,R3,R2",RRD,B33C,,,,,,§7 §9 Da,UE,HFP,7,Multiply and Add Unnormalized 
+Multiply and Add Unnormalized (EHL&larr;LH),MAYL,"R1,R3,D2(X2,B2)",RXF,ED38,,,,,,§7 §9 A Da B2,UE,HFP,7,Multiply and Add Unnormalized 
+Multiply and Add Unnormalized (EHL&larr;LH),MAYLR,"R1,R3,R2",RRD,B338,,,,,,§7 §9 Da,UE,HFP,7,Multiply and Add Unnormalized 
+Multiply and Add Unnormalized (EH&larr;LH),MAYR,"R1,R3,R2",RRD,B33A,,,,,,§7 §9 Da,UE,HFP,7,Multiply and Add Unnormalized 
+Monitor Call,MC,"D1(B1),I2",SI,AF,,,,,,§4 §8 §9 SP ME,,General,1,Monitor Call
+Multiply (LH),MD,"R1,D2(X2,B2)",RX-a,6C,,,,,,§7 §9 A Da EU EO B2,,HFP,1,Multiply 
+Multiply (LB),MDB,"R1,D2(X2,B2)",RXE,ED1C,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply 
+Multiply (LB),MDBR,"R1,R2",RRE,B31C,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply 
+Multiply (LH&larr;SH),MDE,"R1,D2(X2,B2)",RX-a,7C,,,,,,§7 §9 A Da EU EO B2,,HFP,1,Multiply 
+Multiply (LB&larr;SB),MDEB,"R1,D2(X2,B2)",RXE,ED0C,,,,,,§7 §9 A Db Xi B2,,BFP,4,Multiply 
+Multiply (LB&larr;SB),MDEBR,"R1,R2",RRE,B30C,,,,,,§7 §9 Db Xi,,BFP,4,Multiply 
+Multiply (LH&larr;SH),MDER,"R1,R2",RR,3C,,,,,,§7 §9 Da EU EO,,HFP,1,Multiply 
+Multiply (LH),MDR,"R1,R2",RR,2C,,,,,,§7 §9 Da EU EO,,HFP,1,Multiply 
+Multiply (LD),MDTR,"R1,R2,R3",RRF-a,B3D0,,,,,,§7 §9 Dt Xi Xo Xu Xx,TF,DFP,7,Multiply 
+Multiply (LD),MDTRA,"R1,R2,R3,M4",RRF-a,B3D0,,,,,,§7 §9 Dt Xi Xo Xu Xx Xq,F,DFP,9,Multiply 
+Multiply (LH&larr;SH),ME,"R1,D2(X2,B2)",RX-a,7C,,,,,,§7 §9 A Da EU EO B2,,HFP,1,Multiply 
+Multiply (SH),MEE,"R1,D2(X2,B2)",RXE,ED37,,,,,,§7 §9 A Da EU EO B2,,HFP,4,Multiply 
+Multiply (SB),MEEB,"R1,D2(X2,B2)",RXE,ED17,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply 
+Multiply (SB),MEEBR,"R1,R2",RRE,B317,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply 
+Multiply (SH),MEER,"R1,R2",RRE,B337,,,,,,§7 §9 Da EU EO,,HFP,4,Multiply 
+Multiply (LH&larr;SH),MER,"R1,R2",RR,3C,,,,,,§7 §9 Da EU EO,,HFP,1,Multiply 
+Multiply (64&larr;32),MFY,"R1,D2(X2,B2)",RXY-a,E35C,,,,,,A SP B2,GE,General,8,Multiply 
+Multiply (128&larr;64),MG,"R1,D2(X2,B2)",RXY-a,E384,,,,,,A SP B2,MI2,General,12,Multiply 
+Multiply Halfword(64&larr;16),MGH,"R1,D2(X2,B2)",RXY-a,E33C,,,,,,A B2,MI2,General,12,Multiply Halfword
+Multiply Halfword Immediate (64&larr;16),MGHI,"R1,I2",RI-a,A7D,,,,,,,N,General,5,Multiply Halfword Immediate 
+Multiply (128&larr;64),MGRK,"R1,R2,R3",RRF-a,B9EC,,,,,,SP,MI2,General,12,Multiply 
+Multiply Halfword (32&larr;16),MH,"R1,D2(X2,B2)",RX-a,4C,,,,,,A B2,,General,1,Multiply Halfword 
+Multiply Halfword Immediate (32&larr;16),MHI,"R1,I2",RI-a,A7C,,,,,,,,General,4,Multiply Halfword Immediate 
+Multiply Halfword (64&larr;16),MHY,"R1,D2(X2,B2)",RXY-a,E37C,,,,,,A B2,GE,General,8,Multiply Halfword 
+Multiply Logical (64&larr;32),ML,"R1,D2(X2,B2)",RXY-a,E396,,,,,,A SP B2,N3,General,4,Multiply Logical 
+Multiply Logical (128&larr;64),MLG,"R1,D2(X2,B2)",RXY-a,E386,,,,,,A SP B2,N,General,5,Multiply Logical 
+Multiply Logical (128&larr;64),MLGR,"R1,R2",RRE,B986,,,,,,SP,N,General,5,Multiply Logical 
+Multiply Logical (64&larr;32),MLR,"R1,R2",RRE,B996,,,,,,SP,N3,General,4,Multiply Logical 
+Multiply Decimal,MP,"D1(L1,B1),D2(L2,B2)",SS-b,FC,,,,,,§9 A SP Dg ST B1 B2,,Decimal,1,Multiply Decimal
+Multiply (64&larr;32),MR,"R1,R2",RR,1C,,,,,,SP,,General,1,Multiply 
+Multiply Single (32),MS,"R1,D2(X2,B2)",RX-a,71,,,,,,A B2,,General,4,Multiply Single 
+Multiply Single (32),MSC,"R1,D2(X2,B2)",RXY-a,E353,,,,,,C A IF B2,MI2,General,12,Multiply Single 
+Modify Subchannel,MSCH,D2(B2),S,B232,,,,,,C P A SP OP ¢ GS B2,,I/O,3,Modify Subchannel
+Multiply and Subtract (LH),MSD,"R1,R3,D2(X2,B2)",RXF,ED3F,,,,,,§7 §9 A Da EU EO B2,HM,HFP,6,Multiply and Subtract 
+Multiply and Subtract (LB),MSDB,"R1,R3,D2(X2,B2)",RXF,ED1F,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply and Subtract 
+Multiply and Subtract (LB),MSDBR,"R1,R3,R2",RRD,B31F,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply and Subtract 
+Multiply and Subtract (LH),MSDR,"R1,R3,R2",RRD,B33F,,,,,,§7 §9 Da EU EO,HM,HFP,6,Multiply and Subtract 
+Multiply and Subtract (SH),MSE,"R1,R3,D2(X2,B2)",RXF,ED2F,,,,,,§7 §9 A Da EU EO B2,HM,HFP,6,Multiply and Subtract 
+Multiply and Subtract (SB),MSEB,"R1,R3,D2(X2,B2)",RXF,ED0F,,,,,,§7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Multiply and Subtract 
+Multiply and Subtract (SB),MSEBR,"R1,R3,R2",RRD,B30F,,,,,,§7 §9 Db Xi Xo Xu Xx,,BFP,4,Multiply and Subtract 
+Multiply and Subtract (SH),MSER,"R1,R3,R2",RRD,B32F,,,,,,§7 §9 Da EU EO,HM,HFP,6,Multiply and Subtract 
+Multiply Single Immediate (32),MSFI,"R1,I2",RIL-a,C21,,,,,,,GE,General,8,Multiply Single Immediate 
+Multiply Single (64),MSG,"R1,D2(X2,B2)",RXY-a,E30C,,,,,,A B2,N,General,5,Multiply Single 
+Multiply Single (64),MSGC,"R1,D2(X2,B2)",RXY-a,E383,,,,,,C A IF B2,MI2,General,12,Multiply Single 
+Multiply Single (64&larr;32),MSGF,"R1,D2(X2,B2)",RXY-a,E31C,,,,,,A B2,N,General,5,Multiply Single 
+Multiply Single Immediate (64&larr;32),MSGFI,"R1,I2",RIL-a,C20,,,,,,,GE,General,8,Multiply Single Immediate 
+Multiply Single (64&larr;32),MSGFR,"R1,R2",RRE,B91C,,,,,,,N,General,5,Multiply Single 
+Multiply Single (64),MSGR,"R1,R2",RRE,B90C,,,,,,,N,General,5,Multiply Single 
+Multiply Single (64),MSGRKC,"R1,R2,R3",RRF-a,B9ED,,,,,,C IF,MI2,General,12,Multiply Single 
+Multiply Single (32),MSR,"R1,R2",RRE,B252,,,,,,,,General,4,Multiply Single 
+Multiply Single (32),MSRKC,"R1,R2,R3",RRF-a,B9FD,,,,,,C IF,MI2,General,12,Multiply Single 
+Modify Stacked State,MSTA,R1,RRE,B247,,,,,,§1 A1* SP SE ST,,Control,4,Modify Stacked State
+Multiply Single (32),MSY,"R1,D2(X2,B2)",RXY-a,E351,,,,,,A B2,LD,General,6,Multiply Single 
+Move (character),MVC,"D1(L,B1),D2(B2)",SS-a,D2,,,,,,§9 A ST B1 B2,,General,1,Move 
+Move with Destination Key,MVCDK,"D1(B1),D2(B2)",SSE,E50F,,,,,,Q A GM ST B1 B2,,Control,4,Move with Destination Key
+Move Inverse,MVCIN,"D1(L,B1),D2(B2)",SS-a,E8,,,,,,§9 A ST B1 B2,,General,1,Move Inverse
+Move with Key,MVCK,"D1(R1,B1),D2(B2),R3",SS-d,D9,,,,,,C Q A ST B1 B2,,Control,2,Move with Key
+Move Long,MVCL,"R1,R2",RR,0E,,,,,,C §9 A SP II ST R1 R2,,General,1,Move Long
+Move Long Extended,MVCLE,"R1,R3,D2(B2)",RS-a,A8,,,,,,C §9 A SP IC ST R1 R3,,General,4,Move Long Extended
+Move Long Unicode,MVCLU,"R1,R3,D2(B2)",RSY-a,EB8E,,,,,,C §9 A SP IC ST R1 R3,E2,General,5,Move Long Unicode
+Move with Optional Specifications,MVCOS,"D1(B1),D2(B2),R3",SSF,C80,,,,,,C Q A SO G0 ST B+ B++,MO,Control,7,Move with Optional Specifications
+Move to Primary,MVCP,"D1(R1,B1),D2(B2),R3",SS-d,DA,,,,,,C Q A SO ¢ ST,,Control,2,Move to Primary
+Move Right to Left,MVCRL,"D1(B1),D2(B2)",SSE,E50A,,,,,,§9 A G0 ST B1 B2,MI3,General,13,Move Right to Left
+Move to Secondary,MVCS,"D1(R1,B1),D2(B2),R3",SS-d,DB,,,,,,C Q A SO ¢ ST,,Control,2,Move to Secondary
+Move with Source Key,MVCSK,"D1(B1),D2(B2)",SSE,E50E,,,,,,Q A GM ST B1 B2,,Control,4,Move with Source Key
+Move (64&larr;16),MVGHI,"D1(B1),I2",SIL,E548,,,,,,A ST B1,GE,General,8,Move 
+Move (16&larr;16),MVHHI,"D1(B1),I2",SIL,E544,,,,,,A ST B1,GE,General,8,Move 
+Move (32&larr;16),MVHI,"D1(B1),I2",SIL,E54C,,,,,,A ST B1,GE,General,8,Move 
+Move Immediate,MVI,"D1(B1),I2",SI,92,,,,,,A ST B1,,General,1,Move Immediate
+Move Immediate,MVIY,"D1(B1),I2",SIY,EB52,,,,,,A ST B1,LD,General,6,Move Immediate
+Move Numerics,MVN,"D1(L,B1),D2(B2)",SS-a,D1,,,,,,§9 A ST B1 B2,,General,1,Move Numerics
+Move with Offset,MVO,"D1(L1,B1),D2(L2,B2)",SS-b,F1,,,,,,§9 A ST B1 B2,,General,1,Move with Offset
+Move Page,MVPG,"R1,R2",RRE,B254,,,,,,C Q A SP OP ¢4 G0 K ST R1 R2,,Control,4,Move Page
+Move String,MVST,"R1,R2",RRE,B255,,,,,,C §9 A SP IC G0 ST R1 R2,,General,4,Move String
+Move Zones,MVZ,"D1(L,B1),D2(B2)",SS-a,D3,,,,,,§9 A ST B1 B2,,General,1,Move Zones
+Multiply (EB),MXBR,"R1,R2",RRE,B34C,,,,,,§7 §9 SP Db Xi Xo Xu Xx,,BFP,4,Multiply 
+Multiply (EH&larr;LH),MXD,"R1,D2(X2,B2)",RX-a,67,,,,,,§7 §9 A SP Da EU EO B2,,HFP,1,Multiply 
+Multiply (EB&larr;LB),MXDB,"R1,D2(X2,B2)",RXE,ED07,,,,,,§7 §9 A SP Db Xi B2,,BFP,4,Multiply 
+Multiply (EB&larr;LB),MXDBR,"R1,R2",RRE,B307,,,,,,§7 §9 SP Db Xi,,BFP,4,Multiply 
+Multiply (EH&larr;LH),MXDR,"R1,R2",RR,27,,,,,,§7 §9 SP Da EU EO,,HFP,1,Multiply 
+Multiply (EH),MXR,"R1,R2",RR,26,,,,,,§7 §9 SP Da EU EO,,HFP,1,Multiply 
+Multiply (ED),MXTR,"R1,R2,R3",RRF-a,B3D8,,,,,,§7 §9 SP Dt Xi Xo Xu Xx,TF,DFP,7,Multiply 
+Multiply (ED),MXTRA,"R1,R2,R3,M4",RRF-a,B3D8,,,,,,§7 §9 SP Dt Xi Xo Xu Xx Xq,F,DFP,9,Multiply 
+Multiply Unnormalized (EH&larr;LH),MY,"R1,R3,D2(X2,B2)",RXF,ED3B,,,,,,§7 §9 A SP Da B2,UE,HFP,7,Multiply Unnormalized 
+Multiply Unnormalized (EHH&larr;LH),MYH,"R1,R3,D2(X2,B2)",RXF,ED3D,,,,,,§7 §9 A Da B2,UE,HFP,7,Multiply Unnormalized 
+Multiply Unnormalized (EHH&larr;LH),MYHR,"R1,R3,R2",RRD,B33D,,,,,,§7 §9 Da,UE,HFP,7,Multiply Unnormalized 
+Multiply Unnormalized (EHL&larr;LH),MYL,"R1,R3,D2(X2,B2)",RXF,ED39,,,,,,§7 §9 A Da B2,UE,HFP,7,Multiply Unnormalized 
+Multiply Unnormalized (EHL&larr;LH),MYLR,"R1,R3,R2",RRD,B339,,,,,,§7 §9 Da,UE,HFP,7,Multiply Unnormalized 
+Multiply Unnormalized (EH&larr;LH),MYR,"R1,R3,R2",RRD,B33B,,,,,,§7 §9 SP Da,UE,HFP,7,Multiply Unnormalized 
+AND (32),N,"R1,D2(X2,B2)",RX-a,54,,,,,,C A B2,,General,1,AND 
+DIAGNOSE,n/a,n/a,n/a,83,,,,,,P DM MD,DM,Control,?,DIAGNOSE
+AND (character),NC,"D1(L,B1),D2(B2)",SS-a,D4,,,,,,C §9 A ST B1 B2,,General,1,AND 
+AND with Complement (64),NCGRK,"R1,R2,R3",RRF-a,B9E5,,,,,,C,MI3,General,13,AND with Complement 
+AND with Complement (32),NCRK,"R1,R2,R3",RRF-a,B9F5,,,,,,C,MI3,General,13,AND with Complement 
+AND (64),NG,"R1,D2(X2,B2)",RXY-a,E380,,,,,,C A B2,N,General,5,AND 
+AND (64),NGR,"R1,R2",RRE,B980,,,,,,C,N,General,5,AND 
+AND (64),NGRK,"R1,R2,R3",RRF-a,B9E4,,,,,,C,DO,General,9,AND 
+AND Immediate,NI,"D1(B1),I2",SI,94,,,,,,C A £2 ST B1,,General,1,AND Immediate
+Next Instruction Access Intent,NIAI,"I1,I2",IE,B2FA,,,,,,,EH,General,10,Next Instruction Access Intent
+AND Immediate (high),NIHF,"R1,I2",RIL-a,C0A,,,,,,C,EI,General,7,AND Immediate 
+AND Immediate (high high),NIHH,"R1,I2",RI-a,A54,,,,,,C,N,General,5,AND Immediate 
+AND Immediate (high low),NIHL,"R1,I2",RI-a,A55,,,,,,C,N,General,5,AND Immediate 
+AND Immediate (low),NILF,"R1,I2",RIL-a,C0B,,,,,,C,EI,General,7,AND Immediate 
+AND Immediate (low high),NILH,"R1,I2",RI-a,A56,,,,,,C,N,General,5,AND Immediate 
+AND Immediate (low low),NILL,"R1,I2",RI-a,A57,,,,,,C,N,General,5,AND Immediate 
+AND Immediate,NIY,"D1(B1),I2",SIY,EB54,,,,,,C A £2 ST B1,LD,General,6,AND Immediate
+NAND (64),NNGRK,"R1,R2,R3",RRF-a,B964,,,,,,C,MI3,General,13,NAND 
+NAND (32),NNRK,"R1,R2,R3",RRF-a,B974,,,,,,C,MI3,General,13,NAND 
+NOR (64),NOGRK,"R1,R2,R3",RRF-a,B966,,,,,,C,MI3,General,13,NOR 
+NOR (32),NORK,"R1,R2,R3",RRF-a,B976,,,,,,C,MI3,General,13,NOR 
+AND (32),NR,"R1,R2",RR,14,,,,,,C,,General,1,AND 
+AND (32),NRK,"R1,R2,R3",RRF-a,B9F4,,,,,,C,DO,General,9,AND 
+Nontransactional Store (64),NTSTG,"R1,D2(X2,B2)",RXY-a,E325,,,,,,§9 A SP ST B2,TX,General,10,Nontransactional Store 
+NOT Exclusive OR (64),NXGRK,"R1,R2,R3",RRF-a,B967,,,,,,C,MI3,General,13,NOT Exclusive OR 
+NOT Exclusive OR (32),NXRK,"R1,R2,R3",RRF-a,B977,,,,,,C,MI3,General,13,NOT Exclusive OR 
+AND (32),NY,"R1,D2(X2,B2)",RXY-a,E354,,,,,,C A B2,LD,General,6,AND 
+OR (32),O,"R1,D2(X2,B2)",RX-a,56,,,,,,C A B2,,General,1,OR 
+OR (character),OC,"D1(L,B1),D2(B2)",SS-a,D6,,,,,,C §9 A ST B1 B2,,General,1,OR 
+OR with Complement (64),OCGRK,"R1,R2,R3",RRF-a,B965,,,,,,C,MI3,General,13,OR with Complement 
+OR with Complement (32),OCRK,"R1,R2,R3",RRF-a,B975,,,,,,C,MI3,General,13,OR with Complement 
+OR (64),OG,"R1,D2(X2,B2)",RXY-a,E381,,,,,,C A B2,N,General,5,OR 
+OR (64),OGR,"R1,R2",RRE,B981,,,,,,C,N,General,5,OR 
+OR (64),OGRK,"R1,R2,R3",RRF-a,B9E6,,,,,,C,DO,General,9,OR 
+OR Immediate,OI,"D1(B1),I2",SI,96,,,,,,C A ST B1,,General,1,OR Immediate
+OR Immediate (high),OIHF,"R1,I2",RIL-a,C0C,,,,,,C,EI,General,7,OR Immediate 
+OR Immediate (high high),OIHH,"R1,I2",RI-a,A58,,,,,,C,N,General,5,OR Immediate 
+OR Immediate (high low),OIHL,"R1,I2",RI-a,A59,,,,,,C,N,General,5,OR Immediate 
+OR Immediate (low),OILF,"R1,I2",RIL-a,C0D,,,,,,C,EI,General,7,OR Immediate 
+OR Immediate (low high),OILH,"R1,I2",RI-a,A5A,,,,,,C,N,General,5,OR Immediate 
+OR Immediate (low low),OILL,"R1,I2",RI-a,A5B,,,,,,C,N,General,5,OR Immediate 
+OR Immediate,OIY,"D1(B1),I2",SIY,EB56,,,,,,C A ST B1,LD,General,6,OR Immediate
+OR (32),OR,"R1,R2",RR,16,,,,,,C,,General,1,OR 
+OR (32),ORK,"R1,R2,R3",RRF-a,B9F6,,,,,,C,DO,General,9,OR 
+OR (32),OY,"R1,D2(X2,B2)",RXY-a,E356,,,,,,C A B2,LD,General,6,OR 
+Pack,PACK,"D1(L1,B1),D2(L2,B2)",SS-b,F2,,,,,,§9 A ST B1 B2,,General,1,Pack
+Purge ALB,PALB,,RRE,B248,,,,,,P $,,Control,4,Purge ALB
+Program Call,PC,D2(B2),S,B218,,,,,,Q A1* Z1 T ¢ GM B ST,,Control,2,Program Call
+Perform Cryptographic Computation,PCC,,RRE,B92C,,,,,,C §5 §9 A SP IC GM I1 ST,M4,General,9,Perform Cryptographic Computation
+Perform Crypto. Key Mgmt. Operations,PCKMO,,RRE,B928,,,,,,P A SP GM ST,M3,Control,8,Perform Crypto. Key Mgmt. Operations
+Prefetch Data,PFD,"M1,D2(X2,B2)",RXY-b,E336,,,,,,§9 §11 B2,GE,General,8,Prefetch Data
+Prefetch Data Relative Long,PFDRL,"M1,RI2",RIL-c,C62,,,,,,§9 §11,GE,General,8,Prefetch Data Relative Long
+Perform Frame Management Function,PFMF,"R1,R2",RRE,B9AF,,,,,,P A1 SP II ¢3 K,ED1,Control,8,Perform Frame Management Function
+Perform Floating-Point Operation,PFPO,,E,010A,,,,,,§7 §8 §9 SP Da Xi Xo GM Xu Xx Xq,PF,FP,7,Perform Floating-Point Operation
+Page In,PGIN,"R1,R2",RRE,B22E,,,,,,C P A1 ¢,ES,Control,?,Page In
+Page Out,PGOUT,"R1,R2",RRE,B22F,,,,,,C P A1 ¢,ES,Control,?,Page Out
+Pack ASCII,PKA,"D1(B1),D2(L2,B2)",SS-f,E9,,,,,,§9 A SP ST B1 B2,E2,General,5,Pack ASCII
+Pack Unicode,PKU,"D1(B1),D2(L2,B2)",SS-f,E1,,,,,,§9 A SP ST B1 B2,E2,General,5,Pack Unicode
+Perform Locked Operation,PLO,"R1,D2(B2),R3,D4(B4)",SS-e,EE,,,,,,C §1 A SP $ GM ST FC,,General,4,Perform Locked Operation
+Population Count,POPCNT,"R1,R2[,M3]",RRF-c,B9E1,,,,,,C,PK,General,9,Population Count
+Perform Processor Assist,PPA,"R1,R2,M3",RRF-c,B2E8,,,,,,§1,PA,General,10,Perform Processor Assist
+Program Return,PR,,E,0101,,,,,,L §1 A1* SP Z4 T ¢2 B ST,,Control,4,Program Return
+Perform Random Number Operation,PRNO,"R1,R2",RRE,B93C,,,,,,C §5 §9 A SP IC Dg GM I1 ST R1 R2,M5,General,12,Perform Random Number Operation
+Program Transfer,PT,"R1,R2",RRE,B228,,,,,,Q A1* SP Z2 T ¢ B,,Control,2,Program Transfer
+Perform Topology Function,PTF,R1,RRE,B9A2,,,,,,C P SP,CT,Control,8,Perform Topology Function
+Perform Timing-Facility Function,PTFF,,E,0104,,,,,,C Q A SP GM ST,TS,Control,7,Perform Timing-Facility Function
+Program Transfer with Instance,PTI,"R1,R2",RRE,B99E,,,,,,Q A1* SP Z6 T ¢ B,RA,Control,6,Program Transfer with Instance
+Purge TLB,PTLB,,S,B20D,,,,,,P $,,Control,1,Purge TLB
+Quantize (LD),QADTR,"R1,R3,R2,M4",RRF-b,B3F5,,,,,,§7 §9 Dt Xi Xx Xq,TF,DFP,7,Quantize 
+Quantize (ED),QAXTR,"R1,R3,R2,M4",RRF-b,B3FD,,,,,,§7 §9 SP Dt Xi Xx Xq,TF,DFP,7,Quantize 
+Reset Channel Path,RCHP,,S,B23B,,,,,,C P,,I/O,3,Reset Channel Path
+Rotate then Insert Selected Bits (64),RISBG,"R1,R2,I3,I4[,I5]",RIE-f,EC55,,,,,,C,GE,General,8,Rotate then Insert Selected Bits 
+Rotate then Insert Selected Bits (64),RISBGN,"R1,R2,I3,I4[,I5]",RIE-f,EC59,,,,,,,MI1,General,10,Rotate then Insert Selected Bits 
+Rotate then Insert Selected Bits High (32),RISBHG,"R1,I2,I3,I4[,I5]",RIE-f,EC5D,,,,,,,HW,General,9,Rotate then Insert Selected Bits High 
+Rotate then Insert Selected Bits Low (32),RISBLG,"R1,I2,I3,I4[,I5]",RIE-f,EC51,,,,,,,HW,General,9,Rotate then Insert Selected Bits Low 
+Rotate Left Single Logical (32),RLL,"R1,R3,D2(B2)",RSY-a,EB1D,,,,,,,N3,General,4,Rotate Left Single Logical 
+Rotate Left Single Logical (64),RLLG,"R1,R3,D2(B2)",RSY-a,EB1C,,,,,,,N,General,5,Rotate Left Single Logical 
+Rotate then AND Selected Bits (64),RNSBG,"R1,R2,I3,I4[,I5]",RIE-f,EC54,,,,,,C,GE,General,8,Rotate then AND Selected Bits 
+Rotate then OR Selected Bits (64),ROSBG,"R1,R2,I3,I4[,I5]",RIE-f,EC56,,,,,,C,GE,General,8,Rotate then OR Selected Bits 
+Resume Program,RP,D2(B2),S,B277,,,,,,L Q A SP WE T B B2,,Control,4,Resume Program
+Reset Reference Bit Extended,RRBE,"R1,R2",RRE,B22A,,,,,,C P A1*,,Control,2,Reset Reference Bit Extended
+Reset Reference Bits Multiple,RRBM,"R1,R2",RRE,B9AE,,,,,,P A1*,RB,Control,9,Reset Reference Bits Multiple
+Reround (LD),RRDTR,"R1,R3,R2,M4",RRF-b,B3F7,,,,,,§7 §9 Dt Xi Xx Xq,TF,DFP,7,Reround 
+Reround (ED),RRXTR,"R1,R3,R2,M4",RRF-b,B3FF,,,,,,§7 §9 SP Dt Xi Xx Xq,TF,DFP,7,Reround 
+Resume Subchannel,RSCH,,S,B238,,,,,,C P OP ¢ GS,,I/O,3,Resume Subchannel
+Rotate then Exclusive OR Selected Bits (64),RXSBG,"R1,R2,I3,I4[,I5]",RIE-f,EC57,,,,,,C,GE,General,8,Rotate then Exclusive OR Selected Bits 
+Subtract (32),S,"R1,D2(X2,B2)",RX-a,5B,,,,,,C A IF B2,,General,1,Subtract 
+Set Address Space Control,SAC,D2(B2),S,B219,,,,,,Q SP SW ¢,,Control,2,Set Address Space Control
+Set Address Space Control Fast,SACF,D2(B2),S,B279,,,,,,Q SP SW,,Control,4,Set Address Space Control Fast
+Set Address Limit,SAL,,S,B237,,,,,,P OP ¢ G1,,I/O,3,Set Address Limit
+Set Addressing Mode (24),SAM24,,E,010C,,,,,,§3 §9 SP T,N3,General,4,Set Addressing Mode 
+Set Addressing Mode (31),SAM31,,E,010D,,,,,,§3 §9 SP T,N3,General,4,Set Addressing Mode 
+Set Addressing Mode (64),SAM64,,E,010E,,,,,,§3 §9 T,N,General,5,Set Addressing Mode 
+Set Access,SAR,"R1,R2",RRE,B24E,,,,,,§6 U1,,General,4,Set Access
+Set Channel Monitor,SCHM,,S,B23C,,,,,,P OP ¢ GM,,I/O,3,Set Channel Monitor
+Set Clock,SCK,D2(B2),S,B204,,,,,,C P A SP B2,,Control,1,Set Clock
+Set Clock Comparator,SCKC,D2(B2),S,B206,,,,,,P A SP B2,,Control,1,Set Clock Comparator
+Set Clock Programmable Field,SCKPF,,E,0107,,,,,,P SP G0,,Control,4,Set Clock Programmable Field
+Subtract Normalized (LH),SD,"R1,D2(X2,B2)",RX-a,6B,,,,,,C §7 §9 A Da EU EO LS B2,,HFP,1,Subtract Normalized 
+Subtract (LB),SDB,"R1,D2(X2,B2)",RXE,ED1B,,,,,,C §7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Subtract 
+Subtract (LB),SDBR,"R1,R2",RRE,B31B,,,,,,C §7 §9 Db Xi Xo Xu Xx,,BFP,4,Subtract 
+Subtract Normalized (LH),SDR,"R1,R2",RR,2B,,,,,,C §7 §9 Da EU EO LS,,HFP,1,Subtract Normalized 
+Subtract (LD),SDTR,"R1,R2,R3",RRF-a,B3D3,,,,,,C §7 §9 Dt Xi Xo Xu Xx,TF,DFP,7,Subtract 
+Subtract (LD),SDTRA,"R1,R2,R3,M4",RRF-a,B3D3,,,,,,C §7 §9 Dt Xi Xo Xu Xx Xq,F,DFP,9,Subtract 
+Subtract Normalized (SH),SE,"R1,D2(X2,B2)",RX-a,7B,,,,,,C §7 §9 A Da EU EO LS B2,,HFP,1,Subtract Normalized 
+Subtract (SB),SEB,"R1,D2(X2,B2)",RXE,ED0B,,,,,,C §7 §9 A Db Xi Xo Xu Xx B2,,BFP,4,Subtract 
+Subtract (SB),SEBR,"R1,R2",RRE,B30B,,,,,,C §7 §9 Db Xi Xo Xu Xx,,BFP,4,Subtract 
+Select High (32),SELFHR,"R1,R2,R3,M4",RRF-a,B9C0,,,,,,,MI3,General,13,Select High 
+Select (64),SELGR,"R1,R2,R3,M4",RRF-a,B9E3,,,,,,,MI3,General,13,Select 
+Select (32),SELR,"R1,R2,R3,M4",RRF-a,B9F0,,,,,,,MI3,General,13,Select 
+Subtract Normalized (SH),SER,"R1,R2",RR,3B,,,,,,C §7 §9 Da EU EO LS,,HFP,1,Subtract Normalized 
+Set FPC and Signal,SFASR,R1,RRE,B385,,,,,,§7 §9 SP Dt Xg,XF,FP,7,Set FPC and Signal
+Set FPC,SFPC,R1,RRE,B384,,,,,,§7 §9 SP Db,,FP,4,Set FPC
+Subtract (64),SG,"R1,D2(X2,B2)",RXY-a,E309,,,,,,C A IF B2,N,General,5,Subtract 
+Subtract (64&larr;32),SGF,"R1,D2(X2,B2)",RXY-a,E319,,,,,,C A IF B2,N,General,5,Subtract 
+Subtract (64&larr;32),SGFR,"R1,R2",RRE,B919,,,,,,C IF,N,General,5,Subtract 
+Subtract Halfword (64&larr;16),SGH,"R1,D2(X2,B2)",RXY-a,E339,,,,,,C A IF B2,MI2,General,12,Subtract Halfword 
+Subtract (64),SGR,"R1,R2",RRE,B909,,,,,,C IF,N,General,5,Subtract 
+Subtract (64),SGRK,"R1,R2,R3",RRF-a,B9E9,,,,,,C IF,DO,General,9,Subtract 
+Subtract Halfword (32&larr;16),SH,"R1,D2(X2,B2)",RX-a,4B,,,,,,C A IF B2,,General,1,Subtract Halfword 
+Subtract High (32),SHHHR,"R1,R2,R3",RRF-a,B9C9,,,,,,C IF,HW,General,9,Subtract High 
+Subtract High (32),SHHLR,"R1,R2,R3",RRF-a,B9D9,,,,,,C IF,HW,General,9,Subtract High 
+Subtract Halfword (32&larr;16),SHY,"R1,D2(X2,B2)",RXY-a,E37B,,,,,,C A IF B2,LD,General,6,Subtract Halfword 
+Start Interpretive Execution,SIE,D2(B2),S,B214,,,,,,II  P,,Special,3,Start Interpretive Execution
+Signal Processor,SIGP,"R1,R3,D2(B2)",RS-a,AE,,,,,,C P $,,Control,2,Signal Processor
+Subtract Logical (32),SL,"R1,D2(X2,B2)",RX-a,5F,,,,,,C A B2,,General,1,Subtract Logical 
+Shift Left Single (32),SLA,"R1,D2(B2)",RS-a,8B,,,,,,C IF,,General,1,Shift Left Single 
+Shift Left Single (64),SLAG,"R1,R3,D2(B2)",RSY-a,EB0B,,,,,,C IF,N,General,5,Shift Left Single 
+Shift Left Single (32),SLAK,"R1,R3,D2(B2)",RSY-a,EBDD,,,,,,C IF,DO,General,9,Shift Left Single 
+Subtract Logical with Borrow (32),SLB,"R1,D2(X2,B2)",RXY-a,E399,,,,,,C A B2,N3,General,4,Subtract Logical with Borrow 
+Subtract Logical with Borrow (64),SLBG,"R1,D2(X2,B2)",RXY-a,E389,,,,,,C A B2,N,General,5,Subtract Logical with Borrow 
+Subtract Logical with Borrow (64),SLBGR,"R1,R2",RRE,B989,,,,,,C,N,General,5,Subtract Logical with Borrow 
+Subtract Logical with Borrow (32),SLBR,"R1,R2",RRE,B999,,,,,,C,N3,General,4,Subtract Logical with Borrow 
+Shift Left Double (64),SLDA,"R1,D2(B2)",RS-a,8F,,,,,,C SP IF,,General,1,Shift Left Double 
+Shift Left Double Logical (64),SLDL,"R1,D2(B2)",RS-a,8D,,,,,,SP,,General,1,Shift Left Double Logical 
+Shift Significand Left (LD),SLDT,"R1,R3,D2(X2,B2)",RXF,ED40,,,,,,§7 §9 Dt,TF,DFP,7,Shift Significand Left 
+Subtract Logical Immediate (32),SLFI,"R1,I2",RIL-a,C25,,,,,,C,EI,General,7,Subtract Logical Immediate 
+Subtract Logical (64),SLG,"R1,D2(X2,B2)",RXY-a,E30B,,,,,,C A B2,N,General,5,Subtract Logical 
+Subtract Logical (64&larr;32),SLGF,"R1,D2(X2,B2)",RXY-a,E31B,,,,,,C A B2,N,General,5,Subtract Logical 
+Subtract Logical Immediate (64&larr;32),SLGFI,"R1,I2",RIL-a,C24,,,,,,C,EI,General,7,Subtract Logical Immediate 
+Subtract Logical (64&larr;32),SLGFR,"R1,R2",RRE,B91B,,,,,,C,N,General,5,Subtract Logical 
+Subtract Logical (64),SLGR,"R1,R2",RRE,B90B,,,,,,C,N,General,5,Subtract Logical 
+Subtract Logical (64),SLGRK,"R1,R2,R3",RRF-a,B9EB,,,,,,C,DO,General,9,Subtract Logical 
+Subtract Logical High (32),SLHHHR,"R1,R2,R3",RRF-a,B9CB,,,,,,C,HW,General,9,Subtract Logical High 
+Subtract Logical High (32),SLHHLR,"R1,R2,R3",RRF-a,B9DB,,,,,,C,HW,General,9,Subtract Logical High 
+Shift Left Single Logical (32),SLL,"R1,D2(B2)",RS-a,89,,,,,,,,General,1,Shift Left Single Logical 
+Shift Left Single Logical (64),SLLG,"R1,R3,D2(B2)",RSY-a,EB0D,,,,,,,N,General,5,Shift Left Single Logical 
+Shift Left Single Logical (32),SLLK,"R1,R3,D2(B2)",RSY-a,EBDF,,,,,,,DO,General,9,Shift Left Single Logical 
+Subtract Logical (32),SLR,"R1,R2",RR,1F,,,,,,C,,General,1,Subtract Logical 
+Subtract Logical (32),SLRK,"R1,R2,R3",RRF-a,B9FB,,,,,,C,DO,General,9,Subtract Logical 
+Shift Significand Left (ED),SLXT,"R1,R3,D2(X2,B2)",RXF,ED48,,,,,,§7 §9 SP Dt,TF,DFP,7,Shift Significand Left 
+Subtract Logical (32),SLY,"R1,D2(X2,B2)",RXY-a,E35F,,,,,,C A B2,LD,General,6,Subtract Logical 
+Subtract Decimal,SP,"D1(L1,B1),D2(L2,B2)",SS-b,FB,,,,,,C §9 A Dg DF ST B1 B2,,Decimal,1,Subtract Decimal
+Set PSW Key from Address,SPKA,D2(B2),S,B20A,,,,,,Q,,Control,1,Set PSW Key from Address
+Set Program Mask,SPM,R1,RR,04,,,,,,L,,General,1,Set Program Mask
+Set CPU Timer,SPT,D2(B2),S,B208,,,,,,P A SP B2,,Control,1,Set CPU Timer
+Set Prefix,SPX,D2(B2),S,B210,,,,,,P A SP $ B2,,Control,2,Set Prefix
+Square Root (LH),SQD,"R1,D2(X2,B2)",RXE,ED35,,,,,,§7 §9 A Da SQ B2,,HFP,4,Square Root 
+Square Root (LB),SQDB,"R1,D2(X2,B2)",RXE,ED15,,,,,,§7 §9 A Db Xi Xx B2,,BFP,4,Square Root 
+Square Root (LB),SQDBR,"R1,R2",RRE,B315,,,,,,§7 §9 Db Xi Xx,,BFP,4,Square Root 
+Square Root (LH),SQDR,"R1,R2",RRE,B244,,,,,,§7 §9 Da SQ,,HFP,3,Square Root 
+Square Root (SH),SQE,"R1,D2(X2,B2)",RXE,ED34,,,,,,§7 §9 A Da SQ B2,,HFP,4,Square Root 
+Square Root (SB),SQEB,"R1,D2(X2,B2)",RXE,ED14,,,,,,§7 §9 A Db Xi Xx B2,,BFP,4,Square Root 
+Square Root (SB),SQEBR,"R1,R2",RRE,B314,,,,,,§7 §9 Db Xi Xx,,BFP,4,Square Root 
+Square Root (SH),SQER,"R1,R2",RRE,B245,,,,,,§7 §9 Da SQ,,HFP,3,Square Root 
+Square Root (EB),SQXBR,"R1,R2",RRE,B316,,,,,,§7 §9 SP Db Xi Xx,,BFP,4,Square Root 
+Square Root (EH),SQXR,"R1,R2",RRE,B336,,,,,,§7 §9 SP Da SQ,,HFP,4,Square Root 
+Subtract (32),SR,"R1,R2",RR,1B,,,,,,C IF,,General,1,Subtract 
+Shift Right Single (32),SRA,"R1,D2(B2)",RS-a,8A,,,,,,C,,General,1,Shift Right Single 
+Shift Right Single (64),SRAG,"R1,R3,D2(B2)",RSY-a,EB0A,,,,,,C,N,General,5,Shift Right Single 
+Shift Right Single (32),SRAK,"R1,R3,D2(B2)",RSY-a,EBDC,,,,,,C,DO,General,9,Shift Right Single 
+Shift Right Double (64),SRDA,"R1,D2(B2)",RS-a,8E,,,,,,C SP,,General,1,Shift Right Double 
+Shift Right Double Logical (64),SRDL,"R1,D2(B2)",RS-a,8C,,,,,,SP,,General,1,Shift Right Double Logical 
+Shift Significand Right (LD),SRDT,"R1,R3,D2(X2,B2)",RXF,ED41,,,,,,§7 §9 Dt,TF,DFP,7,Shift Significand Right 
+Subtract (32),SRK,"R1,R2,R3",RRF-a,B9F9,,,,,,C IF,DO,General,9,Subtract 
+Shift Right Single Logical (32),SRL,"R1,D2(B2)",RS-a,88,,,,,,,,General,1,Shift Right Single Logical 
+Shift Right Single Logical (64),SRLG,"R1,R3,D2(B2)",RSY-a,EB0C,,,,,,,N,General,5,Shift Right Single Logical 
+Shift Right Single Logical (32),SRLK,"R1,R3,D2(B2)",RSY-a,EBDE,,,,,,,DO,General,9,Shift Right Single Logical 
+Set BFP Rounding Mode (2 bit),SRNM,D2(B2),S,B299,,,,,,§7 §9 Db,,FP,4,Set BFP Rounding Mode 
+Set BFP Rounding Mode (3 bit),SRNMB,D2(B2),S,B2B8,,,,,,§7 §9 SP Db,F,FP,9,Set BFP Rounding Mode 
+Set DFP Rounding Mode,SRNMT,D2(B2),S,B2B9,,,,,,§7 §9 Dt,TR,FP,7,Set DFP Rounding Mode
+Shift and Round Decimal,SRP,"D1(L1,B1),D2(B2),I3",SS-c,F0,,,,,,C §9 A Dg DF ST B1 B2,,Decimal,1,Shift and Round Decimal
+Search String,SRST,"R1,R2",RRE,B25E,,,,,,C §9 A SP IC G0 R2,,General,4,Search String
+Search String Unicode,SRSTU,"R1,R2",RRE,B9BE,,,,,,C §9 A SP IC G0 R1 R2,E3,General,6,Search String Unicode
+Shift Significand Right (ED),SRXT,"R1,R3,D2(X2,B2)",RXF,ED49,,,,,,§7 §9 SP Dt,TF,DFP,7,Shift Significand Right 
+Set Secondary ASN with Instance,SSAIR,R1,RRE,B99F,,,,,,§1 A1* Z7 T ¢,RA,Control,6,Set Secondary ASN with Instance
+Set Secondary ASN,SSAR,R1,RRE,B225,,,,,,§1 A1* Z3 T ¢,,Control,2,Set Secondary ASN
+Start Subchannel,SSCH,D2(B2),S,B233,,,,,,C P A SP OP ¢ GS B2,,I/O,3,Start Subchannel
+Set Storage Key Extended,SSKE,"R1,R2[,M3]",RRF-d,B22B,,,,,,C1 P A1* II ¢ K,,Control,2,Set Storage Key Extended
+Set System Mask,SSM,D2(B2),SI,80,,,,,,P A SP SO B2,,Control,1,Set System Mask
+Store (32),ST,"R1,D2(X2,B2)",RX-a,50,,,,,,A ST B2,,General,1,Store 
+Store Access Multiple,STAM,"R1,R3,D2(B2)",RS-a,9B,,,,,,A SP ST UB,,General,4,Store Access Multiple
+Store Access Multiple,STAMY,"R1,R3,D2(B2)",RSY-a,EB9B,,,,,,A SP ST UB,LD,General,6,Store Access Multiple
+Store CPU Address,STAP,D2(B2),S,B212,,,,,,P A SP ST B2,,Control,2,Store CPU Address
+Store Character,STC,"R1,D2(X2,B2)",RX-a,42,,,,,,A ST B2,,General,1,Store Character
+Store Character High (8),STCH,"R1,D2(X2,B2)",RXY-a,E3C3,,,,,,A ST B2,HW,General,9,Store Character High 
+Store Clock,STCK,D2(B2),S,B205,,,,,,C §8 §9 A $ ST B2,,General,1,Store Clock
+Store Clock Comparator,STCKC,D2(B2),S,B207,,,,,,P A SP ST B2,,Control,1,Store Clock Comparator
+Store Clock Extended,STCKE,D2(B2),S,B278,,,,,,C §8 §9 A $ ST B2,,General,4,Store Clock Extended
+Store Clock Fast,STCKF,D2(B2),S,B27C,,,,,,C §8 §9 A ST B2,SC,General,7,Store Clock Fast
+Store Characters under Mask (low),STCM,"R1,M3,D2(B2)",RS-b,BE,,,,,,A ST B2,,General,1,Store Characters under Mask 
+Store Characters under Mask (high),STCMH,"R1,M3,D2(B2)",RSY-b,EB2C,,,,,,§9 §11 A ST B2,N,General,5,Store Characters under Mask 
+Store Characters under Mask (low),STCMY,"R1,M3,D2(B2)",RSY-b,EB2D,,,,,,A ST B2,LD,General,6,Store Characters under Mask 
+Store Channel Path Status,STCPS,D2(B2),S,B23A,,,,,,P A SP ¢ ST B2,,I/O,3,Store Channel Path Status
+Store Channel Report Word,STCRW,D2(B2),S,B239,,,,,,C P A SP ¢ ST B2,,I/O,3,Store Channel Report Word
+Store Control (64),STCTG,"R1,R3,D2(B2)",RSY-a,EB25,,,,,,P A SP ST B2,N,Control,5,Store Control 
+Store Control (32),STCTL,"R1,R3,D2(B2)",RS-a,B6,,,,,,P A SP ST B2,,Control,1,Store Control 
+Store Character,STCY,"R1,D2(X2,B2)",RXY-a,E372,,,,,,A ST B2,LD,General,6,Store Character
+Store (L),STD,"R1,D2(X2,B2)",RX-a,60,,,,,,§7 §9 A Da ST B2,,FP,1,Store 
+Store (L),STDY,"R1,D2(X2,B2)",RXY-a,ED67,,,,,,§7 §9 A Da ST B2,LD,FP,6,Store 
+Store (S),STE,"R1,D2(X2,B2)",RX-a,70,,,,,,§7 §9 A Da ST B2,,FP,1,Store 
+Store (S),STEY,"R1,D2(X2,B2)",RXY-a,ED66,,,,,,§7 §9 A Da ST B2,LD,FP,6,Store 
+Store High (32),STFH,"R1,D2(X2,B2)",RXY-a,E3CB,,,,,,A ST B2,HW,General,9,Store High 
+Store Facility List,STFL,D2(B2),S,B2B1,,,,,,P,N3,Control,4,Store Facility List
+Store Facility List Extended,STFLE,D2(B2),S,B2B0,,,,,,C §1 A SP G0 ST B2,FL,General,7,Store Facility List Extended
+Store FPC,STFPC,D2(B2),S,B29C,,,,,,§7 §9 A Db ST B2,,FP,4,Store FPC
+Store (64),STG,"R1,D2(X2,B2)",RXY-a,E324,,,,,,A ST B2,N,General,5,Store 
+Store Relative Long (64),STGRL,"R1,RI2",RIL-b,C4B,,,,,,A* SP ST,GE,General,8,Store Relative Long 
+Store guarded storage controls,STGSC,"R1,D2(X2,B2)",RXY-a,E349,,,,,,§1 A SO ST B2,GF,General,12,Store guarded storage controls
+Store Halfword (16),STH,"R1,D2(X2,B2)",RX-a,40,,,,,,A ST B2,,General,1,Store Halfword 
+Store Halfword High (16),STHH,"R1,D2(X2,B2)",RXY-a,E3C7,,,,,,A ST B2,HW,General,9,Store Halfword High 
+Store Halfword Relative Long (16),STHRL,"R1,RI2",RIL-b,C47,,,,,,A* ST,GE,General,8,Store Halfword Relative Long 
+Store Halfword (16),STHY,"R1,D2(X2,B2)",RXY-a,E370,,,,,,A ST B2,LD,General,6,Store Halfword 
+Store CPU ID,STIDP,D2(B2),S,B202,,,,,,P A SP ST B2,,Control,1,Store CPU ID
+Store Multiple (32),STM,"R1,R3,D2(B2)",RS-a,90,,,,,,A ST B2,,General,1,Store Multiple 
+Store Multiple (64),STMG,"R1,R3,D2(B2)",RSY-a,EB24,,,,,,A ST B2,N,General,5,Store Multiple 
+Store Multiple High (32),STMH,"R1,R3,D2(B2)",RSY-a,EB26,,,,,,A ST B2,N,General,5,Store Multiple High 
+Store Multiple (32),STMY,"R1,R3,D2(B2)",RSY-a,EB90,,,,,,A ST B2,LD,General,6,Store Multiple 
+Store Then And System Mask,STNSM,"D1(B1),I2",SI,AC,,,,,,P A ST B1,,Control,1,Store Then And System Mask
+Store on Condition (32),STOC,"R1,D2(B2),M3",RSY-b,EBF3,,,,,,A ST B2,L1,General,9,Store on Condition 
+Store High on Condition (32),STOCFH,"R1,D2(B2),M3",RSY-b,EBE1,,,,,,A ST B2,L2,General,11,Store High on Condition 
+Store on Condition (64),STOCG,"R1,D2(B2),M3",RSY-b,EBE3,,,,,,A ST B2,L1,General,9,Store on Condition 
+Store Then Or System Mask,STOSM,"D1(B1),I2",SI,AD,,,,,,P A SP ST B1,,Control,1,Store Then Or System Mask
+"Store Pair to Quadword (64,64ÔÅß128)",STPQ,"R1,D2(X2,B2)",RXY-a,E38E,,,,,,§9 A SP ST B2,N,General,5,Store Pair to Quadword 
+Store CPU Timer,STPT,D2(B2),S,B209,,,,,,P A SP ST B2,,Control,1,Store CPU Timer
+Store Prefix,STPX,D2(B2),S,B211,,,,,,P A SP ST B2,,Control,2,Store Prefix
+Store Real Address (64),STRAG,"D1(B1),D2(B2)",SSE,E502,,,,,,P A1 SP ST B1 BP,N,Control,5,Store Real Address 
+Store Relative Long (32),STRL,"R1,RI2",RIL-b,C4F,,,,,,A* SP ST,GE,General,8,Store Relative Long 
+Store Reversed (32),STRV,"R1,D2(X2,B2)",RXY-a,E33E,,,,,,A ST B2,N3,General,4,Store Reversed 
+Store Reversed (64),STRVG,"R1,D2(X2,B2)",RXY-a,E32F,,,,,,A ST B2,N,General,5,Store Reversed 
+Store Reversed (16),STRVH,"R1,D2(X2,B2)",RXY-a,E33F,,,,,,A ST B2,N3,General,4,Store Reversed 
+Store Subchannel,STSCH,D2(B2),S,B234,,,,,,C P A SP OP ¢ GS ST B2,,I/O,3,Store Subchannel
+Store System Information,STSI,D2(B2),S,B27D,,,,,,C P A SP GM ST B2,,Control,4,Store System Information
+Store Using Real Address (32),STURA,"R1,R2",RRE,B246,,,,,,P A1 SP SU,,Control,4,Store Using Real Address 
+Store Using Real Address (64),STURG,"R1,R2",RRE,B925,,,,,,P A1 SP SU,N,Control,5,Store Using Real Address 
+Store (32),STY,"R1,D2(X2,B2)",RXY-a,E350,,,,,,A ST B2,LD,General,6,Store 
+Subtract Unnormalized (SH),SU,"R1,D2(X2,B2)",RX-a,7F,,,,,,C §7 §9 A Da EO LS B2,,HFP,1,Subtract Unnormalized 
+Subtract Unnormalized (SH),SUR,"R1,R2",RR,3F,,,,,,C §7 §9 Da EO LS,,HFP,1,Subtract Unnormalized 
+Supervisor Call,SVC,I,I,0A,,,,,,§1 ¢,,General,1,Supervisor Call
+Subtract Unnormalized (LH),SW,"R1,D2(X2,B2)",RX-a,6F,,,,,,C §7 §9 A Da EO LS B2,,HFP,1,Subtract Unnormalized 
+Subtract Unnormalized (LH),SWR,"R1,R2",RR,2F,,,,,,C §7 §9 Da EO LS,,HFP,1,Subtract Unnormalized 
+Subtract (EB),SXBR,"R1,D2",RRE,B34B,,,,,,C §7 §9 SP Db Xi Xo Xu Xx,,BFP,4,Subtract 
+Subtract Normalized (EH),SXR,"R1,D2",RR,37,,,,,,C §7 §9 SP Da EU EO LS,,HFP,1,Subtract Normalized 
+Subtract (ED),SXTR,"R1,R2,R3",RRF-a,B3DB,,,,,,C §7 §9 SP Dt Xi Xo Xu Xx,TF,DFP,7,Subtract 
+Subtract (ED),SXTRA,"R1,R2,R3,M4",RRF-a,B3DB,,,,,,C §7 §9 SP Dt Xi Xo Xu Xx Xq,F,DFP,9,Subtract 
+Subtract (32),SY,"R1,D2(X2,B2)",RXY-a,E35B,,,,,,C A IF B2,LD,General,6,Subtract 
+Transaction Abort,TABORT,D2(B2),S,B2FC,,,,,,§9 SP SO $ EX,TX,General,10,Transaction Abort
+Test Addressing Mode,TAM,,E,010B,,,,,,C §9,N3,General,4,Test Addressing Mode
+Test Access,TAR,"R1,R2",RRE,B24C,,,,,,C §1 A1* U1,,Control,4,Test Access
+Test Block,TB,"R1,R2",RRE,B22C,,,,,,C P A1* II $ G0 K,,Control,2,Test Block
+Convert HFP to BFP (LB&larr;LH),TBDR,"R1,M3,R2",RRF-e,B351,,,,,,C §7 §9 SP Da,,FP,4,Convert HFP to BFP 
+Convert HFP to BFP (SB&larr;LH),TBEDR,"R1,M3,R2",RRF-e,B350,,,,,,C §7 §9 SP Da,,FP,4,Convert HFP to BFP 
+Transaction Begin (nonconstrained),TBEGIN,"D1(B1),I2",SIL,E560,,,,,,C §9 A SP SO $ EX ST,TX,General,10,Transaction Begin 
+Transaction Begin (constrained),TBEGINC,"D1(B1),I2",SIL,E561,,,,,,C §9 SP SO $ EX,CX,General,10,Transaction Begin 
+Test Data Class (LB),TCDB,"R1,D2(X2,B2)",RXE,ED11,,,,,,C §7 §9 Db,,BFP,4,Test Data Class 
+Test Data Class (SB),TCEB,"R1,D2(X2,B2)",RXE,ED10,,,,,,C §7 §9 Db,,BFP,4,Test Data Class 
+Test Data Class (EB),TCXB,"R1,D2(X2,B2)",RXE,ED12,,,,,,C §7 §9 SP Db,,BFP,4,Test Data Class 
+Test Data Class (LD),TDCDT,"R1,D2(X2,B2)",RXE,ED54,,,,,,C §7 §9 Dt,TF,DFP,7,Test Data Class 
+Test Data Class (SD),TDCET,"R1,D2(X2,B2)",RXE,ED50,,,,,,C §7 §9 Dt,TF,DFP,7,Test Data Class 
+Test Data Class (ED),TDCXT,"R1,D2(X2,B2)",RXE,ED58,,,,,,C §7 §9 SP Dt,TF,DFP,7,Test Data Class 
+Test Data Group (LD),TDGDT,"R1,D2(X2,B2)",RXE,ED55,,,,,,C §7 §9 Dt,TF,DFP,7,Test Data Group 
+Test Data Group (SD),TDGET,"R1,D2(X2,B2)",RXE,ED51,,,,,,C §7 §9 Dt,TF,DFP,7,Test Data Group 
+Test Data Group (ED),TDGXT,"R1,D2(X2,B2)",RXE,ED59,,,,,,C §7 §9 SP Dt,TF,DFP,7,Test Data Group 
+Transaction End,TEND,,S,B2F8,,,,,,C SO $ EX,TX,General,10,Transaction End
+Convert BFP to HFP (LH&larr;SB),THDER,"R1,R2",RRE,B358,,,,,,C §7 §9 Da,,FP,4,Convert BFP to HFP 
+Convert BFP to HFP (LH&larr;LB),THDR,"R1,R2",RRE,B359,,,,,,C §7 §9 Da,,FP,4,Convert BFP to HFP 
+Test under Mask,TM,"D1(B1),I2",SI,91,,,,,,C A B1,,General,1,Test under Mask
+Test under Mask High,TMH,"R1,I2",RI-a,A70,,,,,,C,,General,4,Test under Mask High
+Test under Mask (high high),TMHH,"R1,I2",RI-a,A72,,,,,,C,N,General,5,Test under Mask 
+Test under Mask (high low),TMHL,"R1,I2",RI-a,A73,,,,,,C,N,General,5,Test under Mask 
+Test under Mask Low,TML,"R1,I2",RI-a,A71,,,,,,C,,General,4,Test under Mask Low
+Test under Mask (low high),TMLH,"R1,I2",RI-a,A70,,,,,,C,N,General,4,Test under Mask 
+Test under Mask (low low),TMLL,"R1,I2",RI-a,A71,,,,,,C,N,General,4,Test under Mask 
+Test under Mask,TMY,"D1(B1),I2",SIY,EB51,,,,,,C A B1,LD,General,6,Test under Mask
+Test Decimal,TP,"D1(L1,B1)",RSL-a,EBC0,,,,,,C §9 A B1 B2,E2,Decimal,5,Test Decimal
+Test Pending External Interruption,TPEI,"R1,R2",RRE,B9A1,,,,,,C P,TE,Control,12,Test Pending External Interruption
+Test Pending Interruption,TPI,D2(B2),S,B236,,,,,,C P A1* SP ¢ ST B2,,I/O,3,Test Pending Interruption
+Test Protection,TPROT,"D1(B1),D2(B2)",SSE,E501,,,,,,C P A1* B1,,Control,2,Test Protection
+Translate,TR,"D1(L,B1),D2(B2)",SS-a,DC,,,,,,§9 A ST B1 B2,,General,1,Translate
+Trace (32),TRACE,"R1,R3,D2(B2)",RS-a,99,,,,,,P A SP T ¢ B2,,Control,3,Trace 
+Trace (64),TRACG,"R1,R3,D2(B2)",RSY-a,EB0F,,,,,,P A SP T ¢ B2,N,Control,5,Trace 
+Trap,TRAP2,,E,01FF,,,,,,§1 A* SO T B ST,,Control,4,Trap
+Trap,TRAP4,D2(B2),S,B2FF,,,,,,§1 A* SO T B ST,,Control,4,Trap
+Translate Extended,TRE,"R1,R2",RRE,B2A5,,,,,,C §9 A SP IC ST R1 R2,,General,4,Translate Extended
+Translate One to One,TROO,"R1,R2[,M3]",RRF-c,B993,,,,,,C §9 A SP IC GM ST RM R2,E2,General,5,Translate One to One
+Translate One to Two,TROT,"R1,R2[,M3]",RRF-c,B992,,,,,,C §9 A SP IC GM ST RM R2,E2,General,5,Translate One to Two
+Translate and Test,TRT,"D1(L,B1),D2(B2)",SS-a,DD,,,,,,C §9 A GM B1 B2,,General,1,Translate and Test
+Translate and Test Extended,TRTE,"R1,R2[,M3]",RRF-c,B9BF,,,,,,C §9 A SP IC ST RM,PE,General,8,Translate and Test Extended
+Translate Two to One,TRTO,"R1,R2[,M3]",RRF-c,B991,,,,,,C §9 A SP IC GM ST RM R2,E2,General,5,Translate Two to One
+Translate and Test Reverse,TRTR,"D1(L,B1),D2(B2)",SS-a,D0,,,,,,C §9 A GM B1 B2,E3,General,6,Translate and Test Reverse
+Translate and Test Reverse Extended,TRTRE,"R1,R2[,M3]",RRF-c,B9BD,,,,,,C §9 A SP IC ST RM,PE,General,8,Translate and Test Reverse Extended
+Translate Two to Two,TRTT,"R1,R2[,M3]",RRF-c,B990,,,,,,C §9 A SP IC GM ST RM R2,E2,General,5,Translate Two to Two
+Test and Set,TS,D2(B2),SI,93,,,,,,C §9 A $ ST B2,,General,1,Test and Set
+Test Subchannel,TSCH,D2(B2),S,B235,,,,,,C P A SP OP ¢ GS ST B2,,I/O,3,Test Subchannel
+Unpack,UNPK,"D1(L1,B1),D2(L2,B2)",SS-b,F3,,,,,,§9 A ST B1 B2,,General,1,Unpack
+Unpack ASCII,UNPKA,"D1(L1,B1),D2(B2)",SS-a,EA,,,,,,C §9 A SP ST B1 B2,E2,General,5,Unpack ASCII
+Unpack Unicode,UNPKU,"D1(L1,B1),D2(B2)",SS-a,E2,,,,,,C §9 A SP ST B1 B2,E2,General,5,Unpack Unicode
+Update Tree,UPT,,E,0102,,,,,,C §9 A SP II GM I4 ST,,General,3,Update Tree
+Vector Add,VA,"V1,V2,V3,M4",VRR-c,E7F3,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Add
+Vector Add With Carry,VAC,"V1,V2,V3,V4,M5",VRR-d,E7BB,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Add With Carry
+Vector Add Compute Carry,VACC,"V1,V2,V3,M4",VRR-c,E7F1,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Add Compute Carry
+Vector Add With Carry Compute Carry,VACCC,"V1,V2,V3,V4,M5",VRR-d,E7B9,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Add With Carry Compute Carry
+Vector Add Decimal,VAP,"V1,V2,V3,I4,M5",VRI-f,E671,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Add Decimal
+Vector Average,VAVG,"V1,V2,V3,M4",VRR-c,E7F2,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Average
+Vector Average Logical,VAVGL,"V1,V2,V3,M4",VRR-c,E7F0,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Average Logical
+Vector Bit Permute,VBPERM,"V1,V2,V3",VRR-c,E785,,,,,,§7 §9 Dv,V1,Vector,12,Vector Bit Permute
+Vector FP Convert from Fixed 64-bit,VCDG,"V1,V2,M3,M4,M5",VRR-a,E7C3,,,,,,§7 §9 SP Dv Xx,VF,Vector FP,11,Vector FP Convert from Fixed 64-bit
+Vector FP Convert from Logical 64-bit,VCDLG,"V1,V2,M3,M4,M5",VRR-a,E7C1,,,,,,§7 §9 SP Dv Xx,VF,Vector FP,11,Vector FP Convert from Logical 64-bit
+Vector Compare Equal,VCEQ,"V1,V2,V3,M4,M5",VRR-b,E7F8,,,,,,C* §7 §9 SP Dv,VF,Vector Int,11,Vector Compare Equal
+Vector FP Convert from Logical,VCFPL,"V1,V2,M3,M4,M5",VRR-a,E7C1,,,,,,§7 §9 SP Dv Xx,V2,Vector FP,13,Vector FP Convert from Logical
+Vector FP Convert from Fixed,VCFPS,"V1,V2,M3,M4,M5",VRR-a,E7C3,,,,,,§7 §9 SP Dv Xx,V2,Vector FP,13,Vector FP Convert from Fixed
+Vector FP Convert to Fixed 64-bit,VCGD,"V1,V2,M3,M4,M5",VRR-a,E7C2,,,,,,§7 §9 SP Dv Xi Xx,VF,Vector FP,11,Vector FP Convert to Fixed 64-bit
+Vector Compare High,VCH,"V1,V2,V3,M4,M5",VRR-b,E7FB,,,,,,C* §7 §9 SP Dv,VF,Vector Int,11,Vector Compare High
+Vector Compare High Logical,VCHL,"V1,V2,V3,M4,M5",VRR-b,E7F9,,,,,,C* §7 §9 SP Dv,VF,Vector Int,11,Vector Compare High Logical
+Vector Checksum,VCKSM,"V1,V2,V3",VRR-c,E766,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Checksum
+Vector FP Convert to Logical,VCLFP,"V1,V2,M3,M4,M5",VRR-a,E7C0,,,,,,§7 §9 SP Dv Xi Xx,V2,Vector FP,13,Vector FP Convert to Logical
+Vector FP Convert to Logical 64-bit,VCLGD,"V1,V2,M3,M4,M5",VRR-a,E7C0,,,,,,§7 §9 SP Dv Xi Xx,VF,Vector FP,11,Vector FP Convert to Logical 64-bit
+Vector Count Leading Zeros,VCLZ,"V1,V2,M3",VRR-a,E753,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Count Leading Zeros
+Vector Compare Decimal,VCP,"V1,V2,M3",VRR-h,E677,,,,,,C §7 §9 Dv Dg,VD,Vector Dec,12,Vector Compare Decimal
+Vector FP Convert to Fixed,VCSFP,"V1,V2,M3,M4,M5",VRR-a,E7C2,,,,,,§7 §9 SP Dv Xi Xx,V2,Vector FP,13,Vector FP Convert to Fixed
+Vector Count Trailing Zeros,VCTZ,"V1,V2,M3",VRR-a,E752,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Count Trailing Zeros
+Vector Convert to Binary,VCVB,"R1,V2,M3",VRR-i,E650,,,,,,C* §7 §9 Dv Dg IF*,VD,Vector Dec,12,Vector Convert to Binary
+Vector Convert to Binary,VCVBG,"R1,V2,M3",VRR-i,E652,,,,,,C* §7 §9 Dv Dg IF*,VD,Vector Dec,12,Vector Convert to Binary
+Vector Convert to Decimal,VCVD,"V1,R2,I3,M4",VRI-i,E658,,,,,,C* §7 §9 SP Dv DF*,VD,Vector Dec,12,Vector Convert to Decimal
+Vector Convert to Decimal,VCVDG,"V1,R2,I3,M4",VRI-i,E65A,,,,,,C* §7 §9 SP Dv DF*,VD,Vector Dec,12,Vector Convert to Decimal
+Vector Divide Decimal,VDP,"V1,V2,V3,I4,M5",VRI-f,E67A,,,,,,C* §7 §9 SP Dv Dg DF* DK,VD,Vector Dec,12,Vector Divide Decimal
+Vector Element Compare,VEC,"V1,V2,M3",VRR-a,E7DB,,,,,,C §7 §9 SP Dv,VF,Vector Int,11,Vector Element Compare
+Vector Element Compare Logical,VECL,"V1,V2,M3",VRR-a,E7D9,,,,,,C §7 §9 SP Dv,VF,Vector Int,11,Vector Element Compare Logical
+Vector Element Rotate and Insert Under Mask,VERIM,"V1,V2,V3,I4,M5",VRI-d,E772,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Rotate and Insert Under Mask
+Vector Element Rotate Left Logical,VERLL,"V1,V3,D2(B2),M4",VRS-a,E733,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Rotate Left Logical
+Vector Element Rotate Left Logical,VERLLV,"V1,V2,V3,M4",VRR-c,E773,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Rotate Left Logical
+Vector Element Shift Left,VESL,"V1,V3,D2(B2),M4",VRS-a,E730,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Left
+Vector Element Shift Left,VESLV,"V1,V2,V3,M4",VRR-c,E770,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Left
+Vector Element Shift Right Arithmetic,VESRA,"V1,V3,D2(B2),M4",VRS-a,E73A,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Right Arithmetic
+Vector Element Shift Right Arithmetic,VESRAV,"V1,V2,V3,M4",VRR-c,E77A,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Right Arithmetic
+Vector Element Shift Right Logical,VESRL,"V1,V3,D2(B2),M4",VRS-a,E738,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Right Logical
+Vector Element Shift Right Logical,VESRLV,"V1,V2,V3,M4",VRR-c,E778,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Element Shift Right Logical
+Vector FP Add,VFA,"V1,V2,V3,M4,M5",VRR-c,E7E3,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,11,Vector FP Add
+Vector Find Any Element Equal,VFAE,"V1,V2,V3,M4[,M5]",VRR-b,E782,,,,,,C* §7 §9 SP Dv,VF,Vector Str,11,Vector Find Any Element Equal
+Vector FP Compare Equal,VFCE,"V1,V2,V3,M4,M5,M6",VRR-c,E7E8,,,,,,C* §7 §9 SP Dv Xi,VF,Vector FP,11,Vector FP Compare Equal
+Vector FP Compare High,VFCH,"V1,V2,V3,M4,M5,M6",VRR-c,E7EB,,,,,,C* §7 §9 SP Dv Xi,VF,Vector FP,11,Vector FP Compare High
+Vector FP Compare High or Equal,VFCHE,"V1,V2,V3,M4,M5,M6",VRR-c,E7EA,,,,,,C* §7 §9 SP Dv Xi,VF,Vector FP,11,Vector FP Compare High or Equal
+Vector FP Divide,VFD,"V1,V2,V3,M4,M5",VRR-c,E7E5,,,,,,§7 §9 SP Dv Xi Xz Xo Xu Xx,VF,Vector FP,11,Vector FP Divide
+Vector Find Element Equal,VFEE,"V1,V2,V3,M4[,M5]",VRR-b,E780,,,,,,C* §7 §9 SP Dv,VF,Vector Str,11,Vector Find Element Equal
+Vector Find Element Not Equal,VFENE,"V1,V2,V3,M4[,M5]",VRR-b,E781,,,,,,C* §7 §9 SP Dv,VF,Vector Str,11,Vector Find Element Not Equal
+Vector Load FP Integer,VFI,"V1,V2,M3,M4,M5",VRR-a,E7C7,,,,,,§7 §9 SP Dv Xi Xx,VF,Vector FP,11,Vector Load FP Integer
+Vector FP Load Lengthened,VFLL,"V1,V2,M3,M4",VRR-a,E7C4,,,,,,§7 §9 SP Dv Xi,VF,Vector FP,12,Vector FP Load Lengthened
+Vector FP Load Rounded,VFLR,"V1,V2,M3,M4,M5",VRR-a,E7C5,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,12,Vector FP Load Rounded
+Vector FP Multiply,VFM,"V1,V2,V3,M4,M5",VRR-c,E7E7,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,11,Vector FP Multiply
+Vector FP Multiply and Add,VFMA,"V1,V2,V3,V4,M5,M6",VRR-e,E78F,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,11,Vector FP Multiply and Add
+Vector FP Maximum,VFMAX,"V1,V2,V3,M4,M5,M6",VRR-c,E7EF,,,,,,§7 §9 SP Dv Xi,V1,Vector FP,12,Vector FP Maximum
+Vector FP Minimum,VFMIN,"V1,V2,V3,M4,M5,M6",VRR-c,E7EE,,,,,,§7 §9 SP Dv Xi,V1,Vector FP,12,Vector FP Minimum
+Vector FP Multiply and Subtract,VFMS,"V1,V2,V3,V4,M5,M6",VRR-e,E78E,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,11,Vector FP Multiply and Subtract
+Vector FP Negative Multiply and Add,VFNMA,"V1,V2,V3,V4,M5,M6",VRR-e,E79F,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,V1,Vector FP,12,Vector FP Negative Multiply and Add
+Vector FP Negative Multiply and Subtract,VFNMS,"V1,V2,V3,V4,M5,M6",VRR-e,E79E,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,V1,Vector FP,12,Vector FP Negative Multiply and Subtract
+Vector FP Perform Sign Operation,VFPSO,"V1,V2,M3,M4,M5",VRR-a,E7CC,,,,,,§7 §9 SP Dv,VF,Vector FP,11,Vector FP Perform Sign Operation
+Vector FP Subtract,VFS,"V1,V2,V3,M4,M5",VRR-c,E7E2,,,,,,§7 §9 SP Dv Xi Xo Xu Xx,VF,Vector FP,11,Vector FP Subtract
+Vector FP Square Root,VFSQ,"V1,V2,M3,M4",VRR-a,E7CE,,,,,,§7 §9 SP Dv Xi Xx,VF,Vector FP,11,Vector FP Square Root
+Vector FP Test Data Class Immediate,VFTCI,"V1,V2,I3,M4,M5",VRI-e,E74A,,,,,,C §7 §9 SP Dv,VF,Vector FP,11,Vector FP Test Data Class Immediate
+Vector Generate Byte Mask,VGBM,"V1,I2",VRI-a,E744,,,,,,§7 §9 Dv,VF,Vector,11,Vector Generate Byte Mask
+Vector Gather Element (32),VGEF,"V1,D2(V2,B2),M3",VRV,E713,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Gather Element 
+Vector Gather Element (64),VGEG,"V1,D2(V2,B2),M3",VRV,E712,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Gather Element 
+Vector Galois Field Multiply Sum,VGFM,"V1,V2,V3,M4",VRR-c,E7B4,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Galois Field Multiply Sum
+Vector Galois Field Multiply Sum and Accumulate,VGFMA,"V1,V2,V3,V4,M5",VRR-d,E7BC,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Galois Field Multiply Sum and Accumulate
+Vector Generate Mask,VGM,"V1,I2,I3,V4",VRI-b,E746,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Generate Mask
+Vector Isolate String,VISTR,"V1,V2,M3[,M5]",VRR-a,E75C,,,,,,C* §7 §9 SP Dv,VF,Vector Str,11,Vector Isolate String
+Vector Load,VL,"V1,D2(X2,B2)",VRX,E706,,,,,,§7 §9 A Dv B2,VF,Vector,11,Vector Load
+Vector Load to Block Boundary,VLBB,"V1,D2(X2,B2),M3",VRX,E707,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load to Block Boundary
+Vector Load Byte Reversed Elements,VLBR,"V1,D2(X2,B2),M3",VRX,E606,,,,,,§7 §9 A SP Dv B2,V2,Vector,13,Vector Load Byte Reversed Elements
+Vector Load Byte Reversed Element and Replicate,VLBRREP,"V1,D2(X2,B2),M3",VRX,E605,,,,,,§7 §9 A SP Dv B2,V2,Vector,13,Vector Load Byte Reversed Element and Replicate
+Vector Load Complement,VLC,"V1,V2,M3",VRR-a,E7DE,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Load Complement
+Vector Load Element (8),VLEB,"V1,D2(X2,B2),M3",VRX,E700,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Element 
+Vector Load Element (32),VLEF,"V1,D2(X2,B2),M3",VRX,E703,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Element 
+Vector Load Element (64),VLEG,"V1,D2(X2,B2),M3",VRX,E702,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Element 
+Vector Load Element (16),VLEH,"V1,D2(X2,B2),M3",VRX,E701,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Element 
+Vector Load Element Immediate (8),VLEIB,"V1,I2,M3",VRI-a,E740,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load Element Immediate 
+Vector Load Element Immediate (32),VLEIF,"V1,I2,M3",VRI-a,E743,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load Element Immediate 
+Vector Load Element Immediate (64),VLEIG,"V1,I2,M3",VRI-a,E742,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load Element Immediate 
+Vector Load Element Immediate (16),VLEIH,"V1,I2,M3",VRI-a,E741,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load Element Immediate 
+Vector Load Elements Reversed,VLER,"V1,D2(X2,B2),M3",VRX,E607,,,,,,§7 §9 A SP Dv B2,V2,Vector,13,Vector Load Elements Reversed
+Vector Load GR from VR Element,VLGV,"R1,V3,D2(B2),M4",VRS-c,E721,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load GR from VR Element
+Vector Load Immediate Decimal,VLIP,"V1,I2,I3",VRI-h,E649,,,,,,§7 §9 Dv Dg,VD,Vector Dec,12,Vector Load Immediate Decimal
+Vector Load With Length,VLL,"V1,R3,D2(B2)",VRS-b,E737,,,,,,§7 §9 A Dv B2,VF,Vector,11,Vector Load With Length
+Vector Load Byte Reversed Element (32),VLEBRF,"V1,D2(X2,B2),M3",VRX,E603,,,,,,§7 §9 A Dv B2,VF,Vector,13,Vector Load Byte Reversed Element 
+Vector Load Byte Reversed Element (64),VLEBRG,"V1,D2(X2,B2),M3",VRX,E602,,,,,,§7 §9 A Dv B2,VF,Vector,13,Vector Load Byte Reversed Element 
+Vector Load Byte Reversed Element (16),VLEBRH,"V1,D2(X2,B2),M3",VRX,E601,,,,,,§7 §9 A Dv B2,VF,Vector,13,Vector Load Byte Reversed Element 
+Vector Load Byte Reversed Element and Zero,VLLEBRZ,"V1,D2(X2,B2),M3",VRX,E604,,,,,,§7 §9 A SP Dv B2,V2,Vector,13,Vector Load Byte Reversed Element and Zero
+Vector Load Logical Element and Zero,VLLEZ,"V1,D2(X2,B2),M3",VRX,E704,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Logical Element and Zero
+Vector Load Multiple,VLM,"V1,V3,D2(B2)",VRS-a,E736,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load Multiple
+Vector Load Positive,VLP,"V1,V2,M3",VRR-a,E7DF,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Load Positive
+Vector Load,VLR,"V1,V2",VRR-a,E756,,,,,,§7 §9 Dv,VF,Vector,11,Vector Load
+Vector Load and Replicate,VLREP,"V1,D2(X2,B2),M3",VRX,E705,,,,,,§7 §9 A SP Dv B2,VF,Vector,11,Vector Load and Replicate
+Vector Load Rightmost with Length,VLRL,"V1,D2(B2),I3",VSI,E635,,,,,,§7 §9 A SP Dv B2,VD,Vector,12,Vector Load Rightmost with Length
+Vector Load Rightmost with Length,VLRLR,"V1,R3,D2(B2)",VRS-d,E637,,,,,,§7 §9 A Dv B2,VD,Vector,12,Vector Load Rightmost with Length
+Vector Load VR Element from GR,VLVG,"V1,R3,D2(B2),M4",VRS-b,E722,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Load VR Element from GR
+Vector Load VR from GRs Disjoint,VLVGP,"V1,R2,R3",VRR-f,E762,,,,,,§7 §9 Dv,VF,Vector,11,Vector Load VR from GRs Disjoint
+Vector Multiply and Add Even,VMAE,"V1,V2,V3,V4,M5",VRR-d,E7AE,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Even
+Vector Multiply and Add High,VMAH,"V1,V2,V3,V4,M5",VRR-d,E7AB,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add High
+Vector Multiply and Add Low,VMAL,"V1,V2,V3,V4,M5",VRR-d,E7AA,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Low
+Vector Multiply and Add Logical Even,VMALE,"V1,V2,V3,V4,M5",VRR-d,E7AC,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Logical Even
+Vector Multiply and Add Logical High,VMALH,"V1,V2,V3,V4,M5",VRR-d,E7A9,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Logical High
+Vector Multiply and Add Logical Odd,VMALO,"V1,V2,V3,V4,M5",VRR-d,E7AD,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Logical Odd
+Vector Multiply and Add Odd,VMAO,"V1,V2,V3,V4,M5",VRR-d,E7AF,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply and Add Odd
+Vector Multiply Even,VME,"V1,V2,V3,M4",VRR-c,E7A6,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Even
+Vector Multiply High,VMH,"V1,V2,V3,M4",VRR-c,E7A3,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply High
+Vector Multiply Low,VML,"V1,V2,V3,M4",VRR-c,E7A2,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Low
+Vector Multiply Logical Even,VMLE,"V1,V2,V3,M4",VRR-c,E7A4,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Logical Even
+Vector Multiply Logical High,VMLH,"V1,V2,V3,M4",VRR-c,E7A1,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Logical High
+Vector Multiply Logical Odd,VMLO,"V1,V2,V3,M4",VRR-c,E7A5,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Logical Odd
+Vector Minimum,VMN,"V1,V2,V3,M4",VRR-c,E7FE,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Minimum
+Vector Minimum Logical,VMNL,"V1,V2,V3,M4",VRR-c,E7FC,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Minimum Logical
+Vector Multiply Odd,VMO,"V1,V2,V3,M4",VRR-c,E7A7,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Multiply Odd
+Vector Multiply Decimal,VMP,"V1,V2,V3,I4,M5",VRI-f,E678,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Multiply Decimal
+Vector Merge High,VMRH,"V1,V2,V3,M4",VRR-c,E761,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Merge High
+Vector Merge Low,VMRL,"V1,V2,V3,M4",VRR-c,E760,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Merge Low
+Vector Multiply Sum Logical,VMSL,"V1,V2,V3,V4,M5,M6",VRR-d,E6B8,,,,,,§7 §9 SP Dv,V1,Vector Int,12,Vector Multiply Sum Logical
+Vector Multiply and Shift Decimal,VMSP,"V1,V2,V3,I4,M5",VRI-f,E679,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Multiply and Shift Decimal
+Vector Maximum,VMX,"V1,V2,V3,M4",VRR-c,E7FF,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Maximum
+Vector Maximum Logical,VMXL,"V1,V2,V3,M4",VRR-c,E7FD,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Maximum Logical
+Vector AND,VN,"V1,V2,V3",VRR-c,E768,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector AND
+Vector AND with Complement,VNC,"V1,V2,V3",VRR-c,E769,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector AND with Complement
+Vector NAND,VNN,"V1,V2,V3",VRR-c,E76E,,,,,,§7 §9 Dv,V1,Vector Int,12,Vector NAND
+Vector NOR,VNO,"V1,V2,V3",VRR-c,E76B,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector NOR
+Vector Not Exclusive OR,VNX,"V1,V2,V3",VRR-c,E76C,,,,,,§7 §9 Dv,V1,Vector Int,12,Vector Not Exclusive OR
+Vector OR,VO,"V1,V2,V3",VRR-c,E76A,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector OR
+Vector OR with Complement,VOC,"V1,V2,V3",VRR-c,E76F,,,,,,§7 §9 Dv,V1,Vector Int,12,Vector OR with Complement
+Vector Permute Doubleword Immediate,VPDI,"V1,V2,V3,M4",VRR-c,E784,,,,,,§7 §9 Dv,VF,Vector,11,Vector Permute Doubleword Immediate
+Vector Permute,VPERM,"V1,V2,V3,V4",VRR-e,E78C,,,,,,§7 §9 Dv,VF,Vector,11,Vector Permute
+Vector Pack,VPK,"V1,V2,V3,M4",VRR-c,E794,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Pack
+Vector Pack Logical Saturate,VPKLS,"V1,V2,V3,M4,M5",VRR-b,E795,,,,,,C* §7 §9 SP Dv,VF,Vector,11,Vector Pack Logical Saturate
+Vector Pack Saturate,VPKS,"V1,V2,V3,M4,M5",VRR-b,E797,,,,,,C* §7 §9 SP Dv,VF,Vector,11,Vector Pack Saturate
+Vector Pack Zoned,VPKZ,"V1,D2(B2),I3",VSI,E634,,,,,,§7 §9 A SP Dv B2,VD,Vector Dec,12,Vector Pack Zoned
+Vector Population Count,VPOPCT,"V1,V2,M3",VRR-a,E750,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Population Count
+Vector Perform Sign Operation Decimal,VPSOP,"V1,V2,I3,I4,M5",VRI-g,E65B,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Perform Sign Operation Decimal
+Vector Replicate,VREP,"V1,V3,I2,M4",VRI-c,E74D,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Replicate
+Vector Replicate Immediate,VREPI,"V1,I2,M3",VRI-a,E745,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Replicate Immediate
+Vector Remainder Decimal,VRP,"V1,V2,V3,I4,M5",VRI-f,E67B,,,,,,C* §7 §9 SP Dv Dg DF* DK,VD,Vector Dec,12,Vector Remainder Decimal
+Vector Subtract,VS,"V1,V2,V3,M4",VRR-c,E7F7,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Subtract
+Vector Subtract With Borrow Compute Borrow Indication,VSBCBI,"V1,V2,V3,V4,M5",VRR-d,E7BD,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Subtract With Borrow Compute Borrow Indication
+Vector Subtract With Borrow Indication,VSBI,"V1,V2,V3,V4,M5",VRR-d,E7BF,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Subtract With Borrow Indication
+Vector Subtract Compute Borrow Indication,VSCBI,"V1,V2,V3,M4",VRR-c,E7F5,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Subtract Compute Borrow Indication
+Vector Scatter Element (32),VSCEF,"V1,D2(V2,B2),M3",VRV,E71B,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Scatter Element 
+Vector Scatter Element (64),VSCEG,"V1,D2(V2,B2),M3",VRV,E71A,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Scatter Element 
+Vector Shift and Divide Decimal,VSDP,"V1,V2,V3,I4,M5",VRI-f,E67E,,,,,,C* §7 §9 SP Dv Dg DF* DK,VD,Vector Dec,12,Vector Shift and Divide Decimal
+Vector Sign Extend to Doubleword,VSEG,"V1,V2,M3",VRR-a,E75F,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Sign Extend to Doubleword
+Vector Select,VSEL,"V1,V2,V3,V4",VRR-e,E78D,,,,,,§7 §9 Dv,VF,Vector,11,Vector Select
+Vector Shift Left,VSL,"V1,V2,V3",VRR-c,E774,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Left
+Vector Shift Left By Byte,VSLB,"V1,V2,V3",VRR-c,E775,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Left By Byte
+Vector Shift Left Double by Bit,VSLD,"V1,V2,V3,I4",VRI-d,E786,,,,,,§7 §9 SP Dv,V2,Vector Int,13,Vector Shift Left Double by Bit
+Vector Shift Left Double By Byte,VSLDB,"V1,V2,V3,I4",VRI-d,E777,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Left Double By Byte
+Vector Subtract Decimal,VSP,"V1,V2,V3,I4,M5",VRI-f,E673,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Subtract Decimal
+Vector Shift Right Arithmetic,VSRA,"V1,V2,V3",VRR-c,E77E,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Right Arithmetic
+Vector Shift Right Arithmetic By Byte,VSRAB,"V1,V2,V3",VRR-c,E77F,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Right Arithmetic By Byte
+Vector Shift Right Double by Bit,VSRD,"V1,V2,V3,I4",VRI-d,E787,,,,,,§7 §9 SP Dv,V2,Vector Int,13,Vector Shift Right Double by Bit
+Vector Shift Right Logical,VSRL,"V1,V2,V3",VRR-c,E77C,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Right Logical
+Vector Shift Right Logical By Byte,VSRLB,"V1,V2,V3",VRR-c,E77D,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Shift Right Logical By Byte
+Vector Shift and Round Decimal,VSRP,"V1,V2,I3,I4,M5",VRI-g,E659,,,,,,C* §7 §9 SP Dv Dg DF*,VD,Vector Dec,12,Vector Shift and Round Decimal
+Vector Store,VST,"V1,D2(X2,B2)",VRX,E70E,,,,,,§7 §9 A Dv ST B2,VF,Vector,11,Vector Store
+Vector Store Byte Reversed Elements,VSTBR,"V1,D2(X2,B2),M3",VRX,E60E,,,,,,§7 §9 A SP Dv ST B2,V2,Vector,13,Vector Store Byte Reversed Elements
+Vector Store Element (8),VSTEB,"V1,D2(X2,B2),M3",VRX,E708,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Store Element 
+Vector Store Byte Reversed Element (32),VSTEBRF,"V1,D2(X2,B2),M3",VRX,E60B,,,,,,§7 §9 A SP Dv ST B2,V2,Vector,13,Vector Store Byte Reversed Element 
+Vector Store Byte Reversed Element (64),VSTEBRG,"V1,D2(X2,B2),M3",VRX,E60A,,,,,,§7 §9 A SP Dv ST B2,V2,Vector,13,Vector Store Byte Reversed Element 
+Vector Store Byte Reversed Element (16),VSTEBRH,"V1,D2(X2,B2),M3",VRX,E609,,,,,,§7 §9 A SP Dv ST B2,V2,Vector,13,Vector Store Byte Reversed Element 
+Vector Store Element (32),VSTEF,"V1,D2(X2,B2),M3",VRX,E70B,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Store Element 
+Vector Store Element (64),VSTEG,"V1,D2(X2,B2),M3",VRX,E70A,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Store Element 
+Vector Store Element (16),VSTEH,"V1,D2(X2,B2),M3",VRX,E709,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Store Element 
+Vector Store Elements Reversed,VSTER,"V1,D2(X2,B2),M3",VRX,E60F,,,,,,§7 §9 A SP Dv ST B2,V2,Vector,13,Vector Store Elements Reversed
+Vector Store With Length,VSTL,"V1,R3,D2(B2)",VRS-b,E73F,,,,,,§7 §9 A Dv ST B2,VF,Vector,11,Vector Store With Length
+Vector Store Multiple,VSTM,"V1,V3,D2(B2)",VRS-a,E73E,,,,,,§7 §9 A SP Dv ST B2,VF,Vector,11,Vector Store Multiple
+Vector String Range Compare,VSTRC,"V1,V2,V3,V4,M5[,M6]",VRR-d,E78A,,,,,,C* §7 §9 SP Dv,VF,Vector Str,11,Vector String Range Compare
+Vector Store Rightmost with Length,VSTRL,"V1,D2(B2),I3",VSI,E63D,,,,,,§7 §9 A SP Dv ST B2,VD,Vector,12,Vector Store Rightmost with Length
+Vector Store Rightmost with Length,VSTRLR,"V1,R3,D2(B2)",VRS-d,E63F,,,,,,§7 §9 A Dv ST B2,VD,Vector,12,Vector Store Rightmost with Length
+Vector String Search,VSTRS,"V1,V2,V3,V4,M5[,M6]",VRR-d,E78B,,,,,,C §7 §9 SP Dv,V2,Vector Str,13,Vector String Search
+Vector Sum Across Word,VSUM,"V1,V2,V3,M4",VRR-c,E764,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Sum Across Word
+Vector Sum Across Doubleword,VSUMG,"V1,V2,V3,M4",VRR-c,E765,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Sum Across Doubleword
+Vector Sum Across Quadword,VSUMQ,"V1,V2,V3,M4",VRR-c,E767,,,,,,§7 §9 SP Dv,VF,Vector Int,11,Vector Sum Across Quadword
+Vector Test Under Mask,VTM,"V1,V2",VRR-a,E7D8,,,,,,C §7 §9 Dv,VF,Vector Int,11,Vector Test Under Mask
+Vector Test Decimal,VTP,V1,VRR-g,E65F,,,,,,C §7 §9 Dv,VD,Vector Dec,12,Vector Test Decimal
+Vector Unpack High,VUPH,"V1,V2,M3",VRR-a,E7D7,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Unpack High
+Vector Unpack Zoned,VUPKZ,"V1,D2(B2),I3",VSI,E63C,,,,,,§7 §9 A SP Dv ST B2,VD,Vector Dec,12,Vector Unpack Zoned
+Vector Unpack Low,VUPL,"V1,V2,M3",VRR-a,E7D6,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Unpack Low
+Vector Unpack Logical High,VUPLH,"V1,V2,M3",VRR-a,E7D5,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Unpack Logical High
+Vector Unpack Logical Low,VUPLL,"V1,V2,M3",VRR-a,E7D4,,,,,,§7 §9 SP Dv,VF,Vector,11,Vector Unpack Logical Low
+Vector Exclusive OR,VX,"V1,V2,V3",VRR-c,E76D,,,,,,§7 §9 Dv,VF,Vector Int,11,Vector Exclusive OR
+Vector FP Compare Scalar,WFC,"V1,V2,M3,M4",VRR-a,E7CB,,,,,,C §7 §9 SP Dv Xi,VF,Vector FP,11,Vector FP Compare Scalar
+Vector FP Compare and Signal Scalar,WFK,"V1,V2,M3,M4",VRR-a,E7CA,,,,,,C §7 §9 SP Dv Xi,VF,Vector FP,11,Vector FP Compare and Signal Scalar
+Exclusive OR (32),X,"R1,D2(X2,B2)",RX-a,57,,,,,,C A B2,,General,1,Exclusive OR 
+Exclusive OR (character),XC,"D1(L,B1),D2(B2)",SS-a,D7,,,,,,C §9 A ST B1 B2,,General,1,Exclusive OR 
+Exclusive OR (64),XG,"R1,D2(X2,B2)",RXY-a,E382,,,,,,C A B2,N,General,5,Exclusive OR 
+Exclusive OR (64),XGR,"R1,R2",RRE,B982,,,,,,C,N,General,5,Exclusive OR 
+Exclusive OR (64),XGRK,"R1,R2,R3",RRF-a,B9E7,,,,,,C,DO,General,9,Exclusive OR 
+Exclusive OR Immediate,XI,"D1(B1),I2",SI,97,,,,,,C A ST B1,,General,1,Exclusive OR Immediate
+Exclusive OR Immediate (high),XIHF,"R1,I2",RIL-a,C06,,,,,,C,EI,General,7,Exclusive OR Immediate 
+Exclusive OR Immediate (low),XILF,"R1,I2",RIL-a,C07,,,,,,C,EI,General,7,Exclusive OR Immediate 
+Exclusive OR Immediate,XIY,"D1(B1),I2",SIY,EB57,,,,,,C A ST B1,LD,General,6,Exclusive OR Immediate
+Exclusive OR (32),XR,"R1,R2",RR,17,,,,,,C,,General,1,Exclusive OR 
+Exclusive OR (32),XRK,"R1,R2,R3",RRF-a,B9F7,,,,,,C,DO,General,9,Exclusive OR 
+Cancel Subchannel,XSCH,,S,B276,,,,,,C P OP ¢ GS,,I/O,4,Cancel Subchannel
+Exclusive Or (32),XY,"R1,D2(X2,B2)",RXY-a,E357,,,,,,C A B2,LD,General,6,Exclusive Or 
+Zero and Add,ZAP,"D1(L1,B1),D2(L2,B2)",SS-b,F8,,,,,,C §9 A Dg DF ST B1 B2,,Decimal,1,Zero and Add
+Specify assembler options,*PROCESS,,HLASM,,,,,,,,,HLASM,1,
+Dynamically modify options,ACONTROL,,HLASM,,,,,,,,,HLASM,2,
+Conditional assembly branch counter,ACTR,,HLASM,,,,,,,,,HLASM,1,
+Provide data for SYSADATA file,ADATA,,HLASM,,,,,,,,,HLASM,2,
+Start new page in macro definition,AEJECT,,HLASM,,,,,,,,,HLASM,2,
+Unconditional branch,AGO,,HLASM,,,,,,,,,HLASM,1,
+Conditional branch,AIF,,HLASM,,,,,,,,,HLASM,1,
+Create input record,AINSERT,,HLASM,,,,,,,,,HLASM,2,
+Rename external symbol,ALIAS,,HLASM,,,,,,,,,HLASM,2,
+Specify addressing mode,AMODE,,HLASM,,,,,,,,,HLASM,2,
+Assembly no operation,ANOP,,HLASM,,,,,,,,,HLASM,1,
+Assign input record to SETC symbol,AREAD,,HLASM,,,,,,,,,HLASM,2,
+Space lines in macro definition,ASPACE,,HLASM,,,,,,,,,HLASM,2,
+Define class/part name and attributes,CATTR,,HLASM,,,,,,,,,HLASM,2,
+Define channel command word,CCW,,HLASM,,,,,,,,,HLASM,1,
+Define format-0 channel command word,CCW0,,HLASM,,,,,,,,,HLASM,2,
+Define format-1 channel command word,CCW1,,HLASM,,,,,,,,,HLASM,2,
+Conditional start new page,CEJECT,,HLASM,,,,,,,,,HLASM,2,
+Conditional no operation,CNOP,,HLASM,,,,,,,,,HLASM,1,
+Identify common control section,COM,,HLASM,,,,,,,,,HLASM,1,
+Copy predefined source coding,COPY,,HLASM,,,,,,,,,HLASM,1,
+Identify control section,CSECT,,HLASM,,,,,,,,,HLASM,1,
+Cumulative length of external dummy section,CXD,,HLASM,,,,,,,,,HLASM,2,
+Define constant,DC,,HLASM,,,,,,,,,HLASM,1,
+Drop base address register,DROP,,HLASM,,,,,,,,,HLASM,1,
+Define storage,DS,,HLASM,,,,,,,,,HLASM,1,
+Identify dummy section,DSECT,,HLASM,,,,,,,,,HLASM,1,
+Define external dummy section,DXD,,HLASM,,,,,,,,,HLASM,2,
+Start new page,EJECT,,HLASM,,,,,,,,,HLASM,1,
+End assembly,END,,HLASM,,,,,,,,,HLASM,1,
+Identify entry-point symbol,ENTRY,,HLASM,,,,,,,,,HLASM,1,
+Equate symbol,EQU,,HLASM,,,,,,,,,HLASM,1,
+Program control data for I/O exits,EXITCTL,,HLASM,,,,,,,,,HLASM,2,
+Identify external symbol,EXTRN,,HLASM,,,,,,,,,HLASM,1,
+Define global SETA symbol,GBLA,,HLASM,,,,,,,,,HLASM,1,
+Define global SETB symbol,GBLB,,HLASM,,,,,,,,,HLASM,1,
+Define global SETC symbol,GBLC,,HLASM,,,,,,,,,HLASM,1,
+Input format control,ICTL,,HLASM,,,,,,,,,HLASM,1,
+Input sequence checking,ISEQ,,HLASM,,,,,,,,,HLASM,1,
+Define local SETA symbol,LCLA,,HLASM,,,,,,,,,HLASM,1,
+Define local SETB symbol,LCLB,,HLASM,,,,,,,,,HLASM,1,
+Define local SETC symbol,LCLC,,HLASM,,,,,,,,,HLASM,1,
+Specify multiple location counters,LOCTR,,HLASM,,,,,,,,,HLASM,2,
+Begin literal pool,LTORG,,HLASM,,,,,,,,,HLASM,1,
+Macro definition header,MACRO,,HLASM,,,,,,,,,HLASM,1,
+Macro definition trailer,MEND,,HLASM,,,,,,,,,HLASM,1,
+Macro expansion exit,MEXIT,,HLASM,,,,,,,,,HLASM,1,
+Trace macro flow,MHELP,,HLASM,,,,,,,,,HLASM,2,
+Generate message,MNOTE,,HLASM,,,,,,,,,HLASM,1,
+Equate operation code,OPSYN,,HLASM,,,,,,,,,HLASM,2,
+Set location counter,ORG,,HLASM,,,,,,,,,HLASM,1,
+"Restore ACONTROL, PRINT, or USING status",POP,,HLASM,,,,,,,,,HLASM,2,
+Control listing contents,PRINT,,HLASM,,,,,,,,,HLASM,1,
+Punch a record,PUNCH,,HLASM,,,,,,,,,HLASM,1,
+"Save current ACONTROL, PRINT, or USING status",PUSH,,HLASM,,,,,,,,,HLASM,2,
+Reproduce following record,REPRO,,HLASM,,,,,,,,,HLASM,1,
+Specify residence mode,RMODE,,HLASM,,,,,,,,,HLASM,2,
+Identify read-only control section,RSECT,,HLASM,,,,,,,,,HLASM,2,
+Set arithmetic variable symbol,SETA,,HLASM,,,,,,,,,HLASM,1,
+Set arithmetic variable symbol from external function,SETAF,,HLASM,,,,,,,,,HLASM,2,
+Set binary variable symbol,SETB,,HLASM,,,,,,,,,HLASM,1,
+Set character variable symbol,SETC,,HLASM,,,,,,,,,HLASM,1,
+Set character variable symbol from external function,SETCF,,HLASM,,,,,,,,,HLASM,2,
+Space listing,SPACE,,HLASM,,,,,,,,,HLASM,1,
+Start assembly,START,,HLASM,,,,,,,,,HLASM,1,
+Identify assembly output,TITLE,,HLASM,,,,,,,,,HLASM,1,
+Use base address and register,USING,,HLASM,,,,,,,,,HLASM,1,
+Identify weak external symbol,WXTRN,,HLASM,,,,,,,,,HLASM,1,
+Declare external symbol attributes,XATTR,,HLASM,,,,,,,,,HLASM,2,

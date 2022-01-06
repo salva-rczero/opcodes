@@ -1,0 +1,195 @@
+body {
+	background-color: #fafafa;
+	 overflow-y: scroll;
+}
+
+.s8 {
+	color: blue;
+	}
+.s16 {
+	color: blue;
+	}
+.u32 {
+	color: blue;
+	}
+.s32 {
+	color: orange;
+	}
+.s64 {
+	color: orange;
+	}
+.u64 {
+	color: red;
+	}
+.null {
+	background: #ccc;
+	}
+.container {
+	margin: 0px auto;
+	width: 100%;
+	font-size: 0.9em;
+}
+table {
+    font-size: inherit;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+td, th {
+	padding: 0.25rem;
+    vertical-align: top;
+    min-width: 10px;
+    empty-cells: show;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
+}
+
+table.border td, table.border th {
+    border-left: solid 1px #eceeef;
+    border-top: solid 1px #eceeef;
+    border-right: none;
+    border-bottom: none;
+}
+
+table.border tr th:last-child, table.border tr td:last-child {
+    border-right: solid 1px #eceeef;
+}
+
+table.border tr:last-child th, table.border tr:last-child td {
+    border-bottom: solid 1px #eceeef;
+}
+
+th {
+	position: sticky;
+    top: 0;
+	z-index: 998;
+  }
+tbody tr.collapsed {
+    visibility: collapse;
+}
+.dropdown-filter-content {
+	z-index: 999;
+	right: 0;
+}
+.dropdown-filter-dropdown {
+	display: block;
+}
+#optab {
+	margin: 0px auto;
+}
+#optab > tbody > tr > td:nth-child(2) { 
+	font-family: courier;
+	}
+#optab > tbody > tr > td:nth-child(3) { 
+	font-family: courier;
+	}
+
+.tab1 td {
+	padding: 0.05rem !important;
+	text-align: center;
+	margin: auto;
+	border-color: black !important	;
+}
+
+.byte {
+	width: 2em;
+	position: relative;
+}
+
+.byte::after {
+	content: "8";
+	font-size: 0.6em;
+	color: red;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+.nib {
+	width: 1em;
+	position: relative;
+}
+
+.nib::after {
+	content: "4";
+	font-size: 0.6em;
+	color: blue;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+
+.trip {
+	width: 3em;
+	position: relative;
+}
+
+.trip::after {
+	content: "12";
+	font-size: 0.6em;
+	color: pink;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+.half {
+	width: 4em;
+	position: relative;
+}
+
+.half::after {
+	content: "16";
+	font-size: 0.6em;
+	color: turq;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+.v24 {
+	width: 6em;
+	position: relative;
+}
+
+.v24::after {
+	content: "24";
+	font-size: 0.6em;
+	color: pink;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+.word {
+	width: 8em;
+	position: relative;
+}
+
+.word::after {
+	content: "32";
+	font-size: 0.6em;
+	color: green;
+	position: absolute;
+	float: right;
+	top: -0.2em;
+	right: 0.1em;
+}
+
+#splash {
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #eeeeee;
+	z-index:9999;
+	text-align: center;
+}
